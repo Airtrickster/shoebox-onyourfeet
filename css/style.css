@@ -4,6 +4,7 @@
     --main-color:#d3ad7f;
     --black:#13131a;
     --bg:#010103;
+    --text:#fff;
     --border:.1rem solid rgba(255,255,255,.3);
 }
 
@@ -11,10 +12,18 @@
     font-family: 'Roboto', sans-serif;
     margin:0; padding:0;
     box-sizing: border-box;
-    outline: none; border:none;
+    outline: none; 
+    border:none;
     text-decoration: none;
     text-transform: capitalize;
     transition: .2s linear;
+    user-select: none;
+}
+
+/*Navbar*/
+
+body{
+    background: var(--black);
 }
 
 html{
@@ -24,25 +33,8 @@ html{
     scroll-behavior: smooth;
 }
 
-html::-webkit-scrollbar{
-    width: .8rem;
-}
-
-html::-webkit-scrollbar-track{
-    background: transparent;
-}
-
-html::-webkit-scrollbar-thumb{
-    background: #fff;
-    border-radius: 5rem;
-}
-
-body{
-    background: var(--bg);
-}
-
 section{
-    padding:2rem 7%;
+    padding: 2rem 7%;
 }
 
 .heading{
@@ -73,12 +65,11 @@ section{
 }
 
 .header{
-    background: var(--bg);
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding:1.5rem 7%;
-    border-bottom: var(--border);
     position: fixed;
     top:0; left: 0; right: 0;
     z-index: 1000;
@@ -90,14 +81,16 @@ section{
 
 .header .navbar a{
     margin:0 1rem;
+    padding: 5px 10px;
     font-size: 1.6rem;
     color:#fff;
 }
 
 .header .navbar a:hover{
-    color:var(--main-color);
-    border-bottom: .1rem solid var(--main-color);
-    padding-bottom: .5rem;
+    color:var(--text);
+   background: #d3ad7f;
+   transition: all ease-in .1s;
+   border-radius: 50px;
 }
 
 .header .icons div{
@@ -105,6 +98,10 @@ section{
     cursor: pointer;
     font-size: 2.5rem;
     margin-left: 2rem;
+}
+
+.header .icons .menu{
+    display: none;
 }
 
 .header .icons div:hover{
@@ -209,22 +206,30 @@ section{
 }
 
 .home{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background:url(../images/home-img.png) no-repeat;
+    min-height: 90vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/bgs.png) ;
     background-size: cover;
     background-position: center;
 }
 
 .home .content{
-    max-width: 60rem;
+    min-height: 90vh;
+    display: grid;
+    place-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.home .content img{
+    width: 30%;
+    display: flex;
+    margin: auto;
 }
 
 .home .content h3{
     font-size: 6rem;
     text-transform: uppercase;
-    color:#3a2317;
+    color: var(--text);
 }
 
 .home .content p{
@@ -232,7 +237,20 @@ section{
     font-weight: lighter;
     line-height: 1.8;
     padding:1rem 0;
-    color:#69422A;
+    color: var(--text);
+}
+
+.home .content a{
+    font-size: 1.7rem;
+    color:#fff;
+    background: var(--main-color);
+    width: 25%;
+    padding: 10px;
+    margin: auto;
+}
+
+.about{
+    margin-top: 5% ;
 }
 
 .about .row{
@@ -264,6 +282,10 @@ section{
     color:#311f13;
     padding:1rem 0;
     line-height: 1.8;
+}
+
+.product{
+    margin-top: 5% ;
 }
 
 .product .box-container{
@@ -392,6 +414,10 @@ section{
     color:var(--main-color);
 }
 
+.contact{
+    margin-top: 5% ;
+}
+
 .contact .row{
     display: flex;
     background:var(--black);
@@ -465,44 +491,30 @@ section{
     background-color: var(--main-color);
 }
 
-.footer .links{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding:2rem 0;
-    gap:1rem;
-}
-
-.footer .links a{
-    padding:.7rem 2rem;
-    color:#fff;
-    border:var(--border);
-    font-size: 2rem;
-}
-
-.footer .links a:hover{
-    background:var(--main-color);
-}
-
 .footer .credit{
-    font-size: 2rem;
+    font-size: 1.4rem;
     color:#fff;
     font-weight: lighter;
     padding:1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.footer .credit span{
-    color:var(--main-color);
+.footer .credit .faqs a{ 
+        border-right: 2px solid #c4c4c4;
+        display: inline-block;
+        float: left;
+        padding: 0 15px;
 }
 
+.footer .credit .faqs a:last-child{
+    border-right: 0;
+}
 
-
-
-
-
-
-
-
+.footer .credit a{
+    color: var(--text);
+}
 
 
 
