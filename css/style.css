@@ -249,39 +249,26 @@ section{
     margin: auto;
 }
 
-.about{
+.shipping-policy{
     margin-top: 5% ;
 }
 
-.about .row{
+.shipping-policy .row{
     display: flex;
     align-items: center;
     background:var(--main-color);
     flex-wrap: wrap;
 }
 
-.about .row .image{
-    flex:1 1 45rem;
-}
-
-.about .row .image img{
-    width: 100%;
-}
-.about .row .content{
+.shipping-policy .row .content{
     flex:1 1 45rem;
     padding:2rem;
 }
 
-.about .row .content h3{
-    font-size: 3rem;
-    color:#311f13;
-}
-
-.about .row .content p{
+.shipping-policy .row .content p, li{
     font-size: 1.6rem;
     color:#311f13;
     padding:1rem 0;
-    line-height: 1.8;
 }
 
 .product{
