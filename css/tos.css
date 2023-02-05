@@ -7,7 +7,7 @@ body {
   justify-content: center;
 }
 .bg {
-  background: url(img/com_05.png);
+  background: url(../images/bgs.png);
   height: 100vh;
   width: 100%;
   position: absolute;
