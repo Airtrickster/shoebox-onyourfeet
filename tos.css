@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bg {
+  background: url(img/com_05.png);
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  background-size: cover;
+  filter: blur(5px);
+  z-index: -1;
+  opacity: 0.7;
+  filter: brightness(50%);
+}
+.terms-box {
+  max-width: 460px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url();
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0 20px;
+  height: 400px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+.terms-text {
+  padding: 0 20px;
+  height: 400px;
+  overflow-y: auto;
+  font-size: 14;
+  font-weight: 500;
+  color: #f1f1f1;
+}
+.terms-text::-webkit-scrollbar {
+  width: 2px;
+  background-color: #282828;
+}
+.terms-text::-webkit-scrollbar-thumb {
+  background-color: #f1f1f1;
+}
+.terms-text h2 {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 40px;
+}
+.terms-text h4 {
+  font-size: 13px;
+  text-align: center;
+  padding: 0 40px;
+}
+.terms-box h4 span {
+  color: rgb(245, 68, 68);
+  text-transform: uppercase;
+}
+.buttons {
+  display: flex;
+  padding: 0 20px;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+.btn {
+  height: 50px;
+  width: calc(50% - 6px);
+  border: 0;
+  border-radius: 6px;
+  font-size: 19px;
+  font-weight: 500;
+  color: #fff;
+  transition: 0.3s linear;
+  cursor: pointer;
+}
+.red-btn {
+  background-color: rgb(245, 68, 68);
+}
+.gray-btn {
+  background-color: #282828;
+}
+.btn:hover {
+  opacity: 0.6;
+}
