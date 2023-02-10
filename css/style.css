@@ -262,18 +262,6 @@
         margin: auto;
     }
 
-    .members{
-        background-color:lightblue;
-        display: flex;
-        justify-content: space-around;
-        text-align: center;
-    }
-
-    .members .card img{
-        width: 50%;
-        border-radius: 50%;
-    }
-
     .shipping-policy .row{
         display: flex;
         align-items: center;
@@ -565,7 +553,7 @@
     }
 
     .about{
-        margin-top: 5%;
+        margin-top: 6%;
         
     }
 
@@ -605,23 +593,76 @@
         height: 80vh;
         display: grid;
         place-content: center start;
+        box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.584);
+    }
+
+    .mission-text{
+        width: 100%;
+        margin-left: 50px;
     }
 
 
     .about-mission h1{
         color: var(--text);
+        text-align: center;
+        font-size: 5rem;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        width: 50%;
+    }
+
+    .about-mission p{
+        color: var(--text);
+        text-align: center;
+        font-size: 5rem;
+        width: 50%;
 
     }
-    
-    #shipping{
-        background: var(--text);
+
+    .box-wrap{
+        word-wrap: break-word;
+    }
+
+    .members{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        margin: 20px 0px;
+    }
+
+    .card{
+        background: var(--main-color);
+        padding: 20px 20px 100px 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.584);
+    }
+
+    .card h3{
+        font-size: 18px;
+    }
+
+    .card ul li{
+        text-align: left;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .card:hover{
+        transition: .2s;
+        transform: scale(1.05);
+    }
+
+    .members .card img{
+        width: 100px;
+        border-radius: 50%;
     }
 
     .shipping-policy h1{
         text-align: center;
         font-size: 4rem;
         margin:0px 0px 15px 0px;
-        
+        color: var();
+    
     }
 
     .shipping-policy .content{
@@ -828,4 +869,83 @@
             margin-bottom: 20px;
             font-size: 8px;
         }
+
+        /*about*/
+
+        .about{
+            margin-top: 20%;
+        }
+
+        .about-img{
+            display: block;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .about-img img{
+            width: 100%;
+        }
+
+        .about-text{
+            padding: 10px 0px 20px 0px;
+        }
+
+        .about-text p{
+            text-align: justify;
+            text-indent: 10%;
+        }
+
+        .mission{
+           display: grid;
+           place-content: center;
+            
+        }
+
+        .about-mission{
+            height: 90vh;
+            
+        }
+
+        .mission-text{
+           margin-left: 0px;
+           font-size: 25px !important;
+           text-align: center   ;
+           margin-left: 27%;
+        }
+
+        .about-mission h1{
+            font-size: 3rem !important;
+        }
+
+        .vertical{
+            display: grid;
+            place-content: center;
+        }
+
+        .members{
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card{
+            margin-bottom: 40px;
+            padding: 5px 15px 20px 15px;
+        }
+
+        .card img{
+           max-width: 100%;
+        }
+
+        .card h3{
+            font-size: 10px;
+            padding-top: 10px;
+        }
+
+        .card ul li{
+            font-size: 10px;
+        }
+
     }
