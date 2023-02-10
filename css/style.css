@@ -624,12 +624,16 @@
     }
 
     .members{
-        display: flex;
-        justify-content: space-between;
-        text-align: center;
+        
         margin: 20px 0px;
     }
 
+    .vertical{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+    }
+    
     .card{
         background: var(--main-color);
         padding: 20px 20px 100px 20px;
