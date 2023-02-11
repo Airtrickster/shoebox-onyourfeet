@@ -280,10 +280,6 @@
         padding:1rem 0;
     }
 
-    .refund-policy{
-        margin-top: 5% ;
-    }
-
     .refund-policy .row{
         display: flex;
         align-items: center;
@@ -737,7 +733,7 @@
     }
 
     .help{
-        margin-left: -130px;
+        margin-left: -200px;
     }
 
     .help a {
