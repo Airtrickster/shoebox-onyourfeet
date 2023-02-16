@@ -8,11 +8,12 @@ document.querySelector('#menu-btn').onclick = () =>{
 
 let searchForm = document.querySelector('.search-form');
 
-document.querySelector('#search-btn').onclick = () =>{
-    searchForm.classList.toggle('active');
-    navbar.classList.remove('active');
-    cartItem.classList.remove('active');
-}
+// Code removed due to an error since search function is removed
+//document.querySelector('#search-btn').onclick = () =>{
+//    searchForm.classList.toggle('active');
+//    navbar.classList.remove('active');
+//    cartItem.classList.remove('active');
+//}
 
 let cartItem = document.querySelector('.cart-items-container');
 
