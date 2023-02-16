@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  include "db_conn.php";
+  if (isset($_SESSION["userid"])) {
+    echo '<script> window.location.href="index.php" </script>';
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,17 +22,17 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="#" class="sign-in-form">
+          <form action="" id="loginForm" class="sign-in-form" method="post" enctype="multipart/form-data">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" name="usernameLogin" placeholder="Username" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" name="passwordLogin" placeholder="Password" />
             </div>
-            <input type="submit" value="Login" class="btn solid" />
+            <input type="submit" name="login" class="btn solid" />
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -41,21 +49,21 @@
               </a>
             </div>
           </form>
-          <form action="#" class="sign-up-form">
+          <form action="#" id="signupForm" class="sign-up-form" method="post" enctype="multipart/form-data">
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" name="usernameSignUp" placeholder="Username" />
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+              <input type="email" name="emailSignUp" placeholder="Email" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" name="passwordSignUp" placeholder="Password" />
             </div>
-            <input type="submit" class="btn" value="Sign up" />
+            <input type="submit" class="btn" name="signup" />
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -108,5 +116,32 @@
     </div>
 
     <script src="js/login.js"></script>
+    <?php
+
+      if (isset($_POST["signup"])) {
+        $signupsmt = mysqli_prepare($link, "INSERT INTO accounts (username, email, password) VALUES (?, ?, ?);");
+        mysqli_stmt_bind_param($signupsmt, "sss", $_POST["usernameSignUp"], $_POST["emailSignUp"], $_POST["passwordSignUp"]);
+        mysqli_stmt_execute($signupsmt);
+      }
+
+      if (isset($_POST["login"])) {
+        $loginsmt = mysqli_prepare($link, "SELECT id, username, password FROM accounts WHERE username = ? AND password = ?");
+        mysqli_stmt_bind_param($loginsmt, "ss", $_POST["usernameLogin"], $_POST["passwordLogin"]);
+        mysqli_stmt_execute($loginsmt);
+        $loginResults = mysqli_stmt_get_result($loginsmt);
+        $credentials = mysqli_fetch_array($loginResults);
+
+          if (is_array($credentials)) {
+            $_SESSION["userid"] = $credentials["id"];
+            $_SESSION["username"] = $credentials["username"];
+            $_SESSION["password"] = $credentials["password"];
+            echo '<script> window.location.href="index.php" </script>';
+          } else {
+            echo '<script> alert("Wrong Credentials please try again");';
+
+          }
+      }
+    ?>
+    
   </body>
 </html>

@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,16 +21,24 @@
         </a>
     
         <nav class="navbar">
-            <a href="index.html">home</a>
-            <a href="about.html">about</a>
-            <a href="product.html">product</a>
-            <a href="contact.html">contact</a>
+            <a href="index.php">home</a>
+            <a href="about.php">about</a>
+            <a href="product.php">product</a>
+            <a href="contact.php">contact</a>
         </nav>
     
         <div class="icons">
             <div class="fas fa-shopping-cart" id="cart-btn"></div>
             <div class="fa-solid fa-star"></div>
-            <div class="fa-solid fa-user"></div>
+            <div class="fa-solid fa-user" id="user-btn" onclick='<?php if (isset($_SESSION["userid"])) { echo 'window.location.href="logout.php"'; } else { echo 'window.location.href="tos.html"'; } ?>'>
+                <?php
+                    if (isset($_SESSION["userid"])) {
+                    echo $_SESSION["username"];
+                    } else {
+                        echo "login";
+                    }
+                ?>
+            </div>
             <div class="fas fa-bars" id="menu-btn"></div>
         </div>
     
