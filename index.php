@@ -38,9 +38,9 @@
 
     <div class="icons">
         <div class="fas fa-shopping-cart" id="cart-btn"></div>
-        <div class="fa-solid fa-user" id="user-btn" onclick='<?php if (isset($_SESSION["userid"])) { echo 'window.location.href="logout.php"'; } else { echo 'window.location.href="tos.html"'; } ?>'>
+        <div class="fa-solid fa-user" id="user-btn" onclick='<?php if (isset($_SESSION["user_id"])) { echo 'window.location.href="logout.php"'; } else { echo 'window.location.href="tos.html"'; } ?>'>
         <?php
-            if (isset($_SESSION["userid"])) {
+            if (isset($_SESSION["user_id"])) {
                 echo $_SESSION["username"];
             } else {
                 echo "login";
@@ -98,7 +98,7 @@
         <img src="images/mini-logo.png" alt="mini logo">
         <h3>On your feet</h3>
         <p><q>I still have my feet on the ground</q></p>
-        <a class="btn" href="product.html">get yours now!</a>
+        <a class="btn" href="product.php">get yours now!</a>
     </div>
 
 </section>

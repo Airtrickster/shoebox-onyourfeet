@@ -29,9 +29,9 @@
     
         <div class="icons">
             <div class="fas fa-shopping-cart" id="cart-btn"></div>
-            <div class="fa-solid fa-user" id="user-btn" onclick='<?php if (isset($_SESSION["userid"])) { echo 'window.location.href="logout.php"'; } else { echo 'window.location.href="tos.html"'; } ?>'>
+            <div class="fa-solid fa-user" id="user-btn" onclick='<?php if (isset($_SESSION["user_id"])) { echo 'window.location.href="logout.php"'; } else { echo 'window.location.href="tos.html"'; } ?>'>
                 <?php
-                    if (isset($_SESSION["userid"])) {
+                    if (isset($_SESSION["user_id"])) {
                     echo $_SESSION["username"];
                     } else {
                         echo "login";
@@ -163,7 +163,6 @@
     
             <div class="help">
                 <a href="FAQ.html">faq's</a>
-                <a href="tos.html">terms of service</a>
                 <a href="privacy_policy.html">privacy policy</a>
                 <a href="shipping_policy.html">shipping policy</a>
                 <a href="refund_policy.html">refund policy</a>

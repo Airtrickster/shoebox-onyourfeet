@@ -1,7 +1,7 @@
 <?php
   session_start();
   include "db_conn.php";
-  if (isset($_SESSION["userid"])) {
+  if (isset($_SESSION["user_id"])) {
     echo '<script> window.location.href="index.php" </script>';
   }
 ?>
@@ -32,7 +32,7 @@
               <i class="fas fa-lock"></i>
               <input type="password" name="passwordLogin" placeholder="Password" />
             </div>
-            <input type="submit" name="login" class="btn solid" />
+            <input type="submit" name="login" class="btn solid" value="log in" />
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -63,7 +63,7 @@
               <i class="fas fa-lock"></i>
               <input type="password" name="passwordSignUp" placeholder="Password" />
             </div>
-            <input type="submit" class="btn" name="signup" />
+            <input type="submit" class="btn" name="signup" value="sign up" />
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -125,19 +125,19 @@
       }
 
       if (isset($_POST["login"])) {
-        $loginsmt = mysqli_prepare($link, "SELECT id, username, password FROM accounts WHERE username = ? AND password = ?");
+        $loginsmt = mysqli_prepare($link, "SELECT user_id, username, password FROM accounts WHERE username = ? AND password = ?");
         mysqli_stmt_bind_param($loginsmt, "ss", $_POST["usernameLogin"], $_POST["passwordLogin"]);
         mysqli_stmt_execute($loginsmt);
         $loginResults = mysqli_stmt_get_result($loginsmt);
         $credentials = mysqli_fetch_array($loginResults);
 
           if (is_array($credentials)) {
-            $_SESSION["userid"] = $credentials["id"];
+            $_SESSION["user_id"] = $credentials["user_id"];
             $_SESSION["username"] = $credentials["username"];
             $_SESSION["password"] = $credentials["password"];
             echo '<script> window.location.href="index.php" </script>';
           } else {
-            echo '<script> alert("Wrong Credentials please try again");';
+            echo '<script> alert("Wrong Credentials please try again"); </script>';
 
           }
       }
