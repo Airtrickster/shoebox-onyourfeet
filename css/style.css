@@ -524,7 +524,7 @@
 
     .contact .row form{
         flex:1 1 45rem;
-        padding:5rem 2rem;
+        padding:0px 2rem;
         text-align: center;
     }
 
@@ -558,6 +558,10 @@
         background:none;
     }
 
+    .cont{
+        padding: 0px;
+    }
+
     .info{
         display: grid;
         justify-content: center;
@@ -568,16 +572,13 @@
         height: 50vh;
     }
 
-    .info img{
-        width: 20%;
-        border-radius: 50%;
-        margin:  10px auto;
+    .info h4{
+        margin: 30px 0px;
+        font-size: 18px;
     }
 
-    .info h4{
-        margin: 10px;
-        font-size: 15px;
-        text-align: center;
+    .i{
+        margin-right: 50px;
     }
 
     #about{
