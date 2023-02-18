@@ -126,9 +126,9 @@
 
       if (isset($_POST["login"])) {
         $loginsmt = mysqli_prepare($link, "SELECT user_id, username, password FROM accounts WHERE username = ? AND password = ?");
-        mysqli_stmt_bind_param($loginsmt, "ss", $_POST["usernameLogin"], $_POST["passwordLogin"]);
-        mysqli_stmt_execute($loginsmt);
-        $loginResults = mysqli_stmt_get_result($loginsmt);
+        mysqli_stmt_bind_param($logintsmt, "ss", $_POST["usernameLogin"], $_POST["passwordLogin"]);
+        mysqli_stmt_execute($logintsmt);
+        $loginResults = mysqli_stmt_get_result($loginstmt);
         $credentials = mysqli_fetch_array($loginResults);
 
           if (is_array($credentials)) {
