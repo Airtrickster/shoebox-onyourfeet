@@ -49,7 +49,9 @@
               </a>
             </div>
           </form>
-          <form action="#" id="signupForm" class="sign-up-form" method="post" enctype="multipart/form-data">
+      
+          <form action="#" id="signupForm" class="sign-up-form" method="post" enctype="multipart/form-data"
+          onsubmit='return signUpValidation()'>
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
@@ -63,7 +65,7 @@
               <i class="fas fa-lock"></i>
               <input type="password" name="passwordSignUp" placeholder="Password" />
             </div>
-            <input type="submit" class="btn" name="signup" value="sign up" />
+            <input type="submit" class="btn" name="signup" value="sign up"/>
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
