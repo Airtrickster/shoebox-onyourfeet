@@ -91,20 +91,19 @@
     
     <section class="contact" id="contact">
 
-        <h1 class="heading"> <span>contact</span> us </h1>
+        <h1 class="heading cont"> <span>contact</span> us </h1>
 
         <div class="info">
-            <img src="./images/pic-2.jpg" alt="logo">
             <div class="text">
-                <h4>Name: Calvin James S. Medoza</h4>
-                <h4>Email: CalvinJ@gmail.com</h4>
-                <h4>Number: 09123456789</h4>
+                <h4><i class="fa-regular fa-lg fa-user i"></i> Calvin James S. Medoza - CEO</h4>
+                <h4><i class="fa-regular fa-lg fa-hashtag i"></i> (+63) 9123456789</h4>
+                <h4><i class="fa-regular fa-lg fa-envelope i"></i> clvinjmes.ceo@gmail.com</h4>
             </div>
         </div>
     
         <div class="row">
     
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15431.196470921965!2d121.02174176977539!3d14.780342099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ae32623635c7%3A0xfb416c7fe568e681!2sGalilean%20Fundamental%20Christian%20Baptist%20Church!5e0!3m2!1sen!2sph!4v1664634443368!5m2!1sen!2sph" width="685" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1474.1792288057443!2d121.05975269517278!3d14.62555284401961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b796aecb8763%3A0xaa026ea7350f82e7!2sTechnological%20Institute%20of%20the%20Philippines%20-%20Quezon%20City!5e0!3m2!1sen!2sph!4v1676642618419!5m2!1sen!2sph" width="685" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     
             <form action="">
                 <h3>get in touch</h3>

@@ -38,3 +38,11 @@ window.addEventListener('scroll', ( )=> {
         headerEl.classList.remove('header-scrolled');
     }
 })
+
+$("#show").click(function () {
+  $("#hide").show("slow", function () {});
+});
+
+$("#hider").click(function () {
+  $("#hide").hide("slow", function () {});
+});

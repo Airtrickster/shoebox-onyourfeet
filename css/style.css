@@ -98,7 +98,7 @@
         color:#fff;
         cursor: pointer;
         font-size: 2.5rem;
-        margin-left: 2rem;
+        margin-left: 1rem;
     }
 
     .header .icons .menu{
@@ -298,14 +298,69 @@
         padding:1rem 0;
     }
 
-    .product{
-        margin-top: 5% ;
+    .sale{
+        margin-top: 5.5%;
+    }
+
+    .box-sale{
+        background: linear-gradient(90deg,#878080 0%, #d7ecd7 80%);
+        height: 40vh;
+        display: grid;
+        place-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .box-sale h1{
+        font-size: 5rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+    }
+
+    .box-sale p{
+        font-size: 15px;
+        margin-bottom: 10px; 
+    }
+
+    .box-sale button{
+        width: 13%;
+        margin: 0 auto;
+        padding: 6px;
+        border-radius: 20px;
+        cursor:pointer;
+        margin-top: 5px;
+    }
+
+    .showcase-page{
+        margin-top: 0px;
+    }
+
+    .show p{
+        margin: 0px 0px 15px 0px;
+        color: var(--text);
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    .show img{
+        width: 100%;
+    }
+
+    .show .center-text{
+        text-align: center;
+        margin-top: 15px;
     }
 
     .product .box-container{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
         gap:1.5rem;
+    }
+
+    .product .content img{
+        height: 70vh;
     }
 
     .product .box-container .box{
@@ -383,6 +438,10 @@
         border:var(--border);
         padding: 2rem;
     }
+
+    .content img{
+        width: 100%;
+    }
     
     .product-category .box-container .box .icons a{
         height: 5rem;
@@ -394,17 +453,29 @@
         margin:.3rem;
     }    
 
-    .content button{
-        padding: 10px 50px;
-        border-radius: 10px;
-        width: 100%;
+    .btn-prod{
         display: flex;
         justify-content: center;
-        text-align: center;    
+        align-items: center;
     }
 
-    .content button:hover{
+    .content .btn-prod button{
+        padding: 10px 50px;
+        border-radius: 10px;
+        margin: 10px 20px 30px;
+    } 
+
+    .content .btn-prod button:hover{
         background-color: var(--main-color);
+    }
+
+    .content h1{
+        color: var(--text);
+        font-size: 5rem; 
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: 20px;
+        letter-spacing: 5px;  
     }
 
 
@@ -524,7 +595,7 @@
 
     .contact .row form{
         flex:1 1 45rem;
-        padding:5rem 2rem;
+        padding:0px 2rem;
         text-align: center;
     }
 
@@ -558,6 +629,20 @@
         background:none;
     }
 
+    .box button{
+        margin: 0px 10px 20px 10px;
+        padding: 5px 10px;
+        border-radius: 20px;
+    }
+
+    .box button:hover{
+        background: var(--main-color);
+    }
+
+    .cont{
+        padding: 0px;
+    }
+
     .info{
         display: grid;
         justify-content: center;
@@ -568,16 +653,13 @@
         height: 50vh;
     }
 
-    .info img{
-        width: 20%;
-        border-radius: 50%;
-        margin:  10px auto;
+    .info h4{
+        margin: 30px 0px;
+        font-size: 18px;
     }
 
-    .info h4{
-        margin: 10px;
-        font-size: 15px;
-        text-align: center;
+    .i{
+        margin-right: 50px;
     }
 
     #about{
@@ -983,6 +1065,39 @@
 
         .card ul li{
             font-size: 10px;
+        }
+
+        .content img{
+            height: auto !important;
+        }
+        
+        .content h1{
+            font-size: 3rem !important;
+        }
+
+        .btn-prod button{
+            padding: 5px 50px !important;
+        }
+
+        .sale{
+            margin-top: 20%;
+        }
+
+        .box-sale{
+            height: 5   0vh;
+        }
+
+        .box-sale h1{
+            font-size: 4rem;
+            padding: 0px 20px;
+        }
+
+        .box-sale p{
+            padding: 0px 20px;
+        }
+
+        .box-sale button{
+            width: 80px;
         }
 
     }
