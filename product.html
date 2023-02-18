@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <title>On your feet | Product</title>
 </head>
 <body>
@@ -68,27 +69,53 @@
     
     </header>
 
+    <section class="sale">
+        <div class="box-sale">
+            <h1>25% off select styles</h1>
+            <p>Sign in and use code <span>OYFT25</span> for 25% off. Not a member? Use code <span>FEET20</span> for an extra 20% off. Select styles. Exclusions apply.</p>
+            <button onclick='window.location.href="#product"''>Shop</button>
+        </div>
+    </section>
+
+
+    <section class="showcase-page">
+        <div class="show">
+            <p>feet in!</p>
+            <img src="./images/basketball-shoes.png" alt="page">
+            <p class="center-text">When it comes to basketball, having the best pair of basketball shoes is essential</p>
+        </div>
+    </section>
+
     <section class="product" id="product">
 
         <h1 class="heading"> our <span>product</span> </h1>
     
         <div class="content">
-            <img src="images/product_ath.png" style="width:100%;">
-            <button onclick='window.location.href="athletic_shoes_men.html"' class="btn2 buttoncurved">Men</button>
-          <button onclick='window.location.href="athletic_shoes_women.html"' class="btn2 buttoncurved">Women</button>
-          </div>
+            <img src="images/product_ath.png">
+            <h1>Athletic Shoes</h1>
+            <div class="btn-prod">
+            <button onclick='window.location.href="athletic_shoes_men.html"' class="btn2 buttoncurved">Shop Men's</button>
+            <button onclick='window.location.href="athletic_shoes_women.html"' class="btn2 buttoncurved">Shop Women's</button>
+            </div>
+        </div>
 
           <div class="content">
-            <img src="images/product_for.png" style="width:100%;">
-            <button onclick='window.location.href="formal_shoes_men.html"' class="btn2 buttoncurved">Men</button>
-          <button onclick='window.location.href="formal_shoes_women.html"' class="btn2 buttoncurved">Women</button>
-          </div>
+            <img src="images/product_for.png" >
+            <h1>Formal Shoes</h1>
+            <div class="btn-prod">
+            <button onclick='window.location.href="formal_shoes_men.html"' class="btn2 buttoncurved">Shop Men's</button>
+            <button onclick='window.location.href="formal_shoes_women.html"' class="btn2 buttoncurved">Shop Women's</button>
+            </div>
+        </div>
 
           <div class="content">
-            <img src="images/product_cas.png" style="width:100%;">
-            <button onclick='window.location.href="casual_shoes_men.html"' class="btn2 buttoncurved">Men</button>
-          <button onclick='window.location.href="casual_shoes_women.html"' class="btn2 buttoncurved">Women</button>
-          </div>
+            <img src="images/product_cas.png" >
+            <h1>Casual Shoes</h1>
+            <div class="btn-prod">
+            <button onclick='window.location.href="casual_shoes_men.html"' class="btn2 buttoncurved">Shop Men's</button>
+            <button onclick='window.location.href="casual_shoes_women.html"' class="btn2 buttoncurved">Shop Women's</button>
+            </div>
+        </div>
 
     </section>
 
@@ -204,7 +231,12 @@
             
             <div class="box">
                 <img src="images/quote-img.png" alt="" class="quote">
-                <p>This website is amazing! The layout is very user-friendly, and the search engine optimization is top notch. I would definitely recommend this website to anyone looking for a great online shopping experience. The website was very easy to use and I enjoyed browsing through the different styles of shoes and it was helpful to be able to see how the shoes would look before making a purchase.  I enjoy shopping online and using this website for purchasing online was a smooth and easy process. I will definitely shop on this website again.</p>
+                <div>
+                <p class="text-wrap">This website is amazing! The layout is very user-friendly, and the search engine optimization is top notch. I would definitely recommend this website to anyone looking for a great online shopping experience.  </p>
+                <p id="hide" style="display:none;"> The website was very easy to use and I enjoyed browsing through the different styles of shoes and it was helpful to be able to see how the shoes would look before making a purchase.  I enjoy shopping online and using this website for purchasing online was a smooth and easy process. I will definitely shop on this website again.</p>
+                <button id="show">show more</button>
+                <button id="hider">hide</button>
+            </div>
                 <img src="images/cal.jpg" class="user" alt="">
                 <h3>Person 3</h3>
                 <div class="stars">
