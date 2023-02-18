@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include "db_conn.php";
 ?>
 
 <!DOCTYPE html>
@@ -42,40 +43,49 @@
         </div>
     
         <div class="cart-items-container">
-            <div class="cart-item">
-                <span class="fas fa-times"></span>
-                <img src="images/cart-item-1.png" alt="">
-                <div class="content">
-                    <h3>cart item 01</h3>
-                    <div class="price">Php 150/-</div>
-                </div>
-            </div>
-            <div class="cart-item">
-                <span class="fas fa-times"></span>
-                <img src="images/cart-item-2.png" alt="">
-                <div class="content">
-                    <h3>cart item 02</h3>
-                    <div class="price">Php 150/-</div>
-                </div>
-            </div>
-            <div class="cart-item">
-                <span class="fas fa-times"></span>
-                <img src="images/cart-item-3.png" alt="">
-                <div class="content">
-                    <h3>cart item 03</h3>
-                    <div class="price">Php 180/-</div>
-                </div>
-            </div>
-            <div class="cart-item">
-                <span class="fas fa-times"></span>
-                <img src="images/cart-item-4.png" alt="">
-                <div class="content">
-                    <h3>cart item 04</h3>
-                    <div class="price">Php 180/-</div>
-                </div>
-            </div>
-            <a href="#" class="btn">checkout now</a>
-        </div>
+        <?php
+            if (isset($_SESSION["user_id"])) {
+                $productstmt = mysqli_prepare($link, "SELECT item_id, products.product_id , name, price, image FROM cart INNER JOIN products ON cart.product_id = products.product_id WHERE user_id = ?;");
+                mysqli_stmt_bind_param($productstmt, "i", $_SESSION["user_id"],);
+                mysqli_stmt_execute($productstmt);
+                $productResults = mysqli_stmt_get_result($productstmt);
+
+                $sumCartstmt = mysqli_prepare($link,"SELECT SUM(price) as \"sum_cart\" FROM cart INNER JOIN products ON cart.product_id = products.product_id WHERE user_id = ?;");
+                mysqli_stmt_bind_param($sumCartstmt, "i", $_SESSION["user_id"],);
+                mysqli_stmt_execute($sumCartstmt);
+                $sumCartResult = mysqli_stmt_get_result($sumCartstmt);
+                $sumCart = mysqli_fetch_array($sumCartResult);
+
+                while ($productRow = mysqli_fetch_array($productResults)) {     
+                    echo "<div class=\"cart-item\">";
+                    echo "<a href=\"remove_from_cart.php?item_id="; echo $productRow["item_id"]; echo "\"><span class=\"fas fa-times\"></span> </a>";
+                    echo "<img src=\"images/products/"; echo $productRow["image"]; echo "\" alt=\"\">";
+                    echo "<div class=\"content\">";
+                    echo "<h3>"; echo $productRow["name"]; echo "</h3>";
+                    echo "<div class=\"price\">Php "; echo $productRow["price"]; echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+                if (mysqli_num_rows($productResults) == 0) {
+                    echo "<div class=\"cart-item\">";
+                    echo "<div class=\"content\">";
+                    echo '<h3> Cart is empty </h3>';
+                    echo "</div>";
+                    echo "</div>";
+                } else {
+                    echo "<a href=\"checkout.php\" class=\"btn\">checkout now <br> Php "; echo $sumCart["sum_cart"]; echo "</a>";
+                }
+                
+            } else {
+                echo "<div class=\"cart-item\">";
+                echo "<div class=\"content\">";
+                echo '<h3> Not logged in </h3>';
+                echo "</div>";
+                echo "</div>";
+            }
+
+        ?>
+    </div>
     
     </header>
 

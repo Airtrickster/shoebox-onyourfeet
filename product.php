@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include "db_conn.php";
 ?>
 
 <!DOCTYPE html>
@@ -43,40 +44,49 @@
         </div>
     
         <div class="cart-items-container">
-            <div class="cart-item">
-                <span class="fas fa-times"></span>
-                <img src="images/products/formal_shoes/men/20081949_20MILANOS_20-_20KIAN_20-_20BLACK_20_281_29_9388b81a-192f-4f69-8138-396b88b11f3f_350x500.webp" alt="">
-                <div class="content">
-                    <h3>cart item 01</h3>
-                    <div class="price">Php 799/-</div>
-                </div>
-            </div>
-            <div class="cart-item">
-                <span class="fas fa-times"></span>
-                <img src="images/products/formal_shoes/men/7342001750194-1_902f865c-fedc-45e9-9c36-8fba87368b2d_350x500.webp" alt="">
-                <div class="content">
-                    <h3>cart item 02</h3>
-                    <div class="price">Php 2,999.78/-</div>
-                </div>
-            </div>
-            <div class="cart-item">
-                <span class="fas fa-times"></span>
-                <img src="images/products/formal_shoes/women/7405129793714-1_350x500.webp" alt="">
-                <div class="content">
-                    <h3>cart item 03</h3>
-                    <div class="price">Php 399/-</div>
-                </div>
-            </div>
-            <div class="cart-item">
-                <span class="fas fa-times"></span>
-                <img src="images/products/formal_shoes/women/7405778567346-1_350x500.webp" alt="">
-                <div class="content">
-                    <h3>cart item 04</h3>
-                    <div class="price">Php 499/-</div>
-                </div>
-            </div>
-            <a href="#" class="btn">checkout now</a>
-        </div>
+        <?php
+            if (isset($_SESSION["user_id"])) {
+                $productstmt = mysqli_prepare($link, "SELECT item_id, products.product_id , name, price, image FROM cart INNER JOIN products ON cart.product_id = products.product_id WHERE user_id = ?;");
+                mysqli_stmt_bind_param($productstmt, "i", $_SESSION["user_id"],);
+                mysqli_stmt_execute($productstmt);
+                $productResults = mysqli_stmt_get_result($productstmt);
+
+                $sumCartstmt = mysqli_prepare($link,"SELECT SUM(price) as \"sum_cart\" FROM cart INNER JOIN products ON cart.product_id = products.product_id WHERE user_id = ?;");
+                mysqli_stmt_bind_param($sumCartstmt, "i", $_SESSION["user_id"],);
+                mysqli_stmt_execute($sumCartstmt);
+                $sumCartResult = mysqli_stmt_get_result($sumCartstmt);
+                $sumCart = mysqli_fetch_array($sumCartResult);
+
+                while ($productRow = mysqli_fetch_array($productResults)) {     
+                    echo "<div class=\"cart-item\">";
+                    echo "<a href=\"remove_from_cart.php?item_id="; echo $productRow["item_id"]; echo "\"><span class=\"fas fa-times\"></span> </a>";
+                    echo "<img src=\"images/products/"; echo $productRow["image"]; echo "\" alt=\"\">";
+                    echo "<div class=\"content\">";
+                    echo "<h3>"; echo $productRow["name"]; echo "</h3>";
+                    echo "<div class=\"price\">Php "; echo $productRow["price"]; echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+                if (mysqli_num_rows($productResults) == 0) {
+                    echo "<div class=\"cart-item\">";
+                    echo "<div class=\"content\">";
+                    echo '<h3> Cart is empty </h3>';
+                    echo "</div>";
+                    echo "</div>";
+                } else {
+                    echo "<a href=\"checkout.php\" class=\"btn\">checkout now <br> Php "; echo $sumCart["sum_cart"]; echo "</a>";
+                }
+                
+            } else {
+                echo "<div class=\"cart-item\">";
+                echo "<div class=\"content\">";
+                echo '<h3> Not logged in </h3>';
+                echo "</div>";
+                echo "</div>";
+            }
+
+        ?>
+    </div>
     
     </header>
 
@@ -86,20 +96,20 @@
     
         <div class="content">
             <img src="images/product_ath.png" style="width:100%;">
-            <button onclick='window.location.href="athletic_shoes_men.html"' class="btn2 buttoncurved">Men</button>
-          <button onclick='window.location.href="athletic_shoes_women.html"' class="btn2 buttoncurved">Women</button>
+            <button onclick='window.location.href="product_category.php?category=athletic&gender=men"' class="btn2 buttoncurved">Men</button>
+          <button onclick='window.location.href="product_category.php?category=athletic&gender=women"' class="btn2 buttoncurved">Women</button>
           </div>
 
           <div class="content">
             <img src="images/product_for.png" style="width:100%;">
-            <button onclick='window.location.href="formal_shoes_men.html"' class="btn2 buttoncurved">Men</button>
-          <button onclick='window.location.href="formal_shoes_women.html"' class="btn2 buttoncurved">Women</button>
+            <button onclick='window.location.href="product_category.php?category=formal&gender=men"' class="btn2 buttoncurved">Men</button>
+          <button onclick='window.location.href="product_category.php?category=formal&gender=women"' class="btn2 buttoncurved">Women</button>
           </div>
 
           <div class="content">
             <img src="images/product_cas.png" style="width:100%;">
-            <button onclick='window.location.href="casual_shoes_men.html"' class="btn2 buttoncurved">Men</button>
-          <button onclick='window.location.href="casual_shoes_women.html"' class="btn2 buttoncurved">Women</button>
+            <button onclick='window.location.href="product_category.php?category=casual&gender=men"' class="btn2 buttoncurved">Men</button>
+          <button onclick='window.location.href="product_category.php?category=casual&gender=women"' class="btn2 buttoncurved">Women</button>
           </div>
 
     </section>
