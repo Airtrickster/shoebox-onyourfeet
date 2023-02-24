@@ -16,6 +16,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="css/login.css" />
+    <link rel="icon" href="images/icon.png">
     <title>Sign in & Sign up Form</title>
   </head>
   <body>
