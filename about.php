@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
+    <link rel="icon" href="images/icon.png">
     <title>On your feet | About</title>
 </head>
 <body id="about">
@@ -42,7 +43,7 @@
             <div class="fas fa-bars" id="menu-btn"></div>
         </div>
     
-        <div class="cart-items-container">
+        <div class="cart-items-container" id="cart">
         <?php
             if (isset($_SESSION["user_id"])) {
                 $productstmt = mysqli_prepare($link, "SELECT item_id, products.product_id , name, price, image FROM cart INNER JOIN products ON cart.product_id = products.product_id WHERE user_id = ?;");

@@ -32,6 +32,7 @@
         overflow-x: hidden;
         scroll-padding-top: 9rem;
         scroll-behavior: smooth;
+        
     }
 
     section{
@@ -159,6 +160,10 @@
 
     .header-scrolled{
         background: var(--black);
+    }
+
+    .cart-items-container{
+        overflow: scroll;
     }
 
     .header .cart-items-container{
@@ -837,7 +842,7 @@
     }
 
     .help{
-        margin-left: -200px;
+        margin-left: -147px;
     }
 
     .help a {
