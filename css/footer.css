@@ -1,0 +1,45 @@
+footer{
+    font-family: 'Roboto', sans-serif;
+    background: var(--black);
+}
+
+.footer{
+    text-align: center;
+}
+
+.footer .share a{
+    color: var(--text);
+    border: 1px solid var(--text);
+    margin: 0px 7px;
+    padding: 17px 10px;
+    border-radius: 50%;
+}
+
+.footer .share a:hover{
+    background-color: var(--main-color);
+}
+
+.footer .credit{
+    font-size: 1.05rem;
+    color:#fff;
+    font-weight: lighter;
+    font-size: 1.1rem;
+    padding:2rem 2rem .8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+.footer .credit .help a{
+    color: var(--text);
+}
+
+.sub-footer{
+    text-align: center;
+    color: var(--text);
+    padding: 20px;
+}
+
+.sub-footer p{
+    font-size: 1.2rem;
+}

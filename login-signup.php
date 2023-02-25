@@ -20,7 +20,7 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="" id="loginForm" class="sign-in-form" method="post" enctype="multipart/form-data">
+          <form action="" id="loginForm" class="sign-in-form" method="post" enctype="multipart/form-data" onsubmit='return signInValidation()'>
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
@@ -48,7 +48,7 @@
             </div>
           </form>
       
-          <form action="#" id="signupForm" class="sign-up-form" method="post" enctype="multipart/form-data"
+          <form action="" id="signupForm" class="sign-up-form" method="post" enctype="multipart/form-data"
           onsubmit='return signUpValidation()'>
             <h2 class="title">Sign up</h2>
             <div class="input-field">
@@ -115,7 +115,7 @@
       </div>
     </div>
 
-    <script src="js/login.js"></script>
+    
     <?php
 
       if (isset($_POST["signup"])) {
@@ -135,13 +135,16 @@
             $_SESSION["user_id"] = $credentials["user_id"];
             $_SESSION["username"] = $credentials["username"];
             $_SESSION["password"] = $credentials["password"];
-            echo '<script> window.location.href="index.php" </script>';
+            header("Location: index.php");
           } else {
-            echo '<script> alert("Wrong Credentials please try again"); </script>';
+            echo '<script>
+            alert("Wrong Credentials please try again");
+            window.location.href = "'.$_SERVER["SCRIPT_NAME"].'";
+            </script>';
 
           }
       }
     ?>
-    
+    <script src="js/login.js"></script>
   </body>
 </html>
