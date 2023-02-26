@@ -161,6 +161,10 @@
 
     @media (max-width:768px){
 
+        #menu-btn{
+            display: inline-block;
+        }
+
         .header .navbar{
             position: absolute;
             top:100%; right: -100%;

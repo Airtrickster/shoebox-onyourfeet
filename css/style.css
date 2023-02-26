@@ -177,10 +177,6 @@
 
     @media (max-width:768px){
 
-        #menu-btn{
-            display: inline-block;
-        }
-
         .credit{
             width: 100%;
             flex-direction: column;
