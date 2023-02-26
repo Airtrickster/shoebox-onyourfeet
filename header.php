@@ -49,7 +49,7 @@
                     <a href="remove_from_cart.php?item_id=' .  $productRow["item_id"] . '"><span class="fas fa-times"></span> </a>
                     <img src="images/products/'. $productRow["image"] . '" alt="">
                     <div class="content">
-                    <h3>' . $productRow["name"] . '"</h3>
+                    <h3>' . $productRow["name"] . '</h3>
                     <div class="price">Php ' . $productRow["price"] . '</div>
                     </div>
                     </div>';
