@@ -1,6 +1,7 @@
 <?php
     session_start();
     include "db_conn.php";
+    include "check_item.php";
 ?>
 
 <!DOCTYPE html>
@@ -27,12 +28,13 @@
                 $productstmt = mysqli_prepare($link, "SELECT * FROM products WHERE category = ? AND gender = ?");
                 mysqli_stmt_bind_param($productstmt, "ss", $_GET["category"], $_GET["gender"]);
                 mysqli_stmt_execute($productstmt);
-                $productResults = mysqli_stmt_get_result($productstmt);
+                $productResults = mysqli_stmt_get_result($productstmt);         
+
                 while ($productRow = mysqli_fetch_array($productResults)) {
                     echo '<div class="box">
                     <div class="icons">
                     <a href="add_to_cart.php?product_id=' . $productRow["product_id"] . '" class="fas fa-shopping-cart"></a>
-                    <a href="#" class="fas fa-heart"></a>
+                    <a href="toggle_favs.php?product_id='. $productRow["product_id"] .'" class="fa-regular fa-heart"></a>
                     <a href="#" class="fas fa-eye"></a>
                     </div>
                     <div class="image">";

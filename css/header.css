@@ -151,6 +151,63 @@
         text-align: center;
     }
 
+    .fav-items-container{
+        overflow: scroll;
+    }
+
+    .header .fav-items-container{
+        position: absolute;
+        top:100%; right: -100%;
+        height: calc(100vh - 9.5rem);
+        width: 35rem;
+        background: #fff;
+        padding:0 1.5rem;
+    }
+
+    .header .fav-items-container.active{
+        right: 0;
+    }
+
+    .header .fav-items-container .fav-item{
+        position: relative;
+        margin:2rem 0;
+        display: flex;
+        align-items: center;
+        gap:1.5rem;
+    }
+
+    .header .fav-items-container .fav-item .fa-times{
+        position: absolute;
+        top:1rem; right: 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--black);
+    }
+
+    .header .fav-items-container .fav-item .fa-times:hover{
+        color:var(--main-color);
+    }
+
+    .header .fav-items-container .fav-item img{
+        height: 7rem;
+    }
+
+    .header .fav-items-container .fav-item .content h3{
+        font-size: 2rem;
+        color:var(--black);
+        padding-bottom: .5rem;
+    }
+
+    .header .fav-items-container .fav-item .content .price{
+        font-size: 1.5rem;
+        color:var(--main-color);
+    }
+
+    .header .fav-items-container .btn{
+        width: 100%;
+        text-align: center;
+    }
+
     @media (max-width:991px){
 
         .header{

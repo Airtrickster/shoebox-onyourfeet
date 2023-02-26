@@ -19,6 +19,16 @@ let cartItem = document.querySelector('.cart-items-container');
 
 document.querySelector('#cart-btn').onclick = () =>{
     cartItem.classList.toggle('active');
+    favItem.classList.remove('active');
+    navbar.classList.remove('active');
+    searchForm.classList.remove('active');
+}
+
+let favItem = document.querySelector('.fav-items-container');
+
+document.querySelector('#fav-btn').onclick = () =>{
+    favItem.classList.toggle('active');
+    cartItem.classList.remove('active');
     navbar.classList.remove('active');
     searchForm.classList.remove('active');
 }
