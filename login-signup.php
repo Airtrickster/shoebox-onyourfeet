@@ -11,7 +11,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="css/login.css" />
     <link rel="icon" href="images/icon.png">
     <title>Sign in & Sign up Form</title>
@@ -20,7 +23,7 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="" id="loginForm" class="sign-in-form" method="post" enctype="multipart/form-data" onsubmit='return signInValidation()'>
+          <form action="" id="loginForm" class="sign-in-form" method="post" enctype="multipart/form-data">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
@@ -48,7 +51,7 @@
             </div>
           </form>
       
-          <form action="" id="signupForm" class="sign-up-form" method="post" enctype="multipart/form-data"
+          <form action="#" id="signupForm" class="sign-up-form" method="post" enctype="multipart/form-data"
           onsubmit='return signUpValidation()'>
             <h2 class="title">Sign up</h2>
             <div class="input-field">
@@ -115,7 +118,7 @@
       </div>
     </div>
 
-    
+    <script src="js/login.js"></script>
     <?php
 
       if (isset($_POST["signup"])) {
@@ -135,16 +138,13 @@
             $_SESSION["user_id"] = $credentials["user_id"];
             $_SESSION["username"] = $credentials["username"];
             $_SESSION["password"] = $credentials["password"];
-            header("Location: index.php");
+            echo '<script> window.location.href="index.php" </script>';
           } else {
-            echo '<script>
-            alert("Wrong Credentials please try again");
-            window.location.href = "'.$_SERVER["SCRIPT_NAME"].'";
-            </script>';
+            echo '<script> alert("Wrong Credentials please try again"); </script>';
 
           }
       }
     ?>
-    <script src="js/login.js"></script>
+    
   </body>
 </html>
