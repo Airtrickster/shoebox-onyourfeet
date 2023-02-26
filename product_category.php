@@ -29,27 +29,27 @@
                 mysqli_stmt_execute($productstmt);
                 $productResults = mysqli_stmt_get_result($productstmt);
                 while ($productRow = mysqli_fetch_array($productResults)) {
-                    echo "<div class=\"box\">";
-                    echo "<div class=\"icons\">";
-                    echo "<a href=\"add_to_cart.php?product_id="; echo $productRow["product_id"]; echo "\" class=\"fas fa-shopping-cart\"></a>";
-                    echo "<a href=\"#\" class=\"fas fa-heart\"></a>";
-                    echo "<a href=\"#\" class=\"fas fa-eye\"></a>";
-                    echo "</div>";
-                    echo "<div class=\"image\">";
-                    echo "<img src=\"images/products/"; echo $productRow["image"]; echo "\" alt=\""; echo $productRow["name"]; echo "\">";
-                    echo "</div>";
-                    echo "<div class=\"content\">";
-                    echo "<h3>"; echo $productRow["name"] ; echo "</h3>";
-                    echo "<div class=\"stars\">";
-                    echo "<i class=\"fas fa-star\"></i>";
-                    echo "<i class=\"fas fa-star\"></i>";
-                    echo "<i class=\"fas fa-star\"></i>";
-                    echo "<i class=\"fas fa-star\"></i>";
-                    echo "<i class=\"fas fa-star-half-alt\"></i>";
-                    echo "</div>";
-                    echo "<div class=\"price\">Php "; echo $productRow["price"]; echo "</div>";
-                    echo "</div>";
-                    echo "</div>";
+                    echo '<div class="box">
+                    <div class="icons">
+                    <a href="add_to_cart.php?product_id=' . $productRow["product_id"] . '" class="fas fa-shopping-cart"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                    </div>
+                    <div class="image">";
+                    <img src="images/products/'. $productRow["image"] . '" alt="'.$productRow["name"].'">
+                    </div>
+                    <div class="content">
+                    <h3>' . $productRow["name"] . '</h3>
+                    <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">Php ' . $productRow["price"] . '</div>
+                    </div>
+                    </div>';
                 }
             ?>
     

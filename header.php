@@ -45,31 +45,32 @@
                 $sumCart = mysqli_fetch_array($sumCartResult);
 
                 while ($productRow = mysqli_fetch_array($productResults)) {     
-                    echo "<div class=\"cart-item\">";
-                    echo "<a href=\"remove_from_cart.php?item_id="; echo $productRow["item_id"]; echo "\"><span class=\"fas fa-times\"></span> </a>";
-                    echo "<img src=\"images/products/"; echo $productRow["image"]; echo "\" alt=\"\">";
-                    echo "<div class=\"content\">";
-                    echo "<h3>"; echo $productRow["name"]; echo "</h3>";
-                    echo "<div class=\"price\">Php "; echo $productRow["price"]; echo "</div>";
-                    echo "</div>";
-                    echo "</div>";
+                    echo '<div class="cart-item">
+                    <a href="remove_from_cart.php?item_id=' .  $productRow["item_id"] . '"><span class="fas fa-times"></span> </a>
+                    <img src="images/products/'. $productRow["image"] . '" alt="">
+                    <div class="content">
+                    <h3>' . $productRow["name"] . '"</h3>
+                    <div class="price">Php ' . $productRow["price"] . '</div>
+                    </div>
+                    </div>';
                 }
                 if (mysqli_num_rows($productResults) == 0) {
-                    echo "<div class=\"cart-item\">";
-                    echo "<div class=\"content\">";
-                    echo '<h3> Cart is empty </h3>';
-                    echo "</div>";
-                    echo "</div>";
+                    echo '<div class="cart-item">
+                    <div class="content">
+                    <h3> Cart is empty </h3>
+                    </div>
+                    </div>';
                 } else {
-                    echo "<a href=\"checkout.php\" class=\"btn\">checkout now <br> Php "; echo $sumCart["sum_cart"]; echo "</a>";
+                    echo '<a href="checkout.php" class="btn">checkout now <br> Php ' . $sumCart["sum_cart"] . '</a>';
                 }
                 
             } else {
-                echo "<div class=\"cart-item\">";
-                echo "<div class=\"content\">";
-                echo '<h3> Not logged in </h3>';
-                echo "</div>";
-                echo "</div>";
+                echo '<div class="cart-item">
+                <div class="content">
+                <h3> Not logged in </h3>
+                </div>
+                </div>';
+
             }
 
         ?>
