@@ -40,12 +40,12 @@
 
         <?php
             if (isset($_SESSION["user_id"])) {
-                $productstmt = mysqli_prepare($link, "SELECT item_id, products.product_id , name, price, image FROM cart INNER JOIN products ON cart.product_id = products.product_id WHERE user_id = ?;");
+                $productstmt = mysqli_prepare($link, "SELECT item_id, products.product_id , name, price, quantity, price * quantity AS \"subtotal\", image FROM cart INNER JOIN products ON cart.product_id = products.product_id WHERE user_id = ?;");
                 mysqli_stmt_bind_param($productstmt, "i", $_SESSION["user_id"],);
                 mysqli_stmt_execute($productstmt);
                 $productResults = mysqli_stmt_get_result($productstmt);
 
-                $sumCartstmt = mysqli_prepare($link,"SELECT SUM(price) as \"sum_cart\" FROM cart INNER JOIN products ON cart.product_id = products.product_id WHERE user_id = ?;");
+                $sumCartstmt = mysqli_prepare($link,"SELECT SUM(price * quantity) as \"sum_cart\" FROM cart INNER JOIN products ON cart.product_id = products.product_id WHERE user_id = ?;");
                 mysqli_stmt_bind_param($sumCartstmt, "i", $_SESSION["user_id"],);
                 mysqli_stmt_execute($sumCartstmt);
                 $sumCartResult = mysqli_stmt_get_result($sumCartstmt);
@@ -57,14 +57,14 @@
                     <img src="images/products/'. $productRow["image"] . '" alt="">
                     <div class="content">
                     <h3>' . $productRow["name"] . '</h3>
-                    <div class="price">Php ' . $productRow["price"] . '</div>
+                    <div class="price">Php ' . $productRow["price"] . ' <br> x' . $productRow["quantity"] . ' = Php ' . $productRow["subtotal"] .'</div>
                     </div>
                     </div>';
                 }
                 if (mysqli_num_rows($productResults) == 0) {
                     echo '<div class="cart-item">
                     <div class="content">
-                    <h3> Cart is empty </h3>
+                    <h3> is empty </h3>
                     </div>
                     </div>';
                 } else {
@@ -109,7 +109,7 @@
                 if (mysqli_num_rows($favListResults) == 0) {
                     echo '<div class="fav-item">
                     <div class="content">
-                    <h3> Favorites is empty </h3>
+                    <h3> is empty </h3>
                     </div>
                     </div>';
                 } 
