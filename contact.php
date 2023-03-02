@@ -43,11 +43,11 @@
                 </div>
                 <div class="inputBox">
                     <span class="fas fa-envelope"></span>
-                    <input type="email" placeholder="Email">
+                    <input type="email" placeholder="Email (Optional)">
                 </div>
                 <div class="inputBox">
                     <span class="fas fa-mobile"></span>
-                    <input type="text" placeholder="Contact number">
+                    <input type="text" placeholder="Contact number (Optional)">
                 </div>
                 <div class="inputBox">
                     <span class="fas"></span>
