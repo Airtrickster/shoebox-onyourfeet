@@ -4,7 +4,7 @@
     include "check_item.php";
     if (! isset($_SESSION["user_id"])) { echo '<script> window.location.href="login-signup.php" </script>'; }
 
-    if (itemExists("favorites", $_SESSION["user_id"], $_GET["product_id"])) {
+    if (itemExists("favorites", "product_id" , $_SESSION["user_id"], $_GET["product_id"])) {
         $removeFavsstmt = mysqli_prepare($link, "DELETE FROM favorites WHERE user_id = ? AND product_id = ?;");
         mysqli_stmt_bind_param($removeFavsstmt, "ii", $_SESSION["user_id"], $_GET["product_id"]);
         mysqli_stmt_execute($removeFavsstmt);

@@ -25,16 +25,28 @@
         <div class="box-container">
     
             <?php
-                $productstmt = mysqli_prepare($link, "SELECT * FROM products WHERE category = ? AND gender = ?");
-                mysqli_stmt_bind_param($productstmt, "ss", $_GET["category"], $_GET["gender"]);
+                if (isset($_SESSION["user_id"])) {
+                    $productstmt = mysqli_prepare($link, "SELECT products.product_id, category, gender, name, price, image, favorites.product_id AS \"is_in_fav\" FROM products LEFT JOIN favorites ON products.product_id = favorites.product_id AND favorites.user_id = ? WHERE category = ? AND gender = ?;");
+                    mysqli_stmt_bind_param($productstmt, "iss", $_SESSION["user_id"] , $_GET["category"], $_GET["gender"]);
+                } else {
+                    $productstmt = mysqli_prepare($link, "SELECT * FROM products WHERE category = ? AND gender = ?");
+                    mysqli_stmt_bind_param($productstmt, "ss", $_GET["category"], $_GET["gender"]);
+                }
+
                 mysqli_stmt_execute($productstmt);
                 $productResults = mysqli_stmt_get_result($productstmt);         
 
                 while ($productRow = mysqli_fetch_array($productResults)) {
+                    if (is_null($productRow["is_in_fav"])) {
+                        $favIcon = "fa-regular";
+                    } else {
+                        $favIcon = "fa-solid";
+                    }
+
                     echo '<div class="box">
                     <div class="icons">
                     <a href="add_to_cart.php?product_id=' . $productRow["product_id"] . '" class="fas fa-shopping-cart"></a>
-                    <a href="toggle_favs.php?product_id='. $productRow["product_id"] .'" class="fa-regular fa-heart"></a>
+                    <a href="toggle_favs.php?product_id='. $productRow["product_id"] .'" class="' . $favIcon .' fa-heart"></a>
                     <a href="#" class="fas fa-eye"></a>
                     </div>
                     <div class="image">";
