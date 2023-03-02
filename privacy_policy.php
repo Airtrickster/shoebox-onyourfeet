@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/shipping_policy.css">
     <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
     <link rel="icon" href="images/icon.png">
     <title>On your feet | About</title>
@@ -216,34 +217,7 @@
         </div>
     </section>
 
-    <footer class="footer">
-
-        <div class="credit">
-            <div class="wrap">
-                <p>Be the first to know about our special offers, upcoming sales, special events, new arrivals, and more.</p>
-            </div>
-    
-            <div class="help">
-                <a href="FAQ.html">faq's</a>
-                <a href="tos.html">terms of service</a>
-                <a href="privacy_policy.html">privacy policy</a>
-                <a href="shipping_policy.html">shipping policy</a>
-                <a href="refund_policy.html">refund policy</a>
-            </div>
-    
-            <div class="share">
-                <a href="https://www.facebook.com/VandKApparel" class="fab fa-xl fa-square-facebook"></a>
-                <a href="https://www.twitter.com/" class="fab fa-xl fa-square-twitter"></a>
-                <a href="https://www.instagram.com/" class="fab fa-xl fa-square-instagram"></a>
-            </div>
-        </div>
-    
-    </footer>
-    
-    <footer class="sub-footer">
-        <p> Copyright &copy; 2023. On your feet, inc. all rights reserved.</p>
-    </footer>
-
+    <?php include "footer.php"; ?>
 
     <script src="js/script.js"></script>
 

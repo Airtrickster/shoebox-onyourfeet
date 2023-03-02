@@ -1,0 +1,17 @@
+.refund-policy .row{
+    display: flex;
+    align-items: center;
+    background:var(--text);
+    flex-wrap: wrap;
+}
+
+.refund-policy .row .content{
+    flex:1 1 45rem;
+    padding:2rem;
+}
+
+.refund-policy .row .content p, li, ul{
+    font-size: 1.6rem;
+    color:#311f13;
+    padding:1rem 0;
+}
