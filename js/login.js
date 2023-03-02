@@ -9,3 +9,23 @@ sign_up_btn.addEventListener("click", () => {
 sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
+
+function signUpValidation() {
+  let x = document.forms["signupForm"]["usernameSignUp"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+
+  let u = document.forms["signupForm"]["emailSignUp"].value;
+  if (u == "") {
+    alert("Email must be filled out properly");
+    return false;
+  }
+
+  let y = document.forms["signupForm"]["passwordSignUp"].value;
+  if (y == "") {
+    alert("Password must be filled out");
+    return false;
+  }
+}
