@@ -20,7 +20,7 @@
 
     <?php include "header.php"; ?>
     
-    <section class="product-category" class="product-category">
+    <section class="product-category">
         <h1 class="heading"> <span><?php echo $_GET["category"] ?> Shoes </span><?php echo $_GET["gender"] ?></h1>
         <div class="box-container">
     
