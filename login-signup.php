@@ -56,11 +56,11 @@
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user "></i>
-              <input type="text" name="usernameLogin" placeholder="Fullname" />
+              <input type="text" name="firstNameSignUp" placeholder="First name" />
             </div>
             <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" name="usernameSignUp" placeholder="Username" />
+              <i class="fas fa-user "></i>
+              <input type="text" name="lastNameSignUp" placeholder="Last Name" />
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
@@ -68,18 +68,25 @@
             </div>
             <div class="input-field">
               <i class="fas fa-calendar"></i>
-              <input type="date" name="emailSignUp" placeholder="Birthday" />
+              <input type="date" name="dateOfBirthSignUp" placeholder="Birthday" />
             </div>
             <div class="input-field">
               <i class="fas fa-phone  "></i>
-              <input type="number" name="usernameLogin" placeholder="Mobile No." />
+              <input type="text" name="phoneNumberSignUp" placeholder="Mobile No." />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" name="usernameSignUp" placeholder="Username" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
               <input type="password" name="passwordSignUp" placeholder="Password" />
             </div>
+            <input type="checkbox" name="agreeSignUp" id="agreeSignUp">
+            <label for="agreeSignUp"> I Agree To The <a href="tos.html"> Terms of Service </a> And I Read The Privacy Notice </label>
             <input type="submit" class="btn" name="signup" value="sign up"/>
             <p class="social-text">Or Sign up with social platforms</p>
+ 
             <div class="social-media">
               <a href="#" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
@@ -134,9 +141,9 @@
     <?php
 
       if (isset($_POST["signup"])) {
-        $signupstmt = mysqli_prepare($link, "INSERT INTO accounts (username, email, password) VALUES (?, ?, ?);");
-        mysqli_stmt_bind_param($signuptsmt, "sss", $_POST["usernameSignUp"], $_POST["emailSignUp"], $_POST["passwordSignUp"]);
-        mysqli_stmt_execute($signuptsmt);
+        $signupstmt = mysqli_prepare($link, "INSERT INTO accounts (first_name, last_name, email, date_of_birth, phone_number, username, password) VALUES (?, ?, ?, ?, ?, ?, ?);");
+        mysqli_stmt_bind_param($signupstmt, "sssssss", $_POST["firstNameSignUp"], $_POST["lastNameSignUp"] , $_POST["emailSignUp"], $_POST["dateOfBirthSignUp"], $_POST["phoneNumberSignUp"], $_POST["usernameSignUp"], $_POST["passwordSignUp"]);
+        mysqli_stmt_execute($signupstmt);
       }
 
       if (isset($_POST["login"])) {
