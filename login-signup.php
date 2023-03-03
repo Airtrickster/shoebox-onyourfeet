@@ -51,7 +51,7 @@
             </div>
           </form>
       
-          <form action="#" id="signupForm" class="sign-up-form" method="post" enctype="multipart/form-data"
+          <form action="" id="signupForm" class="sign-up-form" method="post" enctype="multipart/form-data"
           onsubmit='return signUpValidation()'>
             <h2 class="title">Sign up</h2>
             <div class="input-field">
@@ -134,9 +134,9 @@
     <?php
 
       if (isset($_POST["signup"])) {
-        $signupsmt = mysqli_prepare($link, "INSERT INTO accounts (username, email, password) VALUES (?, ?, ?);");
-        mysqli_stmt_bind_param($signupsmt, "sss", $_POST["usernameSignUp"], $_POST["emailSignUp"], $_POST["passwordSignUp"]);
-        mysqli_stmt_execute($signupsmt);
+        $signupstmt = mysqli_prepare($link, "INSERT INTO accounts (username, email, password) VALUES (?, ?, ?);");
+        mysqli_stmt_bind_param($signuptsmt, "sss", $_POST["usernameSignUp"], $_POST["emailSignUp"], $_POST["passwordSignUp"]);
+        mysqli_stmt_execute($signuptsmt);
       }
 
       if (isset($_POST["login"])) {
