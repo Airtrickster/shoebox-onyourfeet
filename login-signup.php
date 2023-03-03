@@ -55,12 +55,24 @@
           onsubmit='return signUpValidation()'>
             <h2 class="title">Sign up</h2>
             <div class="input-field">
+              <i class="fas fa-user "></i>
+              <input type="text" name="usernameLogin" placeholder="Fullname" />
+            </div>
+            <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="text" name="usernameSignUp" placeholder="Username" />
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
               <input type="email" name="emailSignUp" placeholder="Email" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-calendar"></i>
+              <input type="date" name="emailSignUp" placeholder="Birthday" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-phone  "></i>
+              <input type="number" name="usernameLogin" placeholder="Mobile No." />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>

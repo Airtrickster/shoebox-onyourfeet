@@ -45,8 +45,8 @@
             <img src="images/product_ath.png">
             <h1>Athletic Shoes</h1>
             <div class="btn-prod">
-            <button onclick='window.location.href="product_category.php?category=athletic&gender=men"' class="btn2 buttoncurved">Men</button>
-            <button onclick='window.location.href="product_category.php?category=athletic&gender=women"' class="btn2 buttoncurved">Women</button>
+            <button onclick='window.location.href="product_category.php?category=athletic&gender=men"' class="btn2 buttoncurved">Shop Men's</button>
+            <button onclick='window.location.href="product_category.php?category=athletic&gender=women"' class="btn2 buttoncurved">Shop Women's</button>
             </div>
         </div>
 

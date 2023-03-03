@@ -99,7 +99,7 @@
                 while ($favListRow = mysqli_fetch_array($favListResults)) {     
                     echo '<div class="fav-item">
                     <a href="toggle_favs.php?product_id=' .  $favListRow["product_id"] . '"><span class="fas fa-times"></span> </a>
-                    <a href="add_to_cart.php?product_id=' .  $favListRow["product_id"] . '"><span class="fas fa-shopping-cart"></span> </a>
+                    <a href="add_to_cart.php?product_id=' .  $favListRow["product_id"] . '"><span class="fas fa-shopping-cart fa-2xl"></span> </a>
                     <img src="images/products/'. $favListRow["image"] . '" alt="">
                     <div class="content">
                     <h3>' . $favListRow["name"] . '</h3>

@@ -95,7 +95,7 @@
     }
 
     .cart-items-container{
-        overflow: scroll;
+        overflow-y: scroll;
     }
 
     .header .cart-items-container{
@@ -152,7 +152,7 @@
     }
 
     .fav-items-container{
-        overflow: scroll;
+        overflow-y: scroll;
     }
 
     .header .fav-items-container{
