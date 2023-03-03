@@ -40,7 +40,7 @@
 
         <?php
             if (isset($_SESSION["user_id"])) {
-                $productstmt = mysqli_prepare($link, "SELECT item_id, products.product_id , name, price, quantity, price * quantity AS \"subtotal\", image FROM cart INNER JOIN products ON cart.product_id = products.product_id WHERE user_id = ?;");
+                $productstmt = mysqli_prepare($link, "SELECT item_id, products.product_id AS \"products_product_id\" , name, price, quantity, price * quantity AS \"subtotal\", image FROM cart INNER JOIN products ON cart.product_id = products.product_id WHERE user_id = ?;");
                 mysqli_stmt_bind_param($productstmt, "i", $_SESSION["user_id"],);
                 mysqli_stmt_execute($productstmt);
                 $productResults = mysqli_stmt_get_result($productstmt);
@@ -57,9 +57,28 @@
                     <img src="images/products/'. $productRow["image"] . '" alt="">
                     <div class="content">
                     <h3>' . $productRow["name"] . '</h3>
-                    <div class="price">Php ' . $productRow["price"] . ' <br> x' . $productRow["quantity"] . ' = Php ' . $productRow["subtotal"] .'</div>
+                    <div class="price">Php ' . $productRow["price"] . ' <br> x' . $productRow["quantity"] . ' = Php ' . $productRow["subtotal"] .' <br> <button onclick="decrementNumber'. $productRow["products_product_id"] .'()">-</button> <p id="quantity-' . $productRow["products_product_id"] . '" style="display:inline"> ' . $productRow["quantity"] . ' </p> <button onclick="incrementNumber' . $productRow["products_product_id"] . '()">+</button><button onclick="changeQuantity'. $productRow["products_product_id"] .'()">Apply</button></div>
                     </div>
-                    </div>';
+                    </div>
+                    <script>
+                    var quantity' . $productRow["products_product_id"] . ' = ' . $productRow["quantity"] . ';
+                    function incrementNumber'. $productRow["products_product_id"] .'() {
+                        quantity' . $productRow["products_product_id"] . '++;
+                        document.getElementById("quantity-' . $productRow["products_product_id"] . '").innerHTML = "" + quantity' . $productRow["products_product_id"] . ';
+                    }
+
+                    function decrementNumber'. $productRow["products_product_id"] .'() {
+                        quantity' . $productRow["products_product_id"] . '--;
+                        if (quantity' . $productRow["products_product_id"] . ' < 1) {
+                            quantity' . $productRow["products_product_id"] . ' = 1;
+                        }
+                        document.getElementById("quantity-' . $productRow["products_product_id"] . '").innerHTML = "" + quantity' . $productRow["products_product_id"] . ';
+                    }
+                    function changeQuantity'. $productRow["products_product_id"] .'() {
+                        window.location.href = "change_quantity.php?quantity=" + quantity' . $productRow["products_product_id"] . ' + "&product_id=' . $productRow["products_product_id"] . '";
+                    }
+
+                </script>';
                 }
                 if (mysqli_num_rows($productResults) == 0) {
                     echo '<div class="cart-item">
