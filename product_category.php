@@ -37,7 +37,7 @@
                 $productResults = mysqli_stmt_get_result($productstmt);         
 
                 while ($productRow = mysqli_fetch_array($productResults)) {
-                    if (is_null($productRow["is_in_fav"])) {
+                    if (array_key_exists("is_in_fav", $productRow) && is_null($productRow["is_in_fav"])) {
                         $favIcon = "fa-regular";
                     } else {
                         $favIcon = "fa-solid";
