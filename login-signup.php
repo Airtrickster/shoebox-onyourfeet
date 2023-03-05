@@ -11,7 +11,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="css/login.css" />
     <link rel="icon" href="images/icon.png">
     <title>Sign in & Sign up Form</title>
@@ -20,7 +23,7 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="" id="loginForm" class="sign-in-form" method="post" enctype="multipart/form-data" onsubmit='return signInValidation()'>
+          <form action="" id="loginForm" class="sign-in-form" method="post" enctype="multipart/form-data">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
@@ -52,19 +55,38 @@
           onsubmit='return signUpValidation()'>
             <h2 class="title">Sign up</h2>
             <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" name="usernameSignUp" placeholder="Username" />
+              <i class="fas fa-user "></i>
+              <input type="text" name="firstNameSignUp" placeholder="First name" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-user "></i>
+              <input type="text" name="lastNameSignUp" placeholder="Last Name" />
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
               <input type="email" name="emailSignUp" placeholder="Email" />
             </div>
             <div class="input-field">
+              <i class="fas fa-calendar"></i>
+              <input type="date" name="dateOfBirthSignUp" placeholder="Birthday" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-phone  "></i>
+              <input type="text" name="phoneNumberSignUp" placeholder="Mobile No." />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" name="usernameSignUp" placeholder="Username" />
+            </div>
+            <div class="input-field">
               <i class="fas fa-lock"></i>
               <input type="password" name="passwordSignUp" placeholder="Password" />
             </div>
+            <input type="checkbox" name="agreeSignUp" id="agreeSignUp">
+            <label for="agreeSignUp"> I Agree To The <a href="tos.html"> Terms of Service </a> And I Read The Privacy Notice </label>
             <input type="submit" class="btn" name="signup" value="sign up"/>
             <p class="social-text">Or Sign up with social platforms</p>
+ 
             <div class="social-media">
               <a href="#" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
@@ -115,13 +137,13 @@
       </div>
     </div>
 
-    
+    <script src="js/login.js"></script>
     <?php
 
       if (isset($_POST["signup"])) {
-        $signupsmt = mysqli_prepare($link, "INSERT INTO accounts (username, email, password) VALUES (?, ?, ?);");
-        mysqli_stmt_bind_param($signupsmt, "sss", $_POST["usernameSignUp"], $_POST["emailSignUp"], $_POST["passwordSignUp"]);
-        mysqli_stmt_execute($signupsmt);
+        $signupstmt = mysqli_prepare($link, "INSERT INTO accounts (first_name, last_name, email, date_of_birth, phone_number, username, password) VALUES (?, ?, ?, ?, ?, ?, ?);");
+        mysqli_stmt_bind_param($signupstmt, "sssssss", $_POST["firstNameSignUp"], $_POST["lastNameSignUp"] , $_POST["emailSignUp"], $_POST["dateOfBirthSignUp"], $_POST["phoneNumberSignUp"], $_POST["usernameSignUp"], $_POST["passwordSignUp"]);
+        mysqli_stmt_execute($signupstmt);
       }
 
       if (isset($_POST["login"])) {
@@ -135,16 +157,13 @@
             $_SESSION["user_id"] = $credentials["user_id"];
             $_SESSION["username"] = $credentials["username"];
             $_SESSION["password"] = $credentials["password"];
-            header("Location: index.php");
+            echo '<script> window.location.href="index.php" </script>';
           } else {
-            echo '<script>
-            alert("Wrong Credentials please try again");
-            window.location.href = "'.$_SERVER["SCRIPT_NAME"].'";
-            </script>';
+            echo '<script> alert("Wrong Credentials please try again"); </script>';
 
           }
       }
     ?>
-    <script src="js/login.js"></script>
+    
   </body>
 </html>

@@ -11,21 +11,43 @@ sign_in_btn.addEventListener("click", () => {
 });
 
 function signUpValidation() {
-  let x = document.forms["signupForm"]["usernameSignUp"].value;
-  if (x == "") {
-    alert("Name must be filled out");
+  if (! document.forms["signupForm"]["firstNameSignUp"].value) {
+    alert("First Name must be filled out");
     return false;
   }
 
-  let u = document.forms["signupForm"]["emailSignUp"].value;
-  if (u == "") {
+  if (! document.forms["signupForm"]["lastNameSignUp"].value) {
+    alert("Last Name must be filled out");
+    return false;
+  }
+
+  if (! document.forms["signupForm"]["emailSignUp"].value) {
     alert("Email must be filled out properly");
     return false;
   }
 
-  let y = document.forms["signupForm"]["passwordSignUp"].value;
-  if (y == "") {
+  if (! document.forms["signupForm"]["dateOfBirthSignUp"].value) {
+    alert("You must specify your date of birth");
+    return false;
+  }
+
+  if (! document.forms["signupForm"]["phoneNumberSignUp"].value) {
+    alert("Phone number must be filled out");
+    return false;
+  }
+  
+  if (! document.forms["signupForm"]["usernameSignUp"].value) {
+    alert("Username must be filled out");
+    return false;
+  }
+
+  if (! document.forms["signupForm"]["passwordSignUp"].value) {
     alert("Password must be filled out");
+    return false;
+  }
+
+  if (! document.forms["signupForm"]["agreeSignUp"].checked) {
+    alert("You must agree to the Terms of Service");
     return false;
   }
 }

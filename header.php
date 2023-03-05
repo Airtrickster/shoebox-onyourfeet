@@ -18,7 +18,8 @@
 
     <div class="icons">
         <div class="fas fa-shopping-cart" id="cart-btn"></div>
-        <div class="fa-solid fa-user" id="user-btn" onclick='<?php if (isset($_SESSION["user_id"])) { echo 'window.location.href="logout.php"'; } else { echo 'window.location.href="tos.html"'; } ?>'>
+        <div class="fa-solid fa-star" id="fav-btn"></div>
+        <div class="fa-solid fa-user" id="user-btn" onclick='<?php if (isset($_SESSION["user_id"])) { echo 'window.location.href="logout.php"'; } else { echo 'window.location.href="login-signup.php"'; } ?>'>
         <?php
             if (isset($_SESSION["user_id"])) {
                 echo $_SESSION["username"];
@@ -31,45 +32,115 @@
     </div>
     
     <div class="cart-items-container">
+    <div class="cart-item">
+        <div class="content">
+            <h3> Shopping Cart </h3>
+        </div>
+    </div>
+
         <?php
             if (isset($_SESSION["user_id"])) {
-                $productstmt = mysqli_prepare($link, "SELECT item_id, products.product_id , name, price, image FROM cart INNER JOIN products ON cart.product_id = products.product_id WHERE user_id = ?;");
+                $productstmt = mysqli_prepare($link, "SELECT item_id, products.product_id AS \"products_product_id\" , name, price, quantity, price * quantity AS \"subtotal\", image FROM cart INNER JOIN products ON cart.product_id = products.product_id WHERE user_id = ?;");
                 mysqli_stmt_bind_param($productstmt, "i", $_SESSION["user_id"],);
                 mysqli_stmt_execute($productstmt);
                 $productResults = mysqli_stmt_get_result($productstmt);
 
-                $sumCartstmt = mysqli_prepare($link,"SELECT SUM(price) as \"sum_cart\" FROM cart INNER JOIN products ON cart.product_id = products.product_id WHERE user_id = ?;");
+                $sumCartstmt = mysqli_prepare($link,"SELECT SUM(price * quantity) as \"sum_cart\" FROM cart INNER JOIN products ON cart.product_id = products.product_id WHERE user_id = ?;");
                 mysqli_stmt_bind_param($sumCartstmt, "i", $_SESSION["user_id"],);
                 mysqli_stmt_execute($sumCartstmt);
                 $sumCartResult = mysqli_stmt_get_result($sumCartstmt);
                 $sumCart = mysqli_fetch_array($sumCartResult);
 
                 while ($productRow = mysqli_fetch_array($productResults)) {     
-                    echo "<div class=\"cart-item\">";
-                    echo "<a href=\"remove_from_cart.php?item_id="; echo $productRow["item_id"]; echo "\"><span class=\"fas fa-times\"></span> </a>";
-                    echo "<img src=\"images/products/"; echo $productRow["image"]; echo "\" alt=\"\">";
-                    echo "<div class=\"content\">";
-                    echo "<h3>"; echo $productRow["name"]; echo "</h3>";
-                    echo "<div class=\"price\">Php "; echo $productRow["price"]; echo "</div>";
-                    echo "</div>";
-                    echo "</div>";
+                    echo '<div class="cart-item">
+                    <a href="remove_from_cart.php?item_id=' .  $productRow["item_id"] . '"><span class="fas fa-times"></span> </a>
+                    <img src="images/products/'. $productRow["image"] . '" alt="">
+                    <div class="content">
+                    <h3>' . $productRow["name"] . '</h3>
+                    <div class="price">Php ' . $productRow["price"] . ' <br> x' . $productRow["quantity"] . ' = Php ' . $productRow["subtotal"] .' <br> <button onclick="decrementNumber'. $productRow["products_product_id"] .'()">-</button> <p id="quantity-' . $productRow["products_product_id"] . '" style="display:inline"> ' . $productRow["quantity"] . ' </p> <button onclick="incrementNumber' . $productRow["products_product_id"] . '()">+</button><button onclick="changeQuantity'. $productRow["products_product_id"] .'()">Apply</button></div>
+                    </div>
+                    </div>
+                    <script>
+                    var quantity' . $productRow["products_product_id"] . ' = ' . $productRow["quantity"] . ';
+                    function incrementNumber'. $productRow["products_product_id"] .'() {
+                        quantity' . $productRow["products_product_id"] . '++;
+                        document.getElementById("quantity-' . $productRow["products_product_id"] . '").innerHTML = "" + quantity' . $productRow["products_product_id"] . ';
+                    }
+
+                    function decrementNumber'. $productRow["products_product_id"] .'() {
+                        quantity' . $productRow["products_product_id"] . '--;
+                        if (quantity' . $productRow["products_product_id"] . ' < 1) {
+                            quantity' . $productRow["products_product_id"] . ' = 1;
+                        }
+                        document.getElementById("quantity-' . $productRow["products_product_id"] . '").innerHTML = "" + quantity' . $productRow["products_product_id"] . ';
+                    }
+                    function changeQuantity'. $productRow["products_product_id"] .'() {
+                        window.location.href = "change_quantity.php?quantity=" + quantity' . $productRow["products_product_id"] . ' + "&product_id=' . $productRow["products_product_id"] . '";
+                    }
+
+                </script>';
                 }
                 if (mysqli_num_rows($productResults) == 0) {
-                    echo "<div class=\"cart-item\">";
-                    echo "<div class=\"content\">";
-                    echo '<h3> Cart is empty </h3>';
-                    echo "</div>";
-                    echo "</div>";
+                    echo '<div class="cart-item">
+                    <div class="content">
+                    <h3> is empty </h3>
+                    </div>
+                    </div>';
                 } else {
-                    echo "<a href=\"checkout.php\" class=\"btn\">checkout now <br> Php "; echo $sumCart["sum_cart"]; echo "</a>";
+                    echo '<a href="checkout.php" class="btn">checkout now <br> Php ' . $sumCart["sum_cart"] . '</a>';
                 }
                 
             } else {
-                echo "<div class=\"cart-item\">";
-                echo "<div class=\"content\">";
-                echo '<h3> Not logged in </h3>';
-                echo "</div>";
-                echo "</div>";
+                echo '<div class="cart-item">
+                <div class="content">
+                <h3> Not logged in </h3>
+                </div>
+                </div>';
+
+            }
+
+        ?>
+    </div>
+
+    <div class="fav-items-container">
+    <div class="fav-item">
+        <div class="content">
+            <h3> Favorites </h3>
+        </div>
+    </div>
+        
+        <?php
+            if (isset($_SESSION["user_id"])) {
+                $favListstmt = mysqli_prepare($link, "SELECT fav_id, products.product_id , name, image FROM favorites INNER JOIN products ON favorites.product_id = products.product_id WHERE user_id = ?;;");
+                mysqli_stmt_bind_param($favListstmt, "i", $_SESSION["user_id"],);
+                mysqli_stmt_execute($favListstmt);
+                $favListResults = mysqli_stmt_get_result($favListstmt);
+                while ($favListRow = mysqli_fetch_array($favListResults)) {     
+                    echo '<div class="fav-item">
+                    <a href="toggle_favs.php?product_id=' .  $favListRow["product_id"] . '"><span class="fas fa-times"></span> </a>
+                    <a href="add_to_cart.php?product_id=' .  $favListRow["product_id"] . '"><span class="fas fa-shopping-cart fa-2xl"></span> </a>
+                    <img src="images/products/'. $favListRow["image"] . '" alt="">
+                    <div class="content">
+                    <h3>' . $favListRow["name"] . '</h3>
+                    </div>
+                    </div>';
+                }
+                if (mysqli_num_rows($favListResults) == 0) {
+                    echo '<div class="fav-item">
+                    <div class="content">
+                    <h3> is empty </h3>
+                    </div>
+                    </div>';
+                } 
+                
+                
+            } else {
+                echo '<div class="fav-item">
+                <div class="content">
+                <h3> Not logged in </h3>
+                </div>
+                </div>';
+
             }
 
         ?>
