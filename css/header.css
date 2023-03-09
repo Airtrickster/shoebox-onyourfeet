@@ -138,7 +138,8 @@
     .header .cart-items-container .cart-item .content h3{
         font-size: 2rem;
         color:var(--black);
-        padding-bottom: .5rem;
+        padding-bottom: .5rem; 
+        
     }
 
     .header .cart-items-container .cart-item .content .price{
@@ -206,6 +207,10 @@
     .header .fav-items-container .btn{
         width: 100%;
         text-align: center;
+    }
+
+    .price button:hover{
+        cursor: pointer;
     }
 
     @media (max-width:991px){
