@@ -2,7 +2,7 @@
   session_start();
   include "db_conn.php";
   if (isset($_SESSION["user_id"])) {
-    echo '<script> window.location.href="index.php" </script>';
+    echo '<script> window.location.href="index.php" </script>'; 
   }
 ?>
 
@@ -82,8 +82,8 @@
               <i class="fas fa-lock"></i>
               <input type="password" name="passwordSignUp" placeholder="Password" />
             </div>
-            <input type="checkbox" name="agreeSignUp" id="agreeSignUp">
-            <label for="agreeSignUp"> I Agree To The <a href="tos.html"> Terms of Service </a> And I Read The Privacy Notice </label>
+           
+            <label class="toss" for="agreeSignUp">  <input type="checkbox" name="agreeSignUp" id="agreeSignUp"> I Agree To The <a href="tos.html"> Terms of Service </a> And I Read The Privacy Notice </label>
             <input type="submit" class="btn" name="signup" value="sign up"/>
             <p class="social-text">Or Sign up with social platforms</p>
  

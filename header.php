@@ -56,8 +56,8 @@
                     <a href="remove_from_cart.php?item_id=' .  $productRow["item_id"] . '"><span class="fas fa-times"></span> </a>
                     <img src="images/products/'. $productRow["image"] . '" alt="">
                     <div class="content">
-                    <h3>' . $productRow["name"] . '</h3>
-                    <div class="price">Php ' . $productRow["price"] . ' <br> x' . $productRow["quantity"] . ' = Php ' . $productRow["subtotal"] .' <br> <button onclick="decrementNumber'. $productRow["products_product_id"] .'()">-</button> <p id="quantity-' . $productRow["products_product_id"] . '" style="display:inline"> ' . $productRow["quantity"] . ' </p> <button onclick="incrementNumber' . $productRow["products_product_id"] . '()">+</button><button onclick="changeQuantity'. $productRow["products_product_id"] .'()">Apply</button></div>
+                    <h3 style="width: 85%;  ">' . $productRow["name"] . '</h3>
+                    <div class="price">Php ' . $productRow["price"] . ' <br> x' . $productRow["quantity"] . ' = Php ' . $productRow["subtotal"] .' <br> <button style="font-size:18px; padding:5px; margin: 4px 10px 0px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;" onclick="decrementNumber'. $productRow["products_product_id"] .'()">-</button> <p id="quantity-' . $productRow["products_product_id"] . '" style="display:inline"> ' . $productRow["quantity"] . ' </p> <button style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"  onclick="incrementNumber' . $productRow["products_product_id"] . '()">+</button><button style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;" onclick="changeQuantity'. $productRow["products_product_id"] .'()">Apply</button></div>
                     </div>
                     </div>
                     <script>
