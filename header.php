@@ -17,8 +17,12 @@
     </nav>
 
     <div class="icons">
-        <div class="fas fa-shopping-cart" id="cart-btn"></div>
-        <div class="fa-solid fa-star" id="fav-btn"></div>
+        <?php
+            if ($_SERVER["SCRIPT_NAME"] == "/product.php" || $_SERVER["SCRIPT_NAME"] == "/product_category.php" || $_SERVER["SCRIPT_NAME"] == "/product_details.php") {
+                echo '<div class="fas fa-shopping-cart" id="cart-btn"></div>
+                <div class="fa-solid fa-heart" id="fav-btn"></div>';
+            }
+        ?>
         <div class="fa-solid fa-user" id="user-btn" onclick='<?php if (isset($_SESSION["user_id"])) { echo 'window.location.href="logout.php"'; } else { echo 'window.location.href="login-signup.php"'; } ?>'>
         <?php
             if (isset($_SESSION["user_id"])) {

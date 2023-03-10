@@ -45,13 +45,9 @@
 
                     echo '<div class="box">
                     <div class="icons">
-                    <form style="display:inline" action="add_to_cart.php" method="post" id="add-to-cart' . $productRow["product_id"] . '">
-                    <input type="hidden" name="product_id" value="' . $productRow["product_id"] . '">
-                    <input type="hidden" name="prev_page" value="' . $_SERVER["REQUEST_URI"] . '">
-                    <a href="#" class="fas fa-shopping-cart" onclick="document.forms[\'add-to-cart' . $productRow["product_id"] . '\'].submit()"></a>
-                    </form>
+                    <a href="add_to_cart.php?product_id=' . $productRow["product_id"] . '" class="fas fa-shopping-cart"></a>
                     <a href="toggle_favs.php?product_id='. $productRow["product_id"] .'" class="' . $favIcon .' fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
+                    <a href="product_details.php?product_id=' . $productRow["product_id"] . '" class="fas fa-eye"></a>
                     </div>
                     <div class="image">";
                     <img src="images/products/'. $productRow["image"] . '" alt="'.$productRow["name"].'">

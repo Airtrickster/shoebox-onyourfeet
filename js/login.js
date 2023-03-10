@@ -11,6 +11,7 @@ sign_in_btn.addEventListener("click", () => {
 });
 
 function signUpValidation() {
+
   if (! document.forms["signupForm"]["firstNameSignUp"].value) {
     alert("First Name must be filled out");
     return false;
@@ -28,6 +29,24 @@ function signUpValidation() {
 
   if (! document.forms["signupForm"]["dateOfBirthSignUp"].value) {
     alert("You must specify your date of birth");
+    return false;
+  }
+
+  var dob = new Date(document.forms["signupForm"]["dateOfBirthSignUp"].value);
+  //calculate month difference from current date in time
+  var month_diff = Date.now() - dob.getTime();
+  
+  //convert the calculated difference in date format
+  var age_dt = new Date(month_diff); 
+  
+  //extract year from date    
+  var year = age_dt.getUTCFullYear();
+  
+  //now calculate the age of the user
+  var age = Math.abs(year - 1970);
+  
+  if (age < 18) {
+    alert("You must be at least 18 years old to create an account");
     return false;
   }
 

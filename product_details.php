@@ -1,3 +1,21 @@
+<?php
+    session_start();
+    include "db_conn.php";
+
+    $productDetailstmt = mysqli_prepare($link, "SELECT name, price, image, description FROM products WHERE product_id = ?");
+    mysqli_stmt_bind_param($productDetailstmt, "i", $_GET["product_id"]);
+    mysqli_stmt_execute($productDetailstmt);
+    $productDetailResults = mysqli_stmt_get_result($productDetailstmt);
+    $productDetailArray = mysqli_fetch_array($productDetailResults);
+
+    if (is_array($productDetailArray)) {
+        $productName = $productDetailArray["name"];
+        $productPrice = $productDetailArray["price"];
+        $productImage = $productDetailArray["image"];
+        $productDescription = $productDetailArray["description"];
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +23,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/product_details.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
     <link rel="icon" href="images/icon.png">
-    <title>On your feet | Product Details</title>
+    <title>On your feet | <?php echo $productName ?></title>
 </head>
 <body id="product_details" class="pdetails">
 
@@ -22,13 +39,13 @@
             <div class="row ">
 
                 <div class="col-lg-6 col-md-6 col-sm-12 imgbox">
-                    <img src="product_test_image.png" class="img-fluid" alt="Product Image">
+                    <img src="images/products/<?php echo $productImage; ?>" class="img-fluid" alt="Product Image">
                 </div>
 
                 <div class="col">
                 <div class="row">
                     <div class="col">
-                        <h1 class="productName details-right">Product Name HERE</h1>
+                        <h1 class="productName details-right"><?php echo $productName; ?></h1>
 
                     </div>
 
@@ -36,27 +53,14 @@
                     <div class="row rbox">
                         <div class="col">
                             <h3 class="details-right">
-                            Proof that quality still exists, our Made in the USA 990v5 is the ultimate blend of performance and style. Made without compromise, the 990v5 is a staple of both morning runs and fashion runways.
-                            New Balance MADE U.S. footwear contains a domestic value of 70% or more. MADE makes up a limited portion of New Balance’s U.S. sales.
-
-                            Features
-                            • Suede and mesh upper
-                            • Dual density collar foam offers support and comfort for ankles
-                            • ENCAP midsole cushioning combines lightweight foam with a durable polyurethane rim to deliver all-day support
-                            • All-day comfort with Ortholite® insert and firm -yet- supportive midsole
-                            • Blown rubber outsole provides superior rebound
-                            • 12 mm drop; due to variances created during the development and manufacturing processes, all references to 12 mm drop are approximate
-                            • New Balance MADE U.S. footwear contains a domestic value of 70% or more. MADE makes up a limited portion of New Balance’s U.S. sales.
-
-                            Available Colors: Gray/Black/Navy
-                            Available Sizes: EU/US/UK
+                            <?php echo str_replace("\n", "<br>",  $productDescription); ?>
                             </h3>
-                            <h2>$91199.99 (PRICE HERE)</h2>
+                            <h2> Php <?php echo $productPrice; ?></h2>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                        <button class="btn btn-primary btn-lg btn-block">Add to Cart</button>
+                        <button onclick='window.location.href="add_to_cart.php?product_id=<?php echo $_GET["product_id"] ?>"' class="btn btn-primary btn-lg btn-block">Add to Cart</button>
                         </div>           
                     </div>
                         
@@ -65,8 +69,8 @@
             </div>
             
         </div>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="lib/jquery-3.6.3.js"></script>
+        <script src="lib/bootstrap-5.3.0-alpha1-dist/js/bootstrap.min.js"></script>
     </section>
 
     <?php include "footer.php"; ?>

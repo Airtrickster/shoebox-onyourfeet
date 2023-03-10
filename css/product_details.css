@@ -79,7 +79,6 @@
       }
       .bg-img::before {
         content: "";
-        background-image: url("../images/bgs.png");
         background-size: cover;
         background-position: center;
         opacity: 1;
