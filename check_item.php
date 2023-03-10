@@ -6,9 +6,9 @@
         mysqli_stmt_bind_param($checkItemstmt, "ii" , $userId, $productId);
         mysqli_stmt_execute($checkItemstmt);
         if (! mysqli_num_rows(mysqli_stmt_get_result($checkItemstmt)) == 0) {
-            return true;
-        } else {
             return false;
+        } else {
+            return true;
         }
     }
 
