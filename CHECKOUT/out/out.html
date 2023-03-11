@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="out.css" />
+  </head>
+  <body>
+    <form>
+      <h2>Checkout</h2>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required />
+      <h3>Select Payment Method</h3>
+      <input
+        type="radio"
+        id="bankcard"
+        name="payment-method"
+        value="bankcard"
+        checked
+      />
+      <label for="bankcard">Bank Card</label>
+      <input type="radio" id="other" name="payment-method" value="other" />
+      <label for="other">Other Online Transaction</label>
+      <button type="submit">Proceed</button>
+    </form>
+    <script src="out.js"></script>
+  </body>
+</html>
