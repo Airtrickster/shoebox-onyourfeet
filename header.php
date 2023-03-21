@@ -18,21 +18,72 @@
 
     <div class="icons">
         <?php
-            if ($_SERVER["SCRIPT_NAME"] == "/product.php" || $_SERVER["SCRIPT_NAME"] == "/product_category.php" || $_SERVER["SCRIPT_NAME"] == "/product_details.php") {
+            if ($_SERVER["SCRIPT_NAME"] == "/index.php" || $_SERVER["SCRIPT_NAME"] == "/product.php" || $_SERVER["SCRIPT_NAME"] == "/product_category.php" || $_SERVER["SCRIPT_NAME"] == "/product_details.php") {
                 echo '<div class="fas fa-shopping-cart" id="cart-btn"></div>
                 <div class="fa-solid fa-heart" id="fav-btn"></div>';
             }
         ?>
-        <div class="fa-solid fa-user" id="user-btn" onclick='<?php if (isset($_SESSION["user_id"])) { echo 'window.location.href="logout.php"'; } else { echo 'window.location.href="login-signup.php"'; } ?>'>
+        <div class="fa-solid fa-user" <?php if (isset($_SESSION["user_id"])) { echo "id=\"profile-btn\""; } else { echo "onclick='window.location.href=\"login-signup.php\"'"; } ?>></div>
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+
+    <div class="profile-items-container">
+    <div class="profile-item">
+        <div class="content">
+            <?php
+                if (! isset($_SESSION["user_id"])) {
+                    echo "<a href=\"login-signup.php\"> Click here to Log in </a>";
+                } else {
+                    echo '<h3>' . $_SESSION["username"] . '</h3>';
+                    echo "<a href=\"logout.php\"> Log out </a>";
+                }
+            ?>
+        </div>
+    </div>
+    </div>
+
+    <div class="fav-items-container">
+    <div class="fav-item">
+        <div class="content">
+            <h3> Favorites </h3>
+        </div>
+    </div>
+        
         <?php
             if (isset($_SESSION["user_id"])) {
-                echo $_SESSION["username"];
+                $favListstmt = mysqli_prepare($link, "SELECT fav_id, products.product_id , name, image FROM favorites INNER JOIN products ON favorites.product_id = products.product_id WHERE user_id = ?;;");
+                mysqli_stmt_bind_param($favListstmt, "i", $_SESSION["user_id"],);
+                mysqli_stmt_execute($favListstmt);
+                $favListResults = mysqli_stmt_get_result($favListstmt);
+                while ($favListRow = mysqli_fetch_array($favListResults)) {     
+                    echo '<div class="fav-item">
+                    <a href="toggle_favs.php?product_id=' .  $favListRow["product_id"] . '"><span class="fas fa-times"></span> </a>
+                    <a href="add_to_cart.php?product_id=' .  $favListRow["product_id"] . '"><span class="fas fa-shopping-cart fa-2xl"></span> </a>
+                    <img src="images/products/'. $favListRow["image"] . '" alt="">
+                    <div class="content">
+                    <h3>' . $favListRow["name"] . '</h3>
+                    </div>
+                    </div>';
+                }
+                if (mysqli_num_rows($favListResults) == 0) {
+                    echo '<div class="fav-item">
+                    <div class="content">
+                    <h3> is empty </h3>
+                    </div>
+                    </div>';
+                } 
+                
+                
             } else {
-                echo "login";
+                echo '<div class="fav-item">
+                <div class="content">
+                <h3> Not logged in </h3>
+                </div>
+                </div>';
+
             }
+
         ?>
-    </div>
-        <div class="fas fa-bars" id="menu-btn"></div>
     </div>
     
     <div class="cart-items-container">
