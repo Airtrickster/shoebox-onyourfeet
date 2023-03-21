@@ -3,34 +3,43 @@
     include "db_conn.php";
 ?>
 <link rel="stylesheet" href="css/header.css">
+
 <header class="header header-scrolled">
 
+    <div class="wrappings start">
     <a href="index.php" class="logo">
         <img src="images/mini-logo.png" alt="Logo">
-    </a>
+    </a>  
+    </div>
 
-    <nav class="navbar">
-        <a href="index.php">home</a>
-        <a href="about.php">about</a>
-        <a href="product.php">product</a>
-        <a href="contact.php">contact</a>
-    </nav>
+    <div class="wrappings center">
+        <nav class="navbar">
+            <a href="index.php">home</a>
+            <a href="about.php">about</a>
+            <a href="product.php">product</a>
+            <a href="contact.php">contact</a>
+        </nav>
+    </div>
 
-    <div class="icons">
-        <?php
-            if ($_SERVER["SCRIPT_NAME"] == "/product.php" || $_SERVER["SCRIPT_NAME"] == "/product_category.php" || $_SERVER["SCRIPT_NAME"] == "/product_details.php") {
-                echo '<div class="fas fa-shopping-cart" id="cart-btn"></div>
-                <div class="fa-solid fa-heart" id="fav-btn"></div>';
-            }
-        ?>
-        <div class="fa-solid fa-user" id="user-btn" onclick='<?php if (isset($_SESSION["user_id"])) { echo 'window.location.href="logout.php"'; } else { echo 'window.location.href="login-signup.php"'; } ?>'>
-        <?php
-            if (isset($_SESSION["user_id"])) {
-                echo $_SESSION["username"];
-            } else {
-                echo "login";
-            }
-        ?>
+    <div class="wrappings end">
+        <div class="icons">
+            <?php
+                if ($_SERVER["SCRIPT_NAME"] == "/product.php" || $_SERVER["SCRIPT_NAME"] == "/product_category.php" || $_SERVER["SCRIPT_NAME"] == "/product_details.php") {
+                    echo '<div class="fas fa-shopping-cart" id="cart-btn"></div>
+                    <div class="fa-solid fa-heart" id="fav-btn"></div>';
+                }
+            ?>
+            <div class="fa-solid  fa-user" id="user-btn" onclick='<?php if (isset($_SESSION["user_id"])) { echo 'window.location.href="logout.php"'; } else { echo 'window.location.href="login-signup.php"'; } ?>'>
+            <?php
+                if (isset($_SESSION["user_id"])) {
+                    echo $_SESSION["username"];
+                } else {
+                    echo "Login";
+                }
+            ?>
+            </div>
+    </div>
+
     </div>
         <div class="fas fa-bars" id="menu-btn"></div>
     </div>

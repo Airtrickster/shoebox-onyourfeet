@@ -30,7 +30,7 @@
     .header .icons div{
         color:#fff;
         cursor: pointer;
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin-left: 1rem;
     }
 
@@ -40,6 +40,23 @@
 
     .header .icons div:hover{
         color:var(--main-color);
+    }
+
+    .wrappings{
+        width: 33.3%;
+        display: flex;
+    }
+    
+    .start{
+        justify-content: flex-start;
+    }
+    
+    .center{
+        justify-content: center;
+    }
+    
+    .end{
+        justify-content: flex-end;
     }
 
     #product-btn{
@@ -83,7 +100,7 @@
         cursor: pointer;
         font-size: 2.2rem;
         margin-right: 1.5rem;
-        color:var(--black);
+        color:var(--black); 
     }
 
     .header .search-form label:hover{
@@ -138,7 +155,7 @@
     .header .cart-items-container .cart-item .content h3{
         font-size: 2rem;
         color:var(--black);
-        padding-bottom: .5rem; 
+        padding-bottom: .5rem;  
         
     }
 

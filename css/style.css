@@ -126,33 +126,6 @@
         justify-content: space-between;
         text-align: center;
     }
-    
-
-    .wrap{
-        width: 20%;
-    }
-
-    .wrap p{
-        word-wrap: break-word;
-        text-align: center;
-        border: var(--text ) 1px solid;
-        text-align: center;
-        padding: 2px;
-    }
-
-    .help{
-        margin-left: -147px;
-    }
-
-    .help a {
-        border-right: 1px solid #c4c4c4;
-        display: inline-block;
-        padding: 0 10px;
-    }
-
-    .help a:last-child {
-        border-right:0;
-    } 
 
 #banner {
     height: 30px; 
