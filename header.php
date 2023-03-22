@@ -29,7 +29,7 @@
                     <div class="fa-solid fa-heart" id="fav-btn"></div>';
                 }
             ?>
-            <div class="fa-solid  fa-user" id="user-btn" onclick='<?php if (isset($_SESSION["user_id"])) { echo 'window.location.href="logout.php"'; } else { echo 'window.location.href="login-signup.php"'; } ?>'>
+            <div class="fa-solid fa-user" <?php if (isset($_SESSION["user_id"])) { echo "id=\"profile-btn\""; } else { echo "onclick='window.location.href=\"login-signup.php\"'"; } ?>><?php if (! isset($_SESSION["user_id"])) { echo "login"; } ?></div>
             <?php
                 if (isset($_SESSION["user_id"])) {
                     echo $_SESSION["username"];
@@ -53,6 +53,10 @@
             ?>
         </div>
     </div>
+    </div>
+
+    </div>
+        <div class="fas fa-bars" id="menu-btn"></div>
     </div>
     
     <div class="cart-items-container">
