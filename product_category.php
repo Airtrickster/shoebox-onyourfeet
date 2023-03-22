@@ -44,8 +44,8 @@
                     }
 
                     echo '
-                    <button class="desc" > 
-                        <div class="box">
+                    <button class="desc"> 
+                        <div class="box" onclick="window.location.href=\'product_details.php?product_id=' . $productRow["product_id"] . '\'">
                         <div class="image">
                         <img src="images/products/'. $productRow["image"] . '" alt="'.$productRow["name"].'">
                         </div>
