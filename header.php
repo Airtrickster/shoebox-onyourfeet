@@ -3,7 +3,6 @@
     include "db_conn.php";
 ?>
 <link rel="stylesheet" href="css/header.css">
-
 <header class="header header-scrolled">
 
     <div class="wrappings start">
@@ -24,20 +23,11 @@
     <div class="wrappings end">
         <div class="icons">
             <?php
-                if ($_SERVER["SCRIPT_NAME"] == "/index.php" || $_SERVER["SCRIPT_NAME"] == "/product.php" || $_SERVER["SCRIPT_NAME"] == "/product_category.php" || $_SERVER["SCRIPT_NAME"] == "/product_details.php") {
-                    echo '<div class="fas fa-shopping-cart" id="cart-btn"></div>
-                    <div class="fa-solid fa-heart" id="fav-btn"></div>';
-                }
+                echo '<div class="fas fa-shopping-cart" id="cart-btn"></div>
+                <div class="fa-solid fa-heart" id="fav-btn"></div>';
             ?>
-            <div class="fa-solid fa-user" <?php if (isset($_SESSION["user_id"])) { echo "id=\"profile-btn\""; } else { echo "onclick='window.location.href=\"login-signup.php\"'"; } ?>><?php if (! isset($_SESSION["user_id"])) { echo "login"; } ?></div>
-            <?php
-                if (isset($_SESSION["user_id"])) {
-                    echo $_SESSION["username"];
-                } else {
-                    echo "Login";
-                }
-            ?>
-            </div>
+            <div class="fa-solid fa-user" <?php if (isset($_SESSION["user_id"])) { echo "id=\"profile-btn\""; } else { echo "onclick='window.location.href=\"login-signup.php\"'"; } ?>><?php if (! isset($_SESSION["user_id"])) { echo "Login"; } ?> </div>
+        </div>
     </div>
 
     <div class="profile-items-container">
