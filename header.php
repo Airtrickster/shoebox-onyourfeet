@@ -57,7 +57,7 @@
 
     </div>
         <div class="fas fa-bars" id="menu-btn"></div>
-    </div>
+    </div> 
     
     <div class="cart-items-container">
     <div class="cart-item">
