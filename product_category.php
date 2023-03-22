@@ -43,27 +43,26 @@
                         $favIcon = "fa-solid";
                     }
 
-                    echo '<div class="box">
-                    <div class="icons">
-                    <a href="add_to_cart.php?product_id=' . $productRow["product_id"] . '" class="fas fa-shopping-cart"></a>
-                    <a href="toggle_favs.php?product_id='. $productRow["product_id"] .'" class="' . $favIcon .' fa-heart"></a>
-                    <a href="product_details.php?product_id=' . $productRow["product_id"] . '" class="fas fa-eye"></a>
-                    </div>
-                    <div class="image">";
-                    <img src="images/products/'. $productRow["image"] . '" alt="'.$productRow["name"].'">
-                    </div>
-                    <div class="content">
-                    <h3>' . $productRow["name"] . '</h3>
-                    <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <div class="price">Php ' . $productRow["price"] . '</div>
-                    </div>
-                    </div>';
+                    echo '
+                    <button class="desc" > 
+                        <div class="box">
+                        <div class="image">
+                        <img src="images/products/'. $productRow["image"] . '" alt="'.$productRow["name"].'">
+                        </div>
+                        <div class="content">
+                        <h3>' . $productRow["name"] . '</h3>
+                        <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="price">Php ' . $productRow["price"] . '</div>
+                        </div>
+                        </div>
+                    </button>
+                    ';
                 }
             ?>
     

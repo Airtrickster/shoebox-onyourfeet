@@ -1,5 +1,5 @@
 #about{
-    background: #bbbbbb;
+    background: #bbbbbb; 
     
 }
 
@@ -72,24 +72,27 @@
 
 .card{
     background: var(--main-color);
-    padding: 20px 20px 100px 20px;
+    width: 17%;
+    height: 250px;
+    padding: 20px 10px 10px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.584);
 }
 
 .card h3{
-    font-size: 18px;
+    font-size: 1.5rem;
 }
 
 .card ul li{
     text-align: left;
-    margin: 0px;
-    padding: 0px;
+    margin: 10px;
+    padding: 0px 10px 0px;
+    font-size: 1rem;
 }
 
 .card:hover{
     transition: .2s;
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 .members .card img{
