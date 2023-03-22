@@ -30,7 +30,7 @@
     .header .icons div{
         color:#fff;
         cursor: pointer;
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin-left: 1rem;
     }
 
@@ -40,6 +40,23 @@
 
     .header .icons div:hover{
         color:var(--main-color);
+    }
+
+    .wrappings{
+        width: 33.3%;
+        display: flex;
+    }
+    
+    .start{
+        justify-content: flex-start;
+    }
+    
+    .center{
+        justify-content: center;
+    }
+    
+    .end{
+        justify-content: flex-end;
     }
 
     #product-btn{
@@ -83,7 +100,7 @@
         cursor: pointer;
         font-size: 2.2rem;
         margin-right: 1.5rem;
-        color:var(--black);
+        color:var(--black); 
     }
 
     .header .search-form label:hover{
@@ -138,7 +155,7 @@
     .header .cart-items-container .cart-item .content h3{
         font-size: 2rem;
         color:var(--black);
-        padding-bottom: .5rem; 
+        padding-bottom: .5rem;  
         
     }
 
@@ -205,6 +222,63 @@
     }
 
     .header .fav-items-container .btn{
+        width: 100%;
+        text-align: center;
+    }
+
+        .fav-items-container{
+        overflow-y: scroll;
+    }
+
+    .header .profile-items-container{
+        position: absolute;
+        top:100%; right: -100%;
+        height: calc(100vh - 9.5rem);
+        width: 35rem;
+        background: #fff;
+        padding:0 1.5rem;
+    }
+
+    .header .profile-items-container.active{
+        right: 0;
+    }
+
+    .header .profile-items-container .fav-item{
+        position: relative;
+        margin:2rem 0;
+        display: flex;
+        align-items: center;
+        gap:1.5rem;
+    }
+
+    .header .profile-items-container .fav-item .fa-times{
+        position: absolute;
+        top:1rem; right: 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--black);
+    }
+
+    .header .profile-items-container .fav-item .fa-times:hover{
+        color:var(--main-color);
+    }
+
+    .header .profile-items-container .fav-item img{
+        height: 7rem;
+    }
+
+    .header .profile-items-container .fav-item .content h3{
+        font-size: 2rem;
+        color:var(--black);
+        padding-bottom: .5rem;
+    }
+
+    .header .profile-items-container .fav-item .content .price{
+        font-size: 1.5rem;
+        color:var(--main-color);
+    }
+
+    .header .profile-items-container .btn{
         width: 100%;
         text-align: center;
     }

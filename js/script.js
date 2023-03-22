@@ -19,6 +19,7 @@ let cartItem = document.querySelector('.cart-items-container');
 
 document.querySelector('#cart-btn').onclick = () =>{
     cartItem.classList.toggle('active');
+    profileItem.classList.remove('active');
     favItem.classList.remove('active');
     navbar.classList.remove('active');
     searchForm.classList.remove('active');
@@ -28,6 +29,17 @@ let favItem = document.querySelector('.fav-items-container');
 
 document.querySelector('#fav-btn').onclick = () =>{
     favItem.classList.toggle('active');
+    profileItem.classList.remove('active');
+    cartItem.classList.remove('active');
+    navbar.classList.remove('active');
+    searchForm.classList.remove('active');
+}
+
+let profileItem = document.querySelector('.profile-items-container');
+
+document.querySelector('#profile-btn').onclick = () =>{
+    profileItem.classList.toggle('active');
+    favItem.classList.remove('active');
     cartItem.classList.remove('active');
     navbar.classList.remove('active');
     searchForm.classList.remove('active');

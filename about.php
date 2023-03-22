@@ -49,6 +49,9 @@
                         <li>Chief Executive Officer (CEO)</li>
                     </ul>
                 </div>
+                <div class="quote">
+                    <p><Q>Success usually comes to those who are too busy to be looking for it.</Q>  – Henry David Thoreau</p>
+                </div>
             </div>
             <div class="card">
                 <img src="./images/jurAbout.jpg" alt="Juri">
@@ -57,6 +60,9 @@
                     <ul>
                         <li>Chief Financial Officer (CFO)</li>
                     </ul>
+                </div>
+                <div class="quote">
+                    <p><Q>Do it early, hassle later</Q></p>
                 </div>
             </div>
             <div class="card">
@@ -79,7 +85,7 @@
             </div>
             <div class="card">
                 <img src="./images/wesAbout.png" alt="Wesley">
-                <h3>Wesley</h3>
+                <h3>Wesley Emerenciana</h3>
                  <div>
                     <ul>
                         <li>Chief Operations Officer (COO)</li>

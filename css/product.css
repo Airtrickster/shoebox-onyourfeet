@@ -137,6 +137,8 @@
     text-align: center;
     border:var(--border);
     padding: 2rem;
+    width: 100%;
+    height: 500px;
 }
 
 .product-category .box-container .box .icons a{
@@ -233,7 +235,7 @@
 .review .box-container .box{
     border:var(--border);
     text-align: center;
-    padding:3rem 2rem;
+    padding:4rem 2rem;
 }
 
 .review .box-container .box p{
@@ -259,6 +261,21 @@
 .review .box-container .box .stars i{
     font-size: 1.5rem;
     color:var(--main-color);
+}
+
+.desc{
+    background-color: #13131a;
+}
+
+.desc:hover{
+    background-color: #d3ad7f;  
+    transform: scale(1.01);
+    transition: 0s;
+}
+
+.desc:active{
+    background-color: #d3ad7f;  
+    transform: scale(1);
 }
 
 @media (max-width:450px){
