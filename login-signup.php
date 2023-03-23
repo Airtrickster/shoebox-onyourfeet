@@ -82,6 +82,10 @@
               <i class="fas fa-lock"></i>
               <input type="password" name="passwordSignUp" placeholder="Password" />
             </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="confirmPasswordSignUp" placeholder="Confirm Password" />
+            </div>
            
             <label class="toss" for="agreeSignUp">  <input type="checkbox" name="agreeSignUp" id="agreeSignUp"> I Agree To The <a href="tos.html"> Terms of Service </a> And I Read The Privacy Notice </label>
             <input type="submit" class="btn" name="signup" value="sign up"/>
@@ -141,9 +145,26 @@
     <?php
 
       if (isset($_POST["signup"])) {
-        $signupstmt = mysqli_prepare($link, "INSERT INTO accounts (first_name, last_name, email, date_of_birth, phone_number, username, password) VALUES (?, ?, ?, ?, ?, ?, ?);");
-        mysqli_stmt_bind_param($signupstmt, "sssssss", $_POST["firstNameSignUp"], $_POST["lastNameSignUp"] , $_POST["emailSignUp"], $_POST["dateOfBirthSignUp"], $_POST["phoneNumberSignUp"], $_POST["usernameSignUp"], $_POST["passwordSignUp"]);
-        mysqli_stmt_execute($signupstmt);
+        $checkUsernamestmt = mysqli_prepare($link, "SELECT DISTINCT username FROM accounts WHERE username = ?;");
+        mysqli_stmt_bind_param($checkUsernamestmt, "s", $_POST["usernameSignUp"]);
+        mysqli_execute($checkUsernamestmt);
+        $usernameResult = mysqli_stmt_get_result($checkUsernamestmt);
+
+        $checkEmailstmt = mysqli_prepare($link, "SELECT DISTINCT email FROM accounts WHERE email = ?;");
+        mysqli_stmt_bind_param($checkEmailstmt, "s", $_POST["emailSignUp"]);
+        mysqli_execute($checkEmailstmt);
+        $emailResult = mysqli_stmt_get_result($checkEmailstmt);
+
+        if (mysqli_num_rows($usernameResult) > 0) {
+          echo '<script> alert("Username already exists"); window.location.href = "' . $_SERVER["PHP_SELF"] . '"; </script>';
+        } else if (mysqli_num_rows($emailResult) > 0) {
+          echo '<script> alert("Email already exists"); window.location.href = "' . $_SERVER["PHP_SELF"] . '"; </script>';
+        } else {
+          $signupstmt = mysqli_prepare($link, "INSERT INTO accounts (first_name, last_name, email, date_of_birth, phone_number, username, password) VALUES (?, ?, ?, ?, ?, ?, ?);");
+          mysqli_stmt_bind_param($signupstmt, "sssssss", $_POST["firstNameSignUp"], $_POST["lastNameSignUp"] , $_POST["emailSignUp"], $_POST["dateOfBirthSignUp"], $_POST["phoneNumberSignUp"], $_POST["usernameSignUp"], $_POST["passwordSignUp"]);
+          mysqli_stmt_execute($signupstmt);
+        }
+
       }
 
       if (isset($_POST["login"])) {
@@ -159,7 +180,7 @@
             $_SESSION["password"] = $credentials["password"];
             echo '<script> window.location.href="index.php" </script>';
           } else {
-            echo '<script> alert("Wrong Credentials please try again"); </script>';
+            echo '<script> alert("Wrong Credentials please try again"); window.location.href = "' . $_SERVER["PHP_SELF"] . '"; </script>';
 
           }
       }
