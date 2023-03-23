@@ -25,26 +25,13 @@
         <div class="box-container">
     
             <?php
-                if (isset($_SESSION["user_id"])) {
-                    $productstmt = mysqli_prepare($link, "SELECT products.product_id, category, gender, name, price, image, favorites.product_id AS \"is_in_fav\" FROM products LEFT JOIN favorites ON products.product_id = favorites.product_id AND favorites.user_id = ? WHERE category = ? AND gender = ?;");
-                    mysqli_stmt_bind_param($productstmt, "iss", $_SESSION["user_id"] , $_GET["category"], $_GET["gender"]);
-                } else {
-                    $productstmt = mysqli_prepare($link, "SELECT * FROM products WHERE category = ? AND gender = ?");
-                    mysqli_stmt_bind_param($productstmt, "ss", $_GET["category"], $_GET["gender"]);
-                }
-
+                $productstmt = mysqli_prepare($link, "SELECT * FROM products WHERE category = ? AND gender = ?");
+                mysqli_stmt_bind_param($productstmt, "ss", $_GET["category"], $_GET["gender"]);
                 mysqli_stmt_execute($productstmt);
                 $productResults = mysqli_stmt_get_result($productstmt);         
 
                 while ($productRow = mysqli_fetch_array($productResults)) {
-                    if (array_key_exists("is_in_fav", $productRow) && is_null($productRow["is_in_fav"])) {
-                        $favIcon = "fa-regular";
-                    } else {
-                        $favIcon = "fa-solid";
-                    }
-
-                    echo '
-                    <button class="desc"> 
+                    echo '<button class="desc"> 
                         <div class="box" onclick="window.location.href=\'product_details.php?product_id=' . $productRow["product_id"] . '\'">
                         <div class="image">
                         <img src="images/products/'. $productRow["image"] . '" alt="'.$productRow["name"].'">
@@ -61,8 +48,7 @@
                         <div class="price">Php ' . $productRow["price"] . '</div>
                         </div>
                         </div>
-                    </button>
-                    ';
+                    </button>';
                 }
             ?>
     
