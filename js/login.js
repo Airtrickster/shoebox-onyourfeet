@@ -54,6 +54,11 @@ function signUpValidation() {
     alert("Phone number must be filled out");
     return false;
   }
+
+  if (document.forms["signupForm"]["phoneNumberSignUp"].value.match(/[^0-9+-]+/g)) {
+    alert("Must be a valid phone number");
+    return false;
+  }
   
   if (! document.forms["signupForm"]["usernameSignUp"].value) {
     alert("Username must be filled out");
@@ -62,6 +67,16 @@ function signUpValidation() {
 
   if (! document.forms["signupForm"]["passwordSignUp"].value) {
     alert("Password must be filled out");
+    return false;
+  }
+
+  if (document.forms["signupForm"]["passwordSignUp"].value.length < 8) {
+    alert("Password length must be at least 8 characters");
+    return false;
+  }
+
+  if (document.forms["signupForm"]["passwordSignUp"].value !== document.forms["signupForm"]["confirmPasswordSignUp"].value) {
+    alert("Passwords do not match");
     return false;
   }
 
