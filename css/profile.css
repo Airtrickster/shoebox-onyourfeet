@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+body{
+  margin: 0px;
+  padding: 0px;
+  background:#171723;
+}
+
+.container{
+  height:100vh;
+  display: grid;
+  place-items: center;
+}
+
+.profile{
+  display: flex;
+  align-items:start;
+  justify-content: center;
+  padding: 10px;
+  width: 925px;
+  height: 441px;
+  background: #D9D9D9;
+  box-shadow: 9px 9px 3px rgba(197, 197, 197, 0.25);
+  border-radius: 21px;
+}
+
+.boxI{
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  margin: 0px 5px;
+}
+
+.boxL{
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  margin: 0px 5px;
+}
+
+.Left{
+  justify-content: center;
+}
+
+.Right{
+  justify-content: center;
+}
+
+.profile-picture{
+  display:grid;
+  place-items: center;
+  margin: 10px 0px;
+} 
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.buttons button{
+  width: 80%;
+  margin: 10px auto;
+  background: #AAAAAA;
+  font-family:"Roboto", sans-serif;
+  border-radius: 4px; 
+  border: transparent;
+  font-size: 16px;
+  width: 223px;
+  height: 28px;
+}
+
+.profile-picture img{
+  width: 80%;
+  border-radius: 50%;
+}
+
+.boxL :is(.names, .personal-details){
+  font-family: "Roboto", sans-serif;
+}
+
+.names h1{
+  font-size: 40px;
+  font-weight: 400;
+  margin: 10px 0px 0px;
+}
+
+.names h2{
+  font-size: 24px;
+  font-weight: 300;
+  margin: 10px 0px 30px;
+}
+
+.personal-details{
+  display: flex;
+  width: 572px;
+  height: 237px;
+  background: #B5B5B5;
+  border-radius: 10px;
+}
+
+ .icons-indi{
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+ .icons-indi i{
+  margin: 25px 0px;
+}
+
+.details{
+  margin: 10px;
+}
+
+.personal-details p{
+  font-size: 16;
+  margin: 30px 0px;
+  font-family: "Roboto", sans-serif;
+  padding: 0px;
+}
