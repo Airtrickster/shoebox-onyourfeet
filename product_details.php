@@ -2,17 +2,26 @@
     session_start();
     include "db_conn.php";
 
-    $productDetailstmt = mysqli_prepare($link, "SELECT name, price, image, description FROM products WHERE product_id = ?");
-    mysqli_stmt_bind_param($productDetailstmt, "i", $_GET["product_id"]);
+    $productDetailstmt = mysqli_prepare($link, "SELECT products.product_id AS \"products_product_id\", cart.quantity AS \"cart_quantity\", name, price, image, description, cart.product_id AS \"is_in_cart\", cart.item_id AS \"cart_item_id\", favorites.product_id AS \"is_in_favs\" FROM products LEFT JOIN cart ON products.product_id = cart.product_id AND cart.user_id = ? LEFT JOIN favorites ON products.product_id = favorites.product_id AND favorites.user_id = ? WHERE products.product_id = ?;");
+    mysqli_stmt_bind_param($productDetailstmt, "iii", $_SESSION["user_id"], $_SESSION["user_id"], $_GET["product_id"]);
     mysqli_stmt_execute($productDetailstmt);
     $productDetailResults = mysqli_stmt_get_result($productDetailstmt);
     $productDetailArray = mysqli_fetch_array($productDetailResults);
 
     if (is_array($productDetailArray)) {
+        $productId= $productDetailArray["products_product_id"];
         $productName = $productDetailArray["name"];
         $productPrice = $productDetailArray["price"];
         $productImage = $productDetailArray["image"];
         $productDescription = $productDetailArray["description"];
+        $isInCart = false;
+        if (! is_null($productDetailArray["is_in_cart"])) {
+            $isInCart = true;
+            $cartItemId = $productDetailArray["cart_item_id"];
+            $cartQuantity = $productDetailArray["cart_quantity"];
+        }
+        $isInFavs = false;
+        if (! is_null($productDetailArray["is_in_favs"])) { $isInFavs = true; }
     }
 ?>
 
@@ -108,8 +117,8 @@
                             <!-- COLOR -->
                             <div class="">
                                 <label for="color">Color:</label>
-                                <select name="color" id="color"
-                                                <option value="red">Red</option>
+                                <select name="color" id="color">
+                                    <option value="red">Red</option>
                                     <option value="blue">Blue</option>
                                     <option value="green">Green</option>
                                 </select>
@@ -118,18 +127,21 @@
                             <!-- QUANTITY -->
                             <div class="quantity-button">
                                 <button class="subtract" onclick="subtractQuantity()">-</button>
-                                <input type="number" min="1" max="100" step="1" value="1" id="quantity">
+                                <input type="number" min="1" max="100" step="1" value="<?php if (! $isInCart) { echo "1"; } else { echo $cartQuantity; } ?>" id="quantity">
                                 <button class="add" onclick="addQuantity()">+</button>
                             </div>
-                                <button class="apply" onclick="applyQuantity()">Apply</button>
-
-
+                            <?php
+                                if ($isInCart) {
+                                    echo '<button class="apply" onclick="applyQuantity()">Apply</button>';
+                                }
+                            ?>
+                            
                     </div>
                    
 
                         
-                        <button onclick='window.location.href="add_to_cart.php?product_id=<?php echo $_GET["product_id"] ?>"' class="btn btn-primary btn-lg btn-block">Add to Cart</button>
-                        <button class="fa-solid fa-heart" id="fav-btn" >
+                        <button onclick='<?php if (! isset($_SESSION["user_id"]) || ! $isInCart) { echo 'addToCart()'; } else { echo 'removeFromCart()'; } ?>' class="btn btn-primary btn-lg btn-block"><?php if (! $isInCart) { echo "Add To Cart"; } else { echo "Remove From Cart"; } ?></button>
+                        <button class="<?php if (! isset($_SESSION["user_id"]) || ! $isInFavs) { echo "fa-regular"; } else { echo "fa-solid"; } ?> fa-heart" id="fav-btn" onclick="toggleFavs()">
                             
                         </button>
                                 
@@ -169,12 +181,50 @@
         }
 
         function applyQuantity() {
-            var quantityInput = document.getElementById("quantity");
-            var quantity = parseInt(quantityInput.value);
-            
-            alert("Quantity Updated: " + quantity);
+            if (isNaN(parseInt(document.getElementById("quantity").value)) || parseInt(document.getElementById("quantity").value) < 1) {
+                alert("Please enter a valid quantity");
+                return false;
+            }
+
+            window.location.href = "change_quantity.php?item_id=<?php echo $cartItemId; ?>&quantity=" + parseInt(document.getElementById("quantity").value);
         }
+
+        function addToCart() {
+            if (<?php if (! isset($_SESSION["user_id"])) { echo "true"; } else { echo "false"; } ?>) {
+                alert("You must be logged in to use the shopping cart");
+                window.location.href = "login-signup.php";
+                return false;
+            }
+
+            if (isNaN(parseInt(document.getElementById("quantity").value)) || parseInt(document.getElementById("quantity").value) < 1) {
+                alert("Please enter a valid quantity");
+                return false;
+            }
+
+            window.location.href = "add_to_cart.php?product_id=<?php echo $_GET["product_id"] ?>&quantity=" + parseInt(document.getElementById("quantity").value);
+        }
+
+        function removeFromCart() {
+            if (<?php if (! isset($_SESSION["user_id"])) { echo "true"; } else { echo "false"; } ?>) {
+                alert("You must be logged in to use the shopping cart");
+                window.location.href = "login-signup.php";
+                return false;
+            }
+
+            window.location.href = "remove_from_cart.php?item_id=<?php echo $cartItemId; ?>";
+        }
+
+        function toggleFavs() {
+            if (<?php if (! isset($_SESSION["user_id"])) { echo "true"; } else { echo "false"; } ?>) {
+                alert("You must be logged in to use favorites");
+                window.location.href = "login-signup.php";
+                return false;
+            }
+            window.location.href="toggle_favs.php?product_id=<?php echo $productId ?>";
+        }
+
     </script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>
