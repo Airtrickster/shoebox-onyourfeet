@@ -75,25 +75,25 @@
                     <img src="images/products/'. $productRow["image"] . '" alt="">
                     <div class="content">
                     <h3 style="width: 85%;  "><a href="product_details.php?product_id=' . $productRow["products_product_id"] . '">' . $productRow["name"] . '</a></h3>
-                    <div class="price">Php ' . $productRow["price"] . ' <br> x' . $productRow["quantity"] . ' = Php ' . $productRow["subtotal"] .' <br> <button style="font-size:18px; padding:5px; margin: 4px 10px 0px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;" onclick="decrementNumber'. $productRow["products_product_id"] .'()">-</button> <p id="quantity-' . $productRow["products_product_id"] . '" style="display:inline"> ' . $productRow["quantity"] . ' </p> <button style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"  onclick="incrementNumber' . $productRow["products_product_id"] . '()">+</button><button style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;" onclick="changeQuantity'. $productRow["products_product_id"] .'()">Apply</button></div>
+                    <div class="price">Php ' . $productRow["price"] . ' <br> x' . $productRow["quantity"] . ' = Php ' . $productRow["subtotal"] .' <br> <button style="font-size:18px; padding:5px; margin: 4px 10px 0px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;" onclick="decrementNumber'. $productRow["item_id"] .'()">-</button> <p id="quantity-' . $productRow["item_id"] . '" style="display:inline"> ' . $productRow["quantity"] . ' </p> <button style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"  onclick="incrementNumber' . $productRow["item_id"] . '()">+</button><button style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;" onclick="changeQuantity'. $productRow["item_id"] .'()">Apply</button></div>
                     </div>
                     </div>
                     <script>
-                    var quantity' . $productRow["products_product_id"] . ' = ' . $productRow["quantity"] . ';
-                    function incrementNumber'. $productRow["products_product_id"] .'() {
-                        quantity' . $productRow["products_product_id"] . '++;
-                        document.getElementById("quantity-' . $productRow["products_product_id"] . '").innerHTML = "" + quantity' . $productRow["products_product_id"] . ';
+                    var quantity' . $productRow["item_id"] . ' = ' . $productRow["quantity"] . ';
+                    function incrementNumber'. $productRow["item_id"] .'() {
+                        quantity' . $productRow["item_id"] . '++;
+                        document.getElementById("quantity-' . $productRow["item_id"] . '").innerHTML = "" + quantity' . $productRow["item_id"] . ';
                     }
 
-                    function decrementNumber'. $productRow["products_product_id"] .'() {
-                        quantity' . $productRow["products_product_id"] . '--;
-                        if (quantity' . $productRow["products_product_id"] . ' < 1) {
-                            quantity' . $productRow["products_product_id"] . ' = 1;
+                    function decrementNumber'. $productRow["item_id"] .'() {
+                        quantity' . $productRow["item_id"] . '--;
+                        if (quantity' . $productRow["item_id"] . ' < 1) {
+                            quantity' . $productRow["item_id"] . ' = 1;
                         }
-                        document.getElementById("quantity-' . $productRow["products_product_id"] . '").innerHTML = "" + quantity' . $productRow["products_product_id"] . ';
+                        document.getElementById("quantity-' . $productRow["item_id"] . '").innerHTML = "" + quantity' . $productRow["item_id"] . ';
                     }
-                    function changeQuantity'. $productRow["products_product_id"] .'() {
-                        window.location.href = "change_quantity.php?quantity=" + quantity' . $productRow["products_product_id"] . ' + "&product_id=' . $productRow["products_product_id"] . '";
+                    function changeQuantity'. $productRow["item_id"] .'() {
+                        window.location.href = "change_quantity.php?quantity=" + quantity' . $productRow["item_id"] . ' + "&item_id=' . $productRow["item_id"] . '";
                     }
 
                 </script>';
@@ -129,7 +129,7 @@
         
         <?php
             if (isset($_SESSION["user_id"])) {
-                $favListstmt = mysqli_prepare($link, "SELECT fav_id, products.product_id , name, image FROM favorites INNER JOIN products ON favorites.product_id = products.product_id WHERE user_id = ?;;");
+                $favListstmt = mysqli_prepare($link, "SELECT fav_id, products.product_id , name, image FROM favorites INNER JOIN products ON favorites.product_id = products.product_id WHERE user_id = ?;");
                 mysqli_stmt_bind_param($favListstmt, "i", $_SESSION["user_id"],);
                 mysqli_stmt_execute($favListstmt);
                 $favListResults = mysqli_stmt_get_result($favListstmt);
