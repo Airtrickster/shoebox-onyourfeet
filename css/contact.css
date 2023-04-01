@@ -51,6 +51,10 @@
     background:none;
 }
 
+.inputBox textarea{
+    max-width: 1000px;
+}
+
 .members{
         
     margin: 20px 0px;

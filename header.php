@@ -2,7 +2,8 @@
     session_start();
     include "db_conn.php";
 ?>
-<link rel="stylesheet" href="css/header.css">
+
+<link rel="stylesheet" type="text/css" href="css/header.css">
 <header class="header header-scrolled">
 
     <div class="wrappings start">
@@ -32,15 +33,38 @@
 
     <div class="profile-items-container">
     <div class="profile-item">
-        <div class="content">
+        <div class="profile-sidebar"> 
+            
             <?php
+            /*
                 if (! isset($_SESSION["user_id"])) {
                     echo "<a href=\"login-signup.php\"> Click here to Log in </a>";
                 } else {
                     echo '<h3>' . $_SESSION["username"] . '</h3>';
                     echo "<a href=\"logout.php\"> Log out </a>";
-                }
+                }*/
             ?>
+
+                <div class="name-sidebar">
+
+                    <div class="img-profile">
+                        <img src="images/cal.jpg" alt="profile">
+                    </div>
+
+                    <div class="name-prof">
+                        <h1>Calvin James Mendoza</h1>
+                        <h2>Airtrickster</h2>
+                    </div>
+
+                </div>
+
+                <div class="nav-btn-sidebar">
+                    <a href="profile.php">Profile</a>
+                    <a href="#">Account</a>
+                    <a href="#">Logout</a>
+                </div>
+
+
         </div>
     </div>
     </div>

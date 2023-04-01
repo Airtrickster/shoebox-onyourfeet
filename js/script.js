@@ -67,3 +67,8 @@ $("#show").click(function () {
 $("#hider").click(function () {
   $("#hide").hide("slow", function () {});
 });
+
+
+
+
+   

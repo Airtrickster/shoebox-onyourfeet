@@ -51,7 +51,7 @@
                 </div>
                 <div class="inputBox">
                     <span class="fas"></span>
-                    <input type="text" placeholder="Message" name="messageContact">
+                    <textarea type="message" placeholder="Message" name="messageContact"></textarea>
                 </div>
                 <input type="submit" value="contact now" class="btn" name="sendContact">
             </form>

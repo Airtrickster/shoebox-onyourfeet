@@ -5,7 +5,7 @@
     justify-content: space-between;
     padding:1.5rem 7%;
     position: fixed;
-    top:0; left: 0; right: 0;
+    top:0; left: 0; right: 0; 
     z-index: 1000;
 }
 
@@ -233,7 +233,7 @@
     .header .profile-items-container{
         position: absolute;
         top:100%; right: -100%;
-        height: calc(100vh - 9.5rem);
+        height: 40vh;
         width: 35rem;
         background: #fff;
         padding:0 1.5rem;
@@ -286,6 +286,66 @@
     .price button:hover{
         cursor: pointer;
     }
+
+    .profile-sidebar{
+        padding: 15px;
+    }
+
+
+    .name-sidebar{
+        display: flex;  
+    }
+
+    .img-profile{
+        width: 30%;
+        }
+        
+        .img-profile img{
+          width: 100%;
+          border-radius: 50%;
+        }
+        
+        .name-prof :is(h1, h2){
+          margin: 0px
+        }
+        
+        .name-prof{
+          padding: 5px 0px 0px 15px ;
+        }
+        
+        .name-prof h1{
+          font-size: 16px;
+        }
+        
+        .name-prof h2{
+          font-size: 17px;
+          margin-top: 10px;
+        }
+
+        .nav-btn-sidebar{
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+ .nav-btn-sidebar a{
+            width: 100%;
+            background-color: #121212;
+            margin: 5px 0px;
+            font-size: 15px;
+            padding: 5px;
+            color:#fff;
+        }
+
+         .nav-btn-sidebar a:hover{
+            background-color: #c6c6c6;
+            color: #121212;
+         }
+
+ .nav-btn-sidebar a:active{
+            background-color: #121212;
+            transition: 0s;
+         }
 
     @media (max-width:991px){
 
