@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+.main-box-details{
+    height: 80vh;
+    margin-top: 80px;
+    display: grid;
+    place-items: center;
+}
+
+.container{
+    width:85%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.flexwrapping{
+    display: flex;
+    justify-content: center;
+}
+
+.widthbox1{
+    display: flex;
+    width: 30%;
+}
+
+.widthbox2{
+    display: flex;
+    width: 70%;
+}
+
+/*Product box display*/
+.prod-box{
+    background-color: #747474;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.frame{
+    width: 80%;
+    margin: 30px;
+    
+}
+
+.prod-box img{
+    width: 100%;
+    box-shadow: 0px 0px 4px 5px rgba(0,0,0,0.4);
+}
+
+
+/*details*/
+
+.detail-container{
+    background: #fff;
+    padding: 20px;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.prod-title h1{
+    font-size: 3rem;
+}
+
+.details{
+    margin: 10px auto;
+}
+
+.details p{
+    font-size: 14px;
+    font-family: "Roboto";
+    font-weight: bold;
+    text-align: justify;
+    text-indent: 6%;
+}
+
+.select{
+    display: flex;
+    margin: 10px 0px;
+}
+
+.select h1{
+   font-family: "Roboto", sans-serif;
+   font-size: 16px;
+   font-weight: 300;
+   text-transform: uppercase;
+   margin-right: 10px;
+}
+
+.select select{
+    width: 20px 10px;
+    background-color: #dbdbdb;
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0,.7) inset;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.quantity-adder input[type="number"]{
+    background: #dbdbdb;
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0,.7) inset;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    padding: 5px;
+}
+
+.quantity-adder .btndesign{
+    width: 30px;
+    aspect-ratio: 1/1;
+    background-color: #d3ad7f;
+    border-radius: 5px;
+    color: white;
+}
+
+.quantity-adder .longbtn{ 
+    width: 60px;
+    height: 30px;
+    font-family: "Reboto", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    background-color: #d3ad7f;
+    border-radius: 5px;
+    color: white;
+}
+
+.addtocart-btn{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 60px;
+    gap: 7px;
+}
+
+.addtocart-btn .longbtn{
+    width: 130px;
+    height: 30px;
+    font-family: "Reboto", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    background-color: #d3ad7f;
+    border-radius: 5px;
+    color: white;
+}
+
+.addtocart-btn .favoritebtn{
+    width: 30px;
+    aspect-ratio: 1/1;
+    background-color: #d3ad7f;
+    border-radius: 5px; 
+    color: white;
+}
