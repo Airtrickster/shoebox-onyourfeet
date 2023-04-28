@@ -130,3 +130,53 @@ width: 35%;
 .box1 p{
   font-size: 20px;
 }
+
+
+/*addresses*/
+.address{
+  background-color: rgb(209, 232, 255);
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 70vh;
+}
+
+.address button{
+  width: 90px;
+  background-color:  #c3781c;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.flex-add-btn{
+  padding: 20px;
+  display: flex;
+  border: 2px #000 solid;
+  width: 100%;
+  margin: 10px 0px;
+  justify-content:center ;
+  align-items: center;
+  
+  
+}
+
+.flex-add-btn p{
+  font-size: 14px;
+}
+
+.flex-add-btn button{
+  background-color:  #c3781c;
+  margin: 0px 5px;
+  padding: 5px;
+  border-radius: 5px;
+  color:white;
+  text-align: center;
+}
+
+.flex-add-btn button:hover{
+  background-color: #f59999;
+  cursor: pointer;
+}

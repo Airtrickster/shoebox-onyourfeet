@@ -1,50 +1,41 @@
-// Get elements
-const usernameInput = document.getElementById("username");
-const numberInput = document.getElementById("number");
-const emailInput = document.getElementById("email");
-const currentPasswordInput = document.getElementById("current-password");
-const newPasswordInput = document.getElementById("new-password");
-const confirmPasswordInput = document.getElementById("confirm-password");
-const currentAddressInput = document.getElementById("current-address");
-const newAddressInput = document.getElementById("new-address");
-const passwordForm = document.getElementById("password");
-const addressForm = document.getElementById("address");
+function changeDetails() {
+  if (! document.forms["accountForm"]["username_new"].value) {
+    alert("Username is empty");
+    return false;
+  }
 
-// Add event listeners
+  if (! document.forms["accountForm"]["phone_new"].value) {
+    alert("Phone number must be filled out");
+    return false;
+  }
 
-usernameInput.addEventListener("input", () => {
-  // Handle username input
-});
+  if (document.forms["accountForm"]["phone_new"].value.match(/[^0-9+-]+/g)) {
+    alert("Must be a valid phone number");
+    return false;
+  }
 
-numberInput.addEventListener("input", () => {
-  // Handle number input
-});
+  var dob = new Date(document.forms["accountForm"]["bday_new"].value);
+  //calculate month difference from current date in time
+  var month_diff = Date.now() - dob.getTime();
+  
+  //convert the calculated difference in date format
+  var age_dt = new Date(month_diff); 
+  
+  //extract year from date    
+  var year = age_dt.getUTCFullYear();
+  
+  //now calculate the age of the user
+  var age = Math.abs(year - 1970);
 
-emailInput.addEventListener("input", () => {
-  // Handle email input
-});
+  if (! document.forms["accountForm"]["bday_new"].value) {
+    alert("You must specify your date of birth");
+    return false;
+  }
 
-passwordForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const currentPassword = currentPasswordInput.value;
-  const newPassword = newPasswordInput.value;
-  const confirmPassword = confirmPasswordInput.value;
-  // Handle password change form submission
-});
+  if (age < 18) {
+    alert("You must be at least 18 years old to create an account");
+    return false;
+  }
 
-addressForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const currentAddress = currentAddressInput.value;
-  const newAddress = newAddressInput.value;
-  // Handle address change form submission
-});
-
-function showPassword() {
-  passwordForm.style.display =
-    passwordForm.style.display === "none" ? "block" : "none";
-}
-
-function showAddress() {
-  addressForm.style.display =
-    addressForm.style.display === "none" ? "block" : "none";
+  return true;
 }

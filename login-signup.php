@@ -168,7 +168,7 @@
       }
 
       if (isset($_POST["login"])) {
-        $loginstmt = mysqli_prepare($link, "SELECT user_id, username, password FROM accounts WHERE username = ? AND password = ?");
+        $loginstmt = mysqli_prepare($link, "SELECT * FROM accounts WHERE username = ? AND password = ?");
         mysqli_stmt_bind_param($loginstmt, "ss", $_POST["usernameLogin"], $_POST["passwordLogin"]);
         mysqli_stmt_execute($loginstmt);
         $loginResults = mysqli_stmt_get_result($loginstmt);
@@ -178,6 +178,10 @@
             $_SESSION["user_id"] = $credentials["user_id"];
             $_SESSION["username"] = $credentials["username"];
             $_SESSION["password"] = $credentials["password"];
+            $_SESSION["full_name"] = $credentials["first_name"] . " " . $credentials["last_name"];
+            $_SESSION["date_of_birth"] = $credentials["date_of_birth"];
+            $_SESSION["phone_number"] = $credentials["phone_number"];
+            $_SESSION["email"] = $credentials["email"];
             echo '<script> window.location.href="index.php" </script>';
           } else {
             echo '<script> alert("Wrong Credentials please try again"); window.location.href = "' . $_SERVER["PHP_SELF"] . '"; </script>';

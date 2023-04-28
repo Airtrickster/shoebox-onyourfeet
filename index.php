@@ -34,7 +34,7 @@
         <img src="images/mini-logo.png" alt="mini logo">
         <h3>On your feet</h3>
         <p><q>I still have my feet on the ground</q></p>
-        <a class="btn" href="product.php">get yours now!</a>
+        <a class="btn" href="product.php">Get Yours Now!</a>
     </div>
 
 </section>

@@ -4,19 +4,6 @@
   if (! isset($_SESSION["user_id"])) {
     echo '<script> window.location.href = "login-signup.php" </script>';
   }
-
-  $refreshDetailsstmt = mysqli_prepare($link, "SELECT * FROM accounts WHERE user_id = ?");
-  mysqli_stmt_bind_param($refreshDetailsstmt, "i", $_SESSION["user_id"]);
-  mysqli_execute($refreshDetailsstmt);
-  $detailResults = mysqli_stmt_get_result($refreshDetailsstmt);
-  $accountDetails = mysqli_fetch_array($detailResults);
-
-  $_SESSION["username"] = $accountDetails["username"];
-  $_SESSION["password"] = $accountDetails["password"];
-  $_SESSION["full_name"] = $accountDetails["first_name"] . " " . $credentials["last_name"];
-  $_SESSION["date_of_birth"] = $accountDetails["date_of_birth"];
-  $_SESSION["phone_number"] = $accountDetails["phone_number"];
-  $_SESSION["email"] = $accountDetails["email"];
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +14,8 @@
     <link rel="stylesheet" href="css/profile.css" /> 
     <link rel="stylesheet" href="css/style.css">
 
-    <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css"> 
+    <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
   </head>
 
   <script src="lib/jquery-3.6.3.js"></script>
@@ -72,21 +60,13 @@
 
         </aside>
 
-        <section class="flex profile">
-          <div class="details">
-            <div class="box1">
-            <i class="fa-solid fa-xl fa-calendar"></i>
-              <p><?php echo $_SESSION["date_of_birth"]; ?></p>
+        <section class="flex address">
+            <button>New Address</button>
+            <div class="flex-add-btn">  
+              <p>Robert Robertson, 1234 NW Bobcat Lane, St. Robert, MO 65584-5678</p>
+              <button>Edit</button>
+              <button>Remove</button>
             </div>
-            <div class="box1">
-            <i class="fa-solid fa-xl fa-envelope"></i>
-            <p><?php echo $_SESSION["email"]; ?></p>
-            </div>
-            <div class="box1">
-            <i class="fa-solid fa-xl fa-phone"></i>
-            <p><?php echo $_SESSION["phone_number"]; ?></p>
-            </div>
-          </div>
         </section>
       </div>
     </div>

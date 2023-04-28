@@ -31,8 +31,8 @@
                 $productResults = mysqli_stmt_get_result($productstmt);         
 
                 while ($productRow = mysqli_fetch_array($productResults)) {
-                    echo '<button class="desc"> 
-                        <div class="box" onclick="window.location.href=\'product_details.php?product_id=' . $productRow["product_id"] . '\'">
+                    echo '<a class="desc" href="product_details.php?product_id=' . $productRow["product_id"] . '"> 
+                        <div class="box">
                         <div class="image">
                         <img src="images/products/'. $productRow["image"] . '" alt="'.$productRow["name"].'">
                         </div>
@@ -48,7 +48,7 @@
                         <div class="price">Php ' . $productRow["price"] . '</div>
                         </div>
                         </div>
-                    </button>';
+                    </a>';
                 }
             ?>
     
