@@ -63,6 +63,8 @@
           $updateDetailsstmt = mysqli_prepare($link, "UPDATE accounts SET username = ?, phone_number = ?, email = ?, date_of_birth = ? WHERE user_id = ?;");
           mysqli_stmt_bind_param($updateDetailsstmt, "ssssi", $_POST["username_new"], $_POST["phone_new"], $_POST["email_new"], $_POST["bday_new"], $_SESSION["user_id"]);
           mysqli_execute($updateDetailsstmt);
+
+          echo '<script> alert("Details updated successfully!"); window.location.href = "' . $_SERVER["PHP_SELF"] . '"; </script>';
         }
       }
     ?>
