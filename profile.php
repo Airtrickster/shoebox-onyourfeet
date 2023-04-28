@@ -58,7 +58,7 @@
             <nav class="sidebtns">
 
               <ul>
-                <li><a href="#">My Account</a></li>
+                <li><a href="account.php">My Account</a></li>
                 <li><a href="#">My Purchase</a></li>
                 <li><a id="drop" href="#">Settings</a>
                   <ul class="down">
