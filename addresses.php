@@ -61,12 +61,24 @@
         </aside>
 
         <section class="flex address">
-            <button>New Address</button>
-            <div class="flex-add-btn">  
-              <p>Robert Robertson, 1234 NW Bobcat Lane, St. Robert, MO 65584-5678</p>
-              <button>Edit</button>
-              <button>Remove</button>
-            </div>
+            <button onclick='window.location.href = "add_address.php"'>New Address</button>
+            <?php
+              $addressstmt = mysqli_prepare($link, "SELECT * FROM addresses WHERE user_id = ?");
+              mysqli_stmt_bind_param($addressstmt, "i", $_SESSION["user_id"]);
+              mysqli_execute($addressstmt);
+              $addressResults = mysqli_stmt_get_result($addressstmt);
+
+              while ($addressRow = mysqli_fetch_array($addressResults)) {
+                echo '
+                <div class="flex-add-btn">  
+                <p> ' . $addressRow["address"] . ', ' .  $addressRow["city"] . ', ' . $addressRow["state"] . ', ' . $addressRow["country"] . ', ' . $addressRow["zip_code"] . '</p>
+                <button>Edit</button>
+                <button onclick=\'window.location.href = "delete_address.php?address_id=' . $addressRow["address_id"] . ' "\'>Remove</button>
+                </div>
+                ';
+              }
+
+            ?>
         </section>
       </div>
     </div>

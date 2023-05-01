@@ -63,7 +63,7 @@
                 <li><a id="drop" href="#">Settings</a>
                   <ul class="down">
                     <li><a href="change_pass.php">Change Password</a></li>
-                    <li><a href="#">Addresses</a></li>
+                    <li><a href="addresses.php">Addresses</a></li>
                   </ul>
                 </li>
               </ul>
