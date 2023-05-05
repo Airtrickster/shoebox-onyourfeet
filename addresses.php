@@ -72,10 +72,15 @@
                 echo '
                 <div class="flex-add-btn">  
                 <p> ' . $addressRow["address"] . ', ' .  $addressRow["city"] . ', ' . $addressRow["state"] . ', ' . $addressRow["country"] . ', ' . $addressRow["zip_code"] . '</p>
-                <button>Edit</button>
+                <button onclick=\'window.location.href = "edit_address.php?address_id=' . $addressRow["address_id"] . '"\'>Edit</button>
                 <button onclick=\'window.location.href = "delete_address.php?address_id=' . $addressRow["address_id"] . ' "\'>Remove</button>
-                </div>
-                ';
+                </div>';
+              }
+
+              if (mysqli_num_rows($addressResults) == 0) {
+                echo '<div class="flex-add-btn">  
+                <p> You have no address added yet </p>
+                </div>';
               }
 
             ?>
