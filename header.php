@@ -144,7 +144,7 @@
                     </div>
                     </div>';
                 } else {
-                    echo '<a href="checkout.php" class="btn">checkout now <br> Php ' . $sumCart["sum_cart"] . '</a>';
+                    echo '<a href="checkout_page.php" class="btn">checkout now <br> Php ' . $sumCart["sum_cart"] . '</a>';
                 }
                 
             } else {
