@@ -87,7 +87,7 @@
               <input type="password" name="confirmPasswordSignUp" placeholder="Confirm Password" />
             </div>
            
-            <label class="toss" for="agreeSignUp">  <input type="checkbox" name="agreeSignUp" id="agreeSignUp"> I Agree To The <a href="tos.html"> Terms of Service </a> And I Read The Privacy Notice </label>
+            <label class="toss" for="agreeSignUp">  <input type="checkbox" name="agreeSignUp" id="agreeSignUp"> I Agree To The <a href="tos.html"> Terms of Service </a> And I Read The <a href="privacy_policy.php">Privacy Policy</a> </label>
             <input type="submit" class="btn" name="signup" value="sign up"/>
             <p class="social-text">Or Sign up with social platforms</p>
  
