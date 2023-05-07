@@ -171,7 +171,7 @@
     @media (max-width:450px){
 
         .credit{
-            width: 100%;
+            width:100%;
             flex-direction: column;
             justify-content: center;
         }
@@ -191,7 +191,7 @@
         }
 
         .vertical{
-            display: grid;
+            display: grid; 
             place-content: center;
         }
 

@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/about.css">
+
     <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
     <link rel="icon" href="images/icon.png">
     <title>On your feet | About</title>
@@ -41,8 +43,9 @@
     
     <section class="members">
         <div class="vertical">
+
             <div class="card">
-                <img src="./images/calAbout.jpg" alt="Calvin">
+                <img src="./images/pic-2.jpg" alt="Calvin">
                 <h3>Calvin James S. Mendoza</h3>
                  <div>
                     <ul>
@@ -50,11 +53,12 @@
                     </ul>
                 </div>
                 <div class="quote">
-                    <p><Q>Success usually comes to those who are too busy to be looking for it.</Q>  – Henry David Thoreau</p>
+                    <p><Q>Success usually comes to those who are too busy to be looking for it.</Q>  - Henry David Thoreau</p>
                 </div>
             </div>
+
             <div class="card">
-                <img src="./images/jurAbout.jpg" alt="Juri">
+                <img src="./images/juri.jpg" alt="Juri">
                 <h3>Juri Salvador S. Turiano</h3>
                  <div>
                     <ul>
@@ -62,9 +66,10 @@
                     </ul>
                 </div>
                 <div class="quote">
-                    <p><Q>Do it early, hassle later</Q></p>
+                    <p><Q>Chase excellence & success will follow</Q> - Aamir Khan</p>
                 </div>
             </div>
+
             <div class="card">
                 <img src="./images/jamAbout.png" alt="James">
                 <h3>James Angelo C. Hernando</h3>
@@ -73,7 +78,11 @@
                         <li>Chief Information Officer (CIO)</li>
                     </ul>
                 </div>
+                <div class="quote">
+                    <p><Q>Success usually comes to those who are too busy to be looking for it.</Q>  - Henry David Thoreau</p>
+                </div>
             </div>
+
             <div class="card">
                 <img src="./images/zacAbout.jpg" alt="Zach">
                 <h3>Zachary Ian A. Alonzo</h3>
@@ -82,7 +91,11 @@
                         <li>Chief Marketing Officer (CMO)</li>
                     </ul>
                 </div>
+                <div class="quote">
+                    <p><Q>If you round out your edges, you lose your edge.</Q>  - Zachary Alonzo</p>
+                </div>
             </div>
+
             <div class="card">
                 <img src="./images/wesAbout.png" alt="Wesley">
                 <h3>Wesley Emerenciana</h3>
@@ -91,7 +104,11 @@
                         <li>Chief Operations Officer (COO)</li>
                     </ul>
                 </div>
+                <div class="quote">
+                    <p><Q>If you don't take risks, you can't create a future.</Q>  - Wesley Emerenciana</p>
+                </div>
             </div>
+
         </div>
     </section>
 

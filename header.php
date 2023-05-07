@@ -84,9 +84,7 @@
     </div>
     </div>
 
-    </div>
-        <div class="fas fa-bars" id="menu-btn"></div>
-    </div> 
+        <i class="fas fa-bars" id="menu-btn"></i>
     
     <div class="cart-items-container">
     <div class="cart-item">

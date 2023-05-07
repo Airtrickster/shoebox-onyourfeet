@@ -1,6 +1,7 @@
 <?php
   session_start();
   include "db_conn.php";
+
   if (! isset($_SESSION["user_id"])) {
     echo '<script> window.location.href = "login-signup.php" </script>';
   }
@@ -46,6 +47,9 @@
         <div class="boxprofile">
           <div class="img">
             <img src="images/blank-profile-picture.webp" alt="Calvin">
+            <button class="change-dp">
+              <i class="fa-solid fa-camera"></i>
+            </button>
           </div>
 
           <div class="names">
