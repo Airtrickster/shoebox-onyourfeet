@@ -1,6 +1,21 @@
 <?php
     session_start();
     include "db_conn.php";
+
+    if (isset($_SESSION["user_id"])) {
+        $refreshDetailsstmt = mysqli_prepare($link, "SELECT * FROM accounts WHERE user_id = ?");
+        mysqli_stmt_bind_param($refreshDetailsstmt, "i", $_SESSION["user_id"]);
+        mysqli_execute($refreshDetailsstmt);
+        $detailResults = mysqli_stmt_get_result($refreshDetailsstmt);
+        $accountDetails = mysqli_fetch_array($detailResults);
+      
+        $_SESSION["username"] = $accountDetails["username"];
+        $_SESSION["password"] = $accountDetails["password"];
+        $_SESSION["full_name"] = $accountDetails["first_name"] . " " . $accountDetails["last_name"];
+        $_SESSION["date_of_birth"] = $accountDetails["date_of_birth"];
+        $_SESSION["phone_number"] = $accountDetails["phone_number"];
+        $_SESSION["email"] = $accountDetails["email"];
+    }
 ?>
 
 <link rel="stylesheet" type="text/css" href="css/header.css">
@@ -14,10 +29,10 @@
 
     <div class="wrappings center">
         <nav class="navbar">
-            <a href="index.php">home</a>
-            <a href="about.php">about</a>
-            <a href="product.php">product</a>
-            <a href="contact.php">contact</a>
+            <a href="index.php">Home</a>
+            <a href="about.php">About</a>
+            <a href="product.php">Product</a>
+            <a href="contact.php">Contact</a>
         </nav>
     </div>
 
@@ -48,12 +63,12 @@
                 <div class="name-sidebar">
 
                     <div class="img-profile">
-                        <img src="images/cal.jpg" alt="profile">
+                        <img src="images/blank-profile-picture.webp" alt="profile">
                     </div>
 
                     <div class="name-prof">
-                        <h1>Calvin James Mendoza</h1>
-                        <h2>Airtrickster</h2>
+                        <h1><?php echo $_SESSION["full_name"]; ?></h1>
+                        <h2><?php echo $_SESSION["username"]; ?></h2>
                     </div>
 
                 </div>
@@ -61,7 +76,7 @@
                 <div class="nav-btn-sidebar">
                     <a href="profile.php">Profile</a>
                     <a href="#">Account</a>
-                    <a href="#">Logout</a>
+                    <a href="logout.php">Logout</a>
                 </div>
 
 
@@ -129,7 +144,7 @@
                     </div>
                     </div>';
                 } else {
-                    echo '<a href="checkout.php" class="btn">checkout now <br> Php ' . $sumCart["sum_cart"] . '</a>';
+                    echo '<a href="checkout_page.php" class="btn">checkout now <br> Php ' . $sumCart["sum_cart"] . '</a>';
                 }
                 
             } else {

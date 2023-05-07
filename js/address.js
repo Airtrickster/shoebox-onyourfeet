@@ -1,3 +1,4 @@
+/*
 var geocoder;
 var map;
 
@@ -29,4 +30,35 @@ function codeAddress() {
       alert("Geocode was not successful for the following reason: " + status);
     }
   });
+}
+
+*/
+
+function validateAddress() {
+  if (! document.forms["addAddressForm"]["address"].value) {
+    alert("Address must be filled");
+    return false;
+  }
+
+  if (! document.forms["addAddressForm"]["city"].value) {
+    alert("City must be filled");
+    return false;
+  }
+
+  if (! document.forms["addAddressForm"]["state"].value) {
+    alert("State must be filled");
+    return false;
+  }
+
+  if (! document.forms["addAddressForm"]["country"].value) {
+    alert("Country must be filled");
+    return false;
+  }
+
+  if (! document.forms["addAddressForm"]["zip"].value) {
+    alert("Zip code must be filled");
+    return false;
+  }
+
+  return true;
 }

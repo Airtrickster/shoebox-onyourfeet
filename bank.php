@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bank Card Payment</title>
-    <link rel="stylesheet" href="bank.css" />
+    <link rel="stylesheet" href="css/bank.css" />
   </head>
   <body>
     
-    <form action="" method="get">
+    <form action="checkout.php" method="post">
+      <input type="hidden" name="address_id" value="<?php echo $_POST["address_id"]; ?>">
+      <input type="hidden" name="payment-method" value="<?php echo "Bank"; ?>">
       <div class="flex">
         <h1>bank card payment</h1>
 

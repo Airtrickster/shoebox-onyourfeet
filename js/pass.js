@@ -14,3 +14,15 @@ showPasswordCheckbox.addEventListener("click", () => {
     confirmPasswordInput.type = "password";
   }
 });
+
+function changePassword() {
+  if (document.forms["changePasswordForm"]["new-password"].value.length < 8) {
+    alert("Your new password length must be at least 8 characters");
+    return false;
+  }
+
+  if (document.forms["changePasswordForm"]["new-password"].value != document.forms["changePasswordForm"]["confirm-password"].value) {
+    alert("Passwords aren't matched");
+    return false;
+  }
+}

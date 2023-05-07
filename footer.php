@@ -11,10 +11,10 @@
 
         <div class="wrapping center">
             <div class="help">
-                <a href="FAQ.html">faq's</a>
-                <a href="privacy_policy.php">privacy policy</a>
-                <a href="shipping_policy.php">shipping policy</a>
-                <a href="refund_policy.php">refund policy</a>
+                <a href="FAQ.html">FAQ's</a>
+                <a href="privacy_policy.php">Privacy Policy</a>
+                <a href="shipping_policy.php">Shipping Policy</a>
+                <a href="refund_policy.php">Refund Policy</a>
             </div>
         </div>
 
