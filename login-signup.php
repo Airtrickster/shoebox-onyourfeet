@@ -121,7 +121,7 @@
             <button class="btn transparent" id="sign-up-btn">Sign up</button>
           </div>
           <img
-            src="images/converse-clipart-sneaker-nike-7.png"
+            src="images/converse-clipart-sneaker-nike-7.webp"
             class="image"
             alt=""
           />
