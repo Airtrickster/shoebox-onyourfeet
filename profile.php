@@ -23,7 +23,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Profile Page</title>
+    <title>Profile</title>
     <!--css--> 
     <link rel="stylesheet" href="css/profile.css" /> 
     <link rel="stylesheet" href="css/style.css">
@@ -60,20 +60,7 @@
 
         </div>
 
-            <nav class="sidebtns">
-
-              <ul>
-                <li><a href="account.php">My Account</a></li>
-                <li><a href="#">My Purchase</a></li>
-                <li><a id="drop" href="#">Settings</a>
-                  <ul class="down">
-                    <li><a href="change_pass.php">Change Password</a></li>
-                    <li><a href="addresses.php">Addresses</a></li>
-                  </ul>
-                </li>
-              </ul>
-
-            </nav>
+      <?php include "profile_nav.php"; ?>
 
         </aside>
 
@@ -99,18 +86,7 @@
 
   <?php include "footer.php"; ?>   
 
-    <script src="js/app.js"></script>
     <script src="js/script.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-    $('#drop').click(function () {
-       if ($('.down').is(':hidden')) {
-           $('.down').show();
-       } else {
-           $('.down').hide();
-       }
-     }); 
-   });
-    </script>
+
   </body>
 </html>

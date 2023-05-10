@@ -48,28 +48,31 @@
         </aside>
 
         <section class="flex address">
-            <button onclick='window.location.href = "add_address.php"'>New Address</button>
             <?php
-              $addressstmt = mysqli_prepare($link, "SELECT * FROM addresses WHERE user_id = ?");
-              mysqli_stmt_bind_param($addressstmt, "i", $_SESSION["user_id"]);
-              mysqli_execute($addressstmt);
-              $addressResults = mysqli_stmt_get_result($addressstmt);
+              $purchasesstmt = mysqli_prepare($link, "SELECT user_id, products.product_id AS \"products_product_id\", quantity, amount, order_datetime, payment_method,products.name AS \"products_name\", products.image AS \"products_image\" FROM transactions LEFT JOIN products ON transactions.product_id = products.product_id WHERE user_id = ?;");
+              mysqli_stmt_bind_param($purchasesstmt, "i", $_SESSION["user_id"]);
+              mysqli_execute($purchasesstmt);
+              $purchasesResults = mysqli_stmt_get_result($purchasesstmt);
 
-              while ($addressRow = mysqli_fetch_array($addressResults)) {
+              while ($purchasesRow = mysqli_fetch_array($purchasesResults)) {
                 echo '
-                <div class="flex-add-btn">  
-                <p> ' . $addressRow["address"] . ', ' .  $addressRow["city"] . ', ' . $addressRow["state"] . ', ' . $addressRow["country"] . ', ' . $addressRow["zip_code"] . '</p>
-                <button onclick=\'window.location.href = "edit_address.php?address_id=' . $addressRow["address_id"] . '"\'>Edit</button>
-                <button onclick=\'window.location.href = "delete_address.php?address_id=' . $addressRow["address_id"] . ' "\'>Remove</button>
+                <div class="flex-add-btn">
+                  <img src="images/products/' . $purchasesRow["products_image"] . '">
+                  <p>
+                    <a href="product_details.php?product_id=' . $purchasesRow["products_product_id"] . '">' . $purchasesRow["products_name"] . '</a>
+                    Date Ordered: ' . $purchasesRow["order_datetime"] . '
+                    Quantity: ' . $purchasesRow["quantity"] . '
+                    Amount Paid: ' . $purchasesRow["amount"] . '
+                    Payment Method Used: ' . $purchasesRow["payment_method"] . '
+                  </p>
                 </div>';
               }
 
-              if (mysqli_num_rows($addressResults) == 0) {
+              if (mysqli_num_rows($purchasesResults) == 0) {
                 echo '<div class="flex-add-btn">  
-                <p> You have no address added yet </p>
+                <p> You have no purchases yet </p>
                 </div>';
               }
-
             ?>
         </section>
       </div>
