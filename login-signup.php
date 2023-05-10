@@ -178,6 +178,8 @@
             $_SESSION["user_id"] = $credentials["user_id"];
             $_SESSION["username"] = $credentials["username"];
             $_SESSION["password"] = $credentials["password"];
+            $_SESSION["first_name"] = $credentials["first_name"];
+            $_SESSION["last_name"] = $credentials["last_name"];
             $_SESSION["full_name"] = $credentials["first_name"] . " " . $credentials["last_name"];
             $_SESSION["date_of_birth"] = $credentials["date_of_birth"];
             $_SESSION["phone_number"] = $credentials["phone_number"];

@@ -13,6 +13,8 @@
 
   $_SESSION["username"] = $accountDetails["username"];
   $_SESSION["password"] = $accountDetails["password"];
+  $_SESSION["first_name"] = $accountDetails["first_name"];
+  $_SESSION["last_name"] = $accountDetails["last_name"];
   $_SESSION["full_name"] = $accountDetails["first_name"] . " " . $credentials["last_name"];
   $_SESSION["date_of_birth"] = $accountDetails["date_of_birth"];
   $_SESSION["phone_number"] = $accountDetails["phone_number"];
@@ -33,6 +35,8 @@
         <h1>Account Details</h1>
         <form action="" id="accountForm" method="post" enctype="multipart/form-data" onsubmit='return changeDetails()'>
           <input type="text" name="username_new" placeholder="username" value="<?php echo $_SESSION["username"]; ?>">
+          <input type="text" name="first_name_new" placeholder="first name" value="<?php echo $_SESSION["first_name"]; ?>">
+          <input type="text" name="last_name_new" placeholder="last name" value="<?php echo $_SESSION["last_name"]; ?>">
           <input type="text" name="phone_new" placeholder="contact number" value="<?php echo $_SESSION["phone_number"] ?>">
           <input type="email" name="email_new" placeholder="email" value="<?php echo $_SESSION["email"]; ?>">
           <input type="date" name="bday_new" placeholder="birthday" value="<?php echo $_SESSION["date_of_birth"] ?>">
@@ -60,8 +64,8 @@
         } else if (mysqli_num_rows($emailResult) > 0) {
           echo '<script> alert("Email already exists"); window.location.href = "' . $_SERVER["PHP_SELF"] . '"; </script>';
         } else {
-          $updateDetailsstmt = mysqli_prepare($link, "UPDATE accounts SET username = ?, phone_number = ?, email = ?, date_of_birth = ? WHERE user_id = ?;");
-          mysqli_stmt_bind_param($updateDetailsstmt, "ssssi", $_POST["username_new"], $_POST["phone_new"], $_POST["email_new"], $_POST["bday_new"], $_SESSION["user_id"]);
+          $updateDetailsstmt = mysqli_prepare($link, "UPDATE accounts SET username = ?, first_name = ?, last_name = ?, phone_number = ?, email = ?, date_of_birth = ? WHERE user_id = ?;");
+          mysqli_stmt_bind_param($updateDetailsstmt, "ssssssi", $_POST["username_new"], $_POST["first_name"], $_POST["last_name"], $_POST["phone_new"], $_POST["email_new"], $_POST["bday_new"], $_SESSION["user_id"]);
           mysqli_execute($updateDetailsstmt);
 
           echo '<script> alert("Details updated successfully!"); window.location.href = "' . $_SERVER["PHP_SELF"] . '"; </script>';

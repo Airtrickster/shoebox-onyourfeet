@@ -11,7 +11,9 @@
       
         $_SESSION["username"] = $accountDetails["username"];
         $_SESSION["password"] = $accountDetails["password"];
-        $_SESSION["full_name"] = $accountDetails["first_name"] . " " . $accountDetails["last_name"];
+        $_SESSION["first_name"] = $accountDetails["first_name"];
+        $_SESSION["last_name"] = $accountDetails["last_name"];
+        $_SESSION["full_name"] = $accountDetails["first_name"] . " " . $credentials["last_name"];
         $_SESSION["date_of_birth"] = $accountDetails["date_of_birth"];
         $_SESSION["phone_number"] = $accountDetails["phone_number"];
         $_SESSION["email"] = $accountDetails["email"];
