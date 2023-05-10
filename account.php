@@ -65,7 +65,7 @@
           echo '<script> alert("Email already exists"); window.location.href = "' . $_SERVER["PHP_SELF"] . '"; </script>';
         } else {
           $updateDetailsstmt = mysqli_prepare($link, "UPDATE accounts SET username = ?, first_name = ?, last_name = ?, phone_number = ?, email = ?, date_of_birth = ? WHERE user_id = ?;");
-          mysqli_stmt_bind_param($updateDetailsstmt, "ssssssi", $_POST["username_new"], $_POST["first_name"], $_POST["last_name"], $_POST["phone_new"], $_POST["email_new"], $_POST["bday_new"], $_SESSION["user_id"]);
+          mysqli_stmt_bind_param($updateDetailsstmt, "ssssssi", $_POST["username_new"], $_POST["first_name_new"], $_POST["last_name_new"], $_POST["phone_new"], $_POST["email_new"], $_POST["bday_new"], $_SESSION["user_id"]);
           mysqli_execute($updateDetailsstmt);
 
           echo '<script> alert("Details updated successfully!"); window.location.href = "' . $_SERVER["PHP_SELF"] . '"; </script>';

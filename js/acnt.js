@@ -4,6 +4,16 @@ function changeDetails() {
     return false;
   }
 
+  if (! document.forms["accountForm"]["first_name_new"].value) {
+    alert("First name is empty");
+    return false;
+  }
+
+  if (! document.forms["accountForm"]["last_name_new"].value) {
+    alert("Last name is empty");
+    return false;
+  }
+
   if (! document.forms["accountForm"]["phone_new"].value) {
     alert("Phone number must be filled out");
     return false;
