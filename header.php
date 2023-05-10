@@ -75,7 +75,6 @@
 
                 <div class="nav-btn-sidebar">
                     <a href="profile.php">Profile</a>
-                    <a href="#">Account</a>
                     <a href="logout.php">Logout</a>
                 </div>
 
