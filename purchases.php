@@ -11,7 +11,7 @@
   <head>
     <title> Addresses </title>
     <!--css--> 
-    <link rel="stylesheet" href="css/profile.css" /> 
+    <link rel="stylesheet" href="css/purchases.css" /> 
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
