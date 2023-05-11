@@ -49,7 +49,7 @@
 
         <section class="flex address">
             <?php
-              $purchasesstmt = mysqli_prepare($link, "SELECT user_id, address, products.product_id AS \"products_product_id\", quantity, amount, order_datetime, payment_method,products.name AS \"products_name\", products.image AS \"products_image\" FROM transactions LEFT JOIN products ON transactions.product_id = products.product_id WHERE user_id = ?;");
+              $purchasesstmt = mysqli_prepare($link, "SELECT user_id, address, products.product_id AS \"products_product_id\", quantity, amount, order_datetime, payment_method,products.name AS \"products_name\", products.image AS \"products_image\" FROM transactions LEFT JOIN products ON transactions.product_id = products.product_id WHERE user_id = ? ORDER BY transaction_id DESC;");
               mysqli_stmt_bind_param($purchasesstmt, "i", $_SESSION["user_id"]);
               mysqli_execute($purchasesstmt);
               $purchasesResults = mysqli_stmt_get_result($purchasesstmt);
