@@ -28,24 +28,7 @@
     <div class="container">
       <div class="flexing">
 
-        <aside class="flex side-bar">
-
-        <div class="boxprofile">
-          <div class="img">
-            <img src="images/blank-profile-picture.webp" alt="Calvin">
-          </div>
-
-          <div class="names">
-            <h1><?php echo $_SESSION["full_name"]; ?></h1>
-            <h2><?php echo $_SESSION["username"]; ?></h2>
-            <a href="logout.php">Logout</a>
-          </div>
-
-        </div>
-
-        <?php include "profile_nav.php"; ?>
-
-        </aside>
+      <?php include "profile_nav.php"; ?>
 
         <section class="flex address">
             <?php

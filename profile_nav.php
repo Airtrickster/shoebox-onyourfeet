@@ -1,3 +1,21 @@
+<aside class="flex side-bar">
+
+<div class="boxprofile">
+          <div class="img">
+            <img src="images/blank-profile-picture.webp" alt="Calvin">
+            <button class="change-dp">
+              <i class="fa-solid fa-camera"></i>
+            </button>
+          </div>
+
+          <div class="names">
+            <h1><?php echo $_SESSION["full_name"]; ?></h1>
+            <h2><?php echo $_SESSION["username"]; ?></h2>
+            <a href="logout.php">Logout</a>
+          </div>
+
+        </div>
+
 <nav class="sidebtns">
 
 <ul>
@@ -12,6 +30,8 @@
 </ul>
 
 </nav>
+
+</aside>
 
 <script src="js/app.js"></script>
 <script type="text/javascript">
