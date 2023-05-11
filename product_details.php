@@ -95,11 +95,9 @@
             <div class="details-page-product-details">
             <!-- 3 -->
 
-                        <h1 class="productName"><?php echo $productName; ?></h1> 
-                        <h2 class="productName"><?php echo "Php ", $productPrice; ?></h2>
-                   
-
                     <div class="rbox">
+                    <h1 class="productName"><?php echo $productName; ?></h1> 
+                        <h2 class="productName"><?php echo "Php ", $productPrice; ?></h2>
                             <h3 class="details-right">
                             <?php echo str_replace("\n", "<br>",  $productDescription); ?>
                             </h3>
