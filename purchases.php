@@ -18,6 +18,81 @@
 
     <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+    <style>
+      .neumorph-card{
+        border:1px solid #000;
+        background:rgb(197, 220, 251);
+        margin-top:20px;
+        border-radius:20px;
+        display: flex;
+        justify-content:space-around;
+        align-items:center;
+        padding:20px;
+      }
+      .neumorph-card img{
+        width: 30%;
+        aspect-ratio:1/1;
+        border-radius:20px;
+      }
+
+      .button-box{
+        display: flex;
+        justify-content: center;
+        align-items:center
+      }
+
+      .detail{
+        height:20vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .detail a{
+        font-size:2rem;
+        margin-bottom: 30px;
+        color:black;
+      }
+
+      .detail a:hover{
+        text-decoration: underline;
+      }
+
+      .detail p{
+        margin: 4px 0px;
+      }
+
+
+      .center h2{
+        font-size:1.5rem;
+        text-align: center;
+      }
+
+      .button-box button{
+       margin:0px 5px;
+      }
+
+      .button-box button:hover{
+        cursor: pointer;
+        background: #d2a671;
+        color:black;
+      }
+
+      .scroll::-webkit-scrollbar{
+        width:10px;
+      }
+
+      .scroll::-webkit-scrollbar-thumb{
+        background: gray;
+        border-radius:50px;
+      }
+
+      .flex button:hover{
+        cursor: pointer;
+        background: #d2a671;
+        color:black;
+      }
+    </style>
   </head>
 
   <script src="lib/jquery-3.6.3.js"></script>
@@ -41,16 +116,17 @@
 
               while ($purchasesRow = mysqli_fetch_array($purchasesResults)) {
                 echo '
-                <div class="flex-add-btn">
+                <div class="neumorph-card">
                   <img src="images/products/' . $purchasesRow["products_image"] . '">
-                  <p>
-                    <a href="product_details.php?product_id=' . $purchasesRow["products_product_id"] . '">' . $purchasesRow["products_name"] . '</a>
-                    Date Ordered: ' . $purchasesRow["order_datetime"] . '
-                    Quantity: ' . $purchasesRow["quantity"] . '
-                    Amount Paid: ' . $purchasesRow["amount"] . '
-                    Payment Method Used: ' . $purchasesRow["payment_method"] . '
-                    Delivered to: ' . $purchasesRow["address"] . '
-                  </p>
+                  <div class="detail">
+                  <a href="product_details.php?product_id=' . $purchasesRow["products_product_id"] . '">' . $purchasesRow["products_name"] . '</a>
+
+                      <p><strong>Date Ordered: </strong>' . $purchasesRow["order_datetime"] . '</p>
+                      <p><strong>Quantity:</strong> ' . $purchasesRow["quantity"] . '</p>
+                      <p><strong>Amount Paid:</strong> ' . $purchasesRow["amount"] . '</p>
+                      <p><strong>Payment Method Used:</strong> ' . $purchasesRow["payment_method"] . '</p>
+                      <p><strong>Delivered to:</strong> ' . $purchasesRow["address"] . '</p>
+                  </div>
                 </div>';
               }
 
