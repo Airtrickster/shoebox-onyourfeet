@@ -1,5 +1,7 @@
 <?php
-  session_start();
+  if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
   include "db_conn.php";
   if (! isset($_SESSION["user_id"])) {
     echo '<script> window.location.href = "login-signup.php" </script>';

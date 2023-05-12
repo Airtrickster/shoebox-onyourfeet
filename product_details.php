@@ -1,5 +1,7 @@
 <?php
+  if (session_status() === PHP_SESSION_NONE) {
     session_start();
+}
     include "db_conn.php";
 
     $productDetailstmt = mysqli_prepare($link, "SELECT products.product_id AS \"products_product_id\", cart.quantity AS \"cart_quantity\", name, price, image, description, cart.product_id AS \"is_in_cart\", cart.item_id AS \"cart_item_id\", favorites.product_id AS \"is_in_favs\" FROM products LEFT JOIN cart ON products.product_id = cart.product_id AND cart.user_id = ? LEFT JOIN favorites ON products.product_id = favorites.product_id AND favorites.user_id = ? WHERE products.product_id = ?;");

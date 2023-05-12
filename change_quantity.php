@@ -1,5 +1,7 @@
 <?php
+  if (session_status() === PHP_SESSION_NONE) {
     session_start();
+}
     include "db_conn.php";
     include "check_item.php";
     if (! isset($_SESSION["user_id"]) || ! itemExists("cart", "item_id", $_GET["item_id"])) {

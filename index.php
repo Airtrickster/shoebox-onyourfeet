@@ -1,5 +1,7 @@
 <?php
+  if (session_status() === PHP_SESSION_NONE) {
     session_start();
+}
     if (isset($_SESSION["user_id"]) && $_SESSION["user_type"] == "admin") {
         echo '<script> window.location.href = "product_maintenance.php"; </script>';
     }

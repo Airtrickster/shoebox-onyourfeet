@@ -1,5 +1,7 @@
 <?php
+  if (session_status() === PHP_SESSION_NONE) {
     session_start();
+}
     include "db_conn.php";
     echo '<script> console.log("' . $_POST["payment-method"] . '"); </script>';
     $checkoutstmt = mysqli_prepare($link, "INSERT INTO transactions(user_id, address, product_id, quantity, amount, payment_method) SELECT user_id, (SELECT CONCAT(address, ', ', city, ', ', state, ', ', country, ', ', zip_code) FROM addresses WHERE address_id = ?), product_id, quantity, (SELECT price  FROM products WHERE product_id = cart.product_id), ? FROM cart WHERE user_id = ?;");
