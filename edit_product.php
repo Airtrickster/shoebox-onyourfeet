@@ -22,8 +22,24 @@
 <html>
   <head>
     <title> Edit Product </title>
-    <link rel="stylesheet" href="css/acnt.css" />
+    <link rel="stylesheet" href="css/add-prod.css" />
     <script src="js/acnt.js"></script>
+
+    <style>
+      .container{
+          width:380px;
+          height:585px;
+          padding: 15px;  
+          background: rgb(197, 220, 251);
+          border-radius: 10px;
+      }
+
+      .mess-img img{
+        display:flex;
+        margin:5px auto;
+
+      }
+    </style>
   </head>
   <body>
 
@@ -31,39 +47,45 @@
       <div class="box">
         <h1>Edit Product</h1>
         <form action="" id="editProductForm" method="post" enctype="multipart/form-data">
-          <input type="text" name="name_new" value="<?php echo $productDetails["name"]; ?>">
-          <input type="number" name="price_new" value="<?php echo $productDetails["price"]; ?>">
-          <select name="category_new">
-            <?php
-              $categoryResults = mysqli_query($link, "SELECT DISTINCT category FROM products;");
-              while ($categoryRow = mysqli_fetch_array($categoryResults)) {
-                if ($categoryRow["category"] == $productDetails["category"]) {
-                  $selectedCategory = "selected";
-                } else {
-                  $selectedCategory = "";
+          <div class="text-form">
+            <input type="text" name="name_new" value="<?php echo $productDetails["name"]; ?>">
+            <input type="number" name="price_new" value="<?php echo $productDetails["price"]; ?>">
+          </div>
+          <div class="drop-down">
+            <select name="category_new">
+              <?php
+                $categoryResults = mysqli_query($link, "SELECT DISTINCT category FROM products;");
+                while ($categoryRow = mysqli_fetch_array($categoryResults)) {
+                  if ($categoryRow["category"] == $productDetails["category"]) {
+                    $selectedCategory = "selected";
+                  } else {
+                    $selectedCategory = "";
+                  }
+                  echo '<option value="' . $categoryRow["category"] . '" ' . $selectedCategory . '> ' . $categoryRow["category"] . ' </option>';
                 }
-                echo '<option value="' . $categoryRow["category"] . '" ' . $selectedCategory . '> ' . $categoryRow["category"] . ' </option>';
-              }
-            ?>
-          </select>
-          <select name="gender_new">
-            <?php
-              $genderResults = mysqli_query($link, "SELECT DISTINCT gender FROM products;");
-              while ($genderRow = mysqli_fetch_array($genderResults)) {
-                if ($genderRow["gender"] == $productDetails["gender"]) {
-                  $selectedGender = "selected";
-                } else {
-                  $selectedGender = "";
+              ?>
+            </select>
+            <select name="gender_new">
+              <?php
+                $genderResults = mysqli_query($link, "SELECT DISTINCT gender FROM products;");
+                while ($genderRow = mysqli_fetch_array($genderResults)) {
+                  if ($genderRow["gender"] == $productDetails["gender"]) {
+                    $selectedGender = "selected";
+                  } else {
+                    $selectedGender = "";
+                  }
+                  echo '<option value="' . $genderRow["gender"] . '" ' . $selectedGender . '> ' . $genderRow["gender"] . ' </option>';
                 }
-                echo '<option value="' . $genderRow["gender"] . '" ' . $selectedGender . '> ' . $genderRow["gender"] . ' </option>';
-              }
-            ?>
-          </select>
-          <textarea name="description_new"><?php echo $productDetails["description"]; ?></textarea>
-          <label for="image_new">
-            <img width="100" height="100" src="images/products/<?php echo $productDetails["image"];?>">
-            </label>
-          <input name="image_new" type="file" />
+              ?>
+            </select>
+          </div>
+          <div class="mess-img">
+            <textarea name="description_new"><?php echo $productDetails["description"]; ?></textarea>
+            <label for="image_new">
+              <img width="100" height="100" src="images/products/<?php echo $productDetails["image"];?>">
+              </label>
+            <input name="image_new" type="file" />
+          </div>
           <div class="button-add">
             <input type="submit" name="edit_product" value="Save Changes">
           </div>
