@@ -230,6 +230,67 @@
         overflow-y: scroll;
     }
 
+    .inbox-items-container{
+        overflow-y: scroll;
+    }
+
+    .header .inbox-items-container{
+        position: absolute;
+        top:100%; right: -100%;
+        height: calc(100vh - 9.5rem);
+        width: 35rem;
+        background: #fff;
+        padding:0 1.5rem;
+    }
+
+    .header .inbox-items-container.active{
+        right: 0;
+    }
+
+    .header .inbox-items-container .fav-item{
+        position: relative;
+        margin:2rem 0;
+        display: flex;
+        align-items: center;
+        gap:1.5rem;
+    }
+
+    .header .inbox-items-container .inbox-item .fa-times{
+        position: absolute;
+        top:1rem; right: 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--black);
+    }
+
+    .header .inbox-items-container .inbox-item .inbox-times:hover{
+        color:var(--main-color);
+    }
+
+    .header .inbox-items-container .inbox-item img{
+        height: 7rem;
+    }
+
+    .header .inbox-items-container .inbox-item .content h3{
+        font-size: 2rem;
+        color:var(--black);
+        padding-bottom: .5rem;
+    }
+
+    .header .inbox-items-container .inbox-item .content .price{
+        font-size: 1.5rem;
+        color:var(--main-color);
+    }
+
+    .header .inbox-items-container .btn{
+        width: 100%;
+        text-align: center;
+    }
+
+        .inbox-items-container{
+        overflow-y: scroll;
+    }
+
     .header .profile-items-container{
         position: absolute;
         top:100%; right: -100%;

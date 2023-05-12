@@ -27,7 +27,7 @@
         <h1>Add Product</h1>
         <form action="" id="addProductForm" method="post" enctype="multipart/form-data">
           <input type="text" name="name_new" placeholder="Product Name">
-          <input type="number" name="price_new" placeholder="Price">
+          <input type="number" name="price_new" step="any" placeholder="Price">
           <select name="category_new">
             <option value="" selected disabled> Select a category </option>
             <?php
@@ -57,10 +57,21 @@
     </div>
 
     <?php
-      if (isset($_POST["edit_product"])) {
-        $addProductstmt = mysqli_prepare($link, "INSERT INTO products(name, price, description, category, gender) VALUES (name = ?, price = ?, description = ?, category = ?, gender = ?) WHERE product_id = ?");
-        mysqli_stmt_bind_param($addProductstmt, "sdsssi", $_POST["name_new"], $_POST["price_new"], $_POST["description_new"], $_POST["category_new"], $_POST["gender_new"], $productDetails["product_id"]);
-        mysqli_execute($addProductstmt);
+      if (isset($_POST["add_product"])) {
+        if ($_FILES["image_new"]["name"]) {
+          $randomString = md5(time());
+          move_uploaded_file($_FILES["image_new"]["tmp_name"], "images/products/".$productDetails["category"]."_shoes/".$productDetails["gender"]."/".$randomString.$_FILES["image_new"]["name"]);
+          $dbImagePath = $productDetails["category"]."_shoes/".$productDetails["gender"]."/".$randomString.$_FILES["image_new"]["name"];
+
+          $addProductstmt = mysqli_prepare($link, "INSERT INTO products(name, price, description, category, gender, image) VALUES (name = ?, price = ?, description = ?, category = ?, gender = ?, image = ?)");
+          mysqli_stmt_bind_param($addProductstmt, "sdssss", $_POST["name_new"], $_POST["price_new"], $_POST["description_new"], $_POST["category_new"], $_POST["gender_new"], $dbImagePath);
+          mysqli_execute($addProductstmt);
+          
+        } else {
+          $addProductstmt = mysqli_prepare($link, "INSERT INTO products(name, price, description, category, gender) VALUES (?, ?, ?, ?, ?)");
+          mysqli_stmt_bind_param($addProductstmt, "sdsss", $_POST["name_new"], $_POST["price_new"], $_POST["description_new"], $_POST["category_new"], $_POST["gender_new"]);
+          mysqli_execute($addProductstmt);
+        }
         echo '<script> alert("Product added successfully"); </script>';
       }
     ?>

@@ -33,18 +33,32 @@
 
     <div class="wrappings center">
         <nav class="navbar">
-            <a href="index.php">Home</a>
-            <a href="about.php">About</a>
-            <a href="product.php">Product</a>
-            <a href="contact.php">Contact</a>
+            <?php
+                if ($_SESSION["user_type"] == "user" || ! isset($_SESSION["user_type"])) {
+                    echo '
+                    <a href="index.php">Home</a>
+                    <a href="about.php">About</a>
+                    <a href="product.php">Product</a>
+                    <a href="contact.php">Contact</a>
+                    ';
+                }
+            ?>
+
         </nav>
     </div>
 
     <div class="wrappings end">
         <div class="icons">
             <?php
-                echo '<div class="fas fa-shopping-cart" id="cart-btn"></div>
-                <div class="fa-solid fa-heart" id="fav-btn"></div>';
+                if ($_SESSION["user_type"] == "user") {
+                    echo '<div class="fas fa-shopping-cart" id="cart-btn"></div>
+                    <div class="fa-solid fa-heart" id="fav-btn"></div>';
+                }
+
+                if ($_SESSION["user_type"] == "admin") {
+                    echo '<div class="fa-solid fa-envelope" id="inbox-btn"></div>';
+                }
+
             ?>
             <div class="fa-solid fa-user" <?php if (isset($_SESSION["user_id"])) { echo "id=\"profile-btn\""; } else { echo "onclick='window.location.href=\"login-signup.php\"'"; } ?>><?php if (! isset($_SESSION["user_id"])) { echo "Login"; } ?> </div>
         </div>
@@ -52,17 +66,7 @@
 
     <div class="profile-items-container">
     <div class="profile-item">
-        <div class="profile-sidebar"> 
-            
-            <?php
-            /*
-                if (! isset($_SESSION["user_id"])) {
-                    echo "<a href=\"login-signup.php\"> Click here to Log in </a>";
-                } else {
-                    echo '<h3>' . $_SESSION["username"] . '</h3>';
-                    echo "<a href=\"logout.php\"> Log out </a>";
-                }*/
-            ?>
+        <div class="profile-sidebar">
 
                 <div class="name-sidebar">
 
@@ -77,14 +81,62 @@
 
                 </div>
 
-                <div class="nav-btn-sidebar">
-                    <a href="profile.php">Profile</a>
+                <div class="nav-btn-sidebar">                    
+                    <?php 
+                        if ($_SESSION["user_type"] == "user") {
+                            echo '<a href="profile.php">Profile</a>';
+                        }
+                    ?>
                     <a href="logout.php">Logout</a>
                 </div>
 
 
         </div>
     </div>
+    </div>
+
+    <div class="inbox-items-container">
+    <div class="inbox-item">
+        <div class="content">
+            <h3> Inbox </h3>
+        </div>
+    </div>
+    <?php
+        if ($_SESSION["user_type"]) {
+            $inboxResults = mysqli_query($link, "SELECT message_id, name, CONCAT(SUBSTRING(message, 1, 75), '...') AS \"short_msg\", is_read FROM inbox ORDER BY message_id DESC");
+            while ($messageRow = mysqli_fetch_array($inboxResults)) {
+                if ($messageRow["is_read"] == 0) {
+                    $bold1 = "<b>";
+                    $bold2 = "</b>";
+                } else {
+                    $bold1 = "";
+                    $bold2 = "";
+                }
+                echo '<div class="inbox-item">
+                <div class="content">
+                <a href="view_message.php?message_id=' . $messageRow["message_id"] . '">
+                <h3> From: ' . $messageRow["name"] . '  </h3>
+                <p> ' . $bold1 . ' ' . $messageRow["short_msg"] . ' ' . $bold2 . ' </p>
+                </a>
+                </div>
+                </div>';
+            }
+    
+            if (mysqli_num_rows($inboxResults) == 0) {
+                echo '<div class="inbox-item">
+                <div class="content">
+                <h3> No messages yet </h3>
+                </div>
+                </div>';
+            }
+        } else {
+            echo '<div class="inbox-item">
+            <div class="content">
+            <h3> Insufficient privileges </h3>
+            </div>
+            </div>';
+        }
+    ?>
     </div>
 
         <i class="fas fa-bars" id="menu-btn"></i>

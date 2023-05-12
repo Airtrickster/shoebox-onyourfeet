@@ -32,7 +32,7 @@
         <h1>Edit Product</h1>
         <form action="" id="editProductForm" method="post" enctype="multipart/form-data">
           <input type="text" name="name_new" value="<?php echo $productDetails["name"]; ?>">
-          <input type="number" name="price_new" value="<?php echo $productDetails["price"]; ?>">
+          <input type="number" name="price_new" step="any" value="<?php echo $productDetails["price"]; ?>">
           <select name="category_new">
             <?php
               $categoryResults = mysqli_query($link, "SELECT DISTINCT category FROM products;");
@@ -73,9 +73,19 @@
 
     <?php
       if (isset($_POST["edit_product"])) {
-        $editProductstmt = mysqli_prepare($link, "UPDATE products SET name = ?, price = ?, description = ?, category = ?, gender = ? WHERE product_id = ?");
-        mysqli_stmt_bind_param($editProductstmt, "sdsssi", $_POST["name_new"], $_POST["price_new"], $_POST["description_new"], $_POST["category_new"], $_POST["gender_new"], $productDetails["product_id"]);
-        mysqli_execute($editProductstmt);
+        if ($_FILES["image_new"]["name"]) {
+          $randomString = md5(time());
+          move_uploaded_file($_FILES["image_new"]["tmp_name"], "images/products/".$productDetails["category"]."_shoes/".$productDetails["gender"]."/".$randomString.$_FILES["image_new"]["name"]);
+          $dbImagePath = $productDetails["category"]."_shoes/".$productDetails["gender"]."/".$randomString.$_FILES["image_new"]["name"];
+
+          $editProductstmt = mysqli_prepare($link, "UPDATE products SET name = ?, price = ?, description = ?, category = ?, gender = ?, image = ? WHERE product_id = ?");
+          mysqli_stmt_bind_param($editProductstmt, "sdssssi", $_POST["name_new"], $_POST["price_new"], $_POST["description_new"], $_POST["category_new"], $_POST["gender_new"], $dbImagePath, $productDetails["product_id"]);
+          mysqli_execute($editProductstmt);
+        } else {
+          $editProductstmt = mysqli_prepare($link, "UPDATE products SET name = ?, price = ?, description = ?, category = ?, gender = ? WHERE product_id = ?");
+          mysqli_stmt_bind_param($editProductstmt, "sdsssi", $_POST["name_new"], $_POST["price_new"], $_POST["description_new"], $_POST["category_new"], $_POST["gender_new"], $productDetails["product_id"]);
+          mysqli_execute($editProductstmt);
+        }       
         echo '<script> alert("Product edited successfully"); </script>';
       }
     ?>

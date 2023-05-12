@@ -48,7 +48,7 @@
                 <img src="images/products/' . $productRow["image"] . '">
                 <p>' . $productRow["name"] . '</p>
                 <button onclick=\'window.location.href = "edit_product.php?product_id=' . $productRow["product_id"] . '"\'>Edit</button>
-                <button onclick=\'window.location.href = ""\'>Remove</button>
+                <button onclick=\'window.location.href = "delete_product.php?product_id=' . $productRow["product_id"] . '"\'>Remove</button>
                 </div>';
               }
 
@@ -64,7 +64,7 @@
     </div>
   </div>
 
-    <script src="js/script.js"></script>
+    <script src="js/admin_script.js"></script>
 
   </body>
 </html>
