@@ -172,8 +172,8 @@
 
         .credit{
             width:100%;
-            flex-direction: column;
             justify-content: center;
+            align-items: center;
         }
 
         .credit .wrap {
@@ -181,14 +181,12 @@
             margin-bottom: 20px;
         }
 
+
         .help{
             margin-left: 0px;
+            width: 100%;
         }
 
-        .help a{
-            margin-bottom: 20px;
-            font-size: 8px;
-        }
 
         .vertical{
             display: grid; 

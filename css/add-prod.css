@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    /* outline: 1px dashed #000; */
+}
+
+body{
+    background-color: #121212;
+    height: 100vh;
+    display: grid;
+    place-items:center;
+}
+
+.container{
+    width:380px;
+    height:500px;
+    padding: 15px;  
+    background: rgb(197, 220, 251);
+    border-radius: 10px;
+}
+
+.box h1{
+    text-align: center;
+    text-transform: uppercase;
+    font-family:"Roboto";
+}
+
+.text-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-form input[type="text"], [type="number"]{
+    background-color: rgb(167, 193, 225);
+    margin: 5px;
+    font-size: 1rem;
+    padding: 5px;
+    border-radius: 5px;
+    border:none;
+    box-shadow: inset 1px 1px 5px 1px rgb(16, 43, 79),
+                inset -1px -1px 5px 1px   rgb(207, 219, 235);
+    color: black;
+}
+
+::placeholder{
+    color:black;
+}
+
+.drop-down{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.drop-down select{
+    margin: 0px 5px;
+    padding: 6px;
+    border-radius: 10px;
+    border:none;
+    box-shadow: inset 1px 1px 5px  rgb(207, 219, 235),
+                inset -1px -1px 5px rgb(16, 43, 79) ;
+    box-shadow:  1px 1px 5px rgb(16, 43, 79),
+                 -1px -1px 5px rgb(207, 219, 235) ;
+    background-color: rgb(167, 193, 225);
+}
+
+.mess-img{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mess-img textarea{
+    max-width: 348px;
+    min-width: 348px;
+    max-height: 230px;
+    min-height: 230px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    padding: 10px;
+    border:none;
+    box-shadow: inset 1px 1px 5px 1px rgb(16, 43, 79),
+                inset -1px -1px 5px 1px   rgb(207, 219, 235);
+    background-color: rgb(167, 193, 225);
+}
+
+.mess-img label{
+    margin-bottom: 5px;
+    font-family: "Roboto";
+}
+
+.mess-img input[type="file"]::file-selector-button{
+    background:rgb(167, 193, 225) ;
+    border: 1px solid #000;
+}
+
+.button-add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.button-add input[type="submit"]{
+    padding: 5px;
+    width: 50%;
+    font-family: "Roboto";
+    font-weight: 400;
+    box-shadow:  4px 4px 5px rgba(16, 43, 79, 0.5),
+                -4px -4px 5px rgb(207, 219, 235);
+    background-color: rgb(167, 193, 225);
+    border-radius: 30px;
+    border: none;
+    margin-top: 6px;
+}
+
+.button-add input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+.button-add input[type="submit"]:active{
+    box-shadow: inset 1px 1px 5px 1px rgb(16, 43, 79),
+    inset -1px -1px 5px 1px   rgb(207, 219, 235);
+}

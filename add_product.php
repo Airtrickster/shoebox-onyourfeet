@@ -17,7 +17,7 @@
 <html>
   <head>
     <title> Add Product </title>
-    <link rel="stylesheet" href="css/acnt.css" />
+    <link rel="stylesheet" href="css/add-prod.css" />
     <script src="js/acnt.js"></script>
   </head>
   <body>
@@ -26,29 +26,35 @@
       <div class="box">
         <h1>Add Product</h1>
         <form action="" id="addProductForm" method="post" enctype="multipart/form-data">
-          <input type="text" name="name_new" placeholder="Product Name">
-          <input type="number" name="price_new" step="any" placeholder="Price">
-          <select name="category_new">
-            <option value="" selected disabled> Select a category </option>
-            <?php
-              $categoryResults = mysqli_query($link, "SELECT DISTINCT category FROM products;");
-              while ($categoryRow = mysqli_fetch_array($categoryResults)) {
-                echo '<option value="' . $categoryRow["category"] . '"> ' . $categoryRow["category"] . ' </option>';
-              }
-            ?>
-          </select>
-          <select name="gender_new">
-            <option value="" selected disabled> Select a gender </option>
-            <?php
-              $genderResults = mysqli_query($link, "SELECT DISTINCT gender FROM products;");
-              while ($genderRow = mysqli_fetch_array($genderResults)) {
-                echo '<option value="' . $genderRow["gender"] . '"> ' . $genderRow["gender"] . ' </option>';
-              }
-            ?>
-          </select>
-          <textarea name="description_new"><?php echo $productDetails["description"]; ?></textarea>
-          <label for="image_new"> Product Image: </label>
-          <input name="image_new" type="file" />
+          <div class="text-form">
+            <input type="text" name="name_new" placeholder="Product Name">
+            <input type="number" name="price_new" placeholder="Price">
+          </div>
+          <div class="drop-down">
+            <select name="category_new">
+              <option value="" selected disabled> Select a category </option>
+              <?php
+                $categoryResults = mysqli_query($link, "SELECT DISTINCT category FROM products;");
+                while ($categoryRow = mysqli_fetch_array($categoryResults)) {
+                  echo '<option value="' . $categoryRow["category"] . '"> ' . $categoryRow["category"] . ' </option>';
+                }
+              ?>
+            </select>
+            <select name="gender_new">
+              <option value="" selected disabled> Select a gender </option>
+              <?php
+                $genderResults = mysqli_query($link, "SELECT DISTINCT gender FROM products;");
+                while ($genderRow = mysqli_fetch_array($genderResults)) {
+                  echo '<option value="' . $genderRow["gender"] . '"> ' . $genderRow["gender"] . ' </option>';
+                }
+              ?>
+            </select>
+          </div>
+          <div class="mess-img">
+            <textarea name="description_new"><?php echo $productDetails["description"]; ?></textarea>
+            <label for="image_new"> Product Image: </label>
+            <input type="file"  name="image_new">
+          </div>
           <div class="button-add">
             <input type="submit" name="add_product" value="Add Product">
           </div>
