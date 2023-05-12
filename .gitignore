@@ -1,3 +1,5 @@
-./images/products/**
-./images/profile_picture/**
+./images/products/*
+./images/products/*/*
+./images/products/*/*/*
+./images/profile_picture/*
 ./db_conn.php
