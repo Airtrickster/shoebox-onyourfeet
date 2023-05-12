@@ -2,8 +2,15 @@
 
 <div class="boxprofile">
           <div class="img">
-            <img src="images/blank-profile-picture.webp" alt="Calvin">
-            <button class="change-dp">
+            <?php
+              if (isset($_SESSION["image"])) {
+                $profilePicture = "images/profile_picture/".$_SESSION["image"];
+              } else {
+                $profilePicture = "images/blank-profile-picture.webp";
+              }
+            ?>
+            <img src="<?php echo $profilePicture;?>" alt="Calvin">
+            <button class="change-dp" onclick='window.location.href = "change_profile_pic.php"'>
               <i class="fa-solid fa-camera"></i>
             </button>
           </div>

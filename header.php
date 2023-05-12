@@ -19,6 +19,9 @@
         $_SESSION["date_of_birth"] = $accountDetails["date_of_birth"];
         $_SESSION["phone_number"] = $accountDetails["phone_number"];
         $_SESSION["email"] = $accountDetails["email"];
+        if (isset($_SESSION["image"])) {
+            $_SESSION["image"] = $accountDetails["image"];
+        }
     }
 ?>
 
@@ -71,7 +74,14 @@
                 <div class="name-sidebar">
 
                     <div class="img-profile">
-                        <img src="images/blank-profile-picture.webp" alt="profile">
+                    <?php
+                        if (isset($_SESSION["image"])) {
+                            $profilePicture = "images/profile_picture/".$_SESSION["image"];
+                        } else {
+                            $profilePicture = "images/blank-profile-picture.webp";
+                        }
+                    ?>
+                        <img src="<?php echo $profilePicture;?>" alt="profile">
                     </div>
 
                     <div class="name-prof">

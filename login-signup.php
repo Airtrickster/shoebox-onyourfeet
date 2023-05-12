@@ -186,7 +186,10 @@
             $_SESSION["date_of_birth"] = $credentials["date_of_birth"];
             $_SESSION["phone_number"] = $credentials["phone_number"];
             $_SESSION["email"] = $credentials["email"];
-            $_SESSION["user_type"] = $credentials["type"]; 
+            $_SESSION["user_type"] = $credentials["type"];
+            if (! is_null($credentials["image"])) {
+              $_SESSION["image"] = $credentials["image"];
+            }
             echo '<script> window.location.href="index.php" </script>';
           } else {
             echo '<script> alert("Wrong Credentials please try again"); window.location.href = "' . $_SERVER["PHP_SELF"] . '"; </script>';

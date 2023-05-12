@@ -20,6 +20,9 @@
   $_SESSION["date_of_birth"] = $accountDetails["date_of_birth"];
   $_SESSION["phone_number"] = $accountDetails["phone_number"];
   $_SESSION["email"] = $accountDetails["email"];
+  if (isset($_SESSION["image"])) {
+    $_SESSION["image"] = $accountDetails["image"];
+  }
 ?>
 
 <!DOCTYPE html>
