@@ -36,7 +36,7 @@
       <?php include "admin_nav.php"; ?>
 
         <section class="flex address">
-            <button onclick='window.location.href = ""'>Add Product</button>
+            <button onclick='window.location.href = "add_product.php"'>Add Product</button>
             <?php
               $productResults = mysqli_query($link, "SELECT * FROM products");
 
@@ -45,7 +45,7 @@
                 <div class="flex-add-btn">
                 <img src="images/products/' . $productRow["image"] . '">
                 <p>' . $productRow["name"] . '</p>
-                <button onclick=\'window.location.href = ""\'>Edit</button>
+                <button onclick=\'window.location.href = "edit_product.php?product_id=' . $productRow["product_id"] . '"\'>Edit</button>
                 <button onclick=\'window.location.href = ""\'>Remove</button>
                 </div>';
               }
