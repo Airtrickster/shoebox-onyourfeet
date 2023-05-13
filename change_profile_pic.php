@@ -18,10 +18,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+      function changeProfile() {
+        if (document.forms["change_profile_form"]["new_profile"].files.length == 0) {
+          alert("Please select an image");
+          return false;
+        }
+        return true;
+      }
+    </script>
 </head>
 <body>
-    <form action="" method="post" enctype="multipart/form-data">
-        <input type="file" name="new_profile">
+    <form action="" id="change_profile_form" method="post" enctype="multipart/form-data" onsubmit='return changeProfile();'>
+        <input type="file" name="new_profile"> 
         <input type="submit" name="change_profile" value="Change Profile Picture">
     </form>
 
@@ -33,7 +42,7 @@
             $changeProfilePicturestmt = mysqli_prepare($link, "UPDATE accounts SET image = ? WHERE user_id = ?");
             mysqli_stmt_bind_param($changeProfilePicturestmt, "si", $dbImagePath, $_SESSION["user_id"]);
             mysqli_execute($changeProfilePicturestmt);
-            echo '<script> alert("Profile picture changed successfully"); history.back(); </script>';
+            echo '<script> alert("Profile picture changed successfully"); window.location.href = "profile.php"; </script>';
         } 
        
     ?>
