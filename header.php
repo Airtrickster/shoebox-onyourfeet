@@ -18,10 +18,8 @@
         $_SESSION["full_name"] = $accountDetails["first_name"] . " " . $accountDetails["last_name"];
         $_SESSION["date_of_birth"] = $accountDetails["date_of_birth"];
         $_SESSION["phone_number"] = $accountDetails["phone_number"];
+        $_SESSION["image"] = $accountDetails["image"];
         $_SESSION["email"] = $accountDetails["email"];
-        if (isset($_SESSION["image"])) {
-            $_SESSION["image"] = $accountDetails["image"];
-        }
     }
 ?>
 

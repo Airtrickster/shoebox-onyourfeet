@@ -3,6 +3,7 @@
 
 <ul>
   <li><a href="product_maintenance.php">Product Maintenance</a></li>
+  <li><a href="admin_transactions.php">Transactions</a></li>
   <li><a id="drop">Settings</a>
     <ul class="down">
       <li><a href="account.php">My Account</a></li>

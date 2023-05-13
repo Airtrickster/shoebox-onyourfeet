@@ -127,7 +127,7 @@
                 </div>
                 <div class="right button-box">
                   <button onclick=\'window.location.href = "edit_product.php?product_id=' . $productRow["product_id"] . '"\'>Edit</button>
-                  <button onclick=\'window.location.href = ""\'>Remove</button>
+                    <button onclick=\'window.location.href = "delete_product.php?product_id=' . $productRow["product_id"] . '"\'>Remove</button>
                 </div>
                 </div>';
                 }

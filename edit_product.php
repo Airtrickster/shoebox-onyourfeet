@@ -49,7 +49,7 @@
         <form action="" id="editProductForm" method="post" enctype="multipart/form-data">
           <div class="text-form">
             <input type="text" name="name_new" value="<?php echo $productDetails["name"]; ?>">
-            <input type="number" name="price_new" value="<?php echo $productDetails["price"]; ?>">
+            <input type="number" name="price_new" step="any" value="<?php echo $productDetails["price"]; ?>">
           </div>
           <div class="drop-down">
             <select name="category_new">

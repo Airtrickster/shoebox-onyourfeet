@@ -28,7 +28,7 @@
         <form action="" id="addProductForm" method="post" enctype="multipart/form-data">
           <div class="text-form">
             <input type="text" name="name_new" placeholder="Product Name">
-            <input type="number" name="price_new" placeholder="Price">
+            <input type="number" name="price_new" step="any" placeholder="Price">
           </div>
           <div class="drop-down">
             <select name="category_new">
@@ -66,10 +66,10 @@
       if (isset($_POST["add_product"])) {
         if ($_FILES["image_new"]["name"]) {
           $randomString = md5(time());
-          move_uploaded_file($_FILES["image_new"]["tmp_name"], "images/products/".$productDetails["category"]."_shoes/".$productDetails["gender"]."/".$randomString.$_FILES["image_new"]["name"]);
-          $dbImagePath = $productDetails["category"]."_shoes/".$productDetails["gender"]."/".$randomString.$_FILES["image_new"]["name"];
+          move_uploaded_file($_FILES["image_new"]["tmp_name"], "images/products/".$_POST["category_new"]."_shoes/".$_POST["gender_new"]."/".$randomString.$_FILES["image_new"]["name"]);
+          $dbImagePath = $_POST["category_new"]."_shoes/".$_POST["gender_new"]."/".$randomString.$_FILES["image_new"]["name"];
 
-          $addProductstmt = mysqli_prepare($link, "INSERT INTO products(name, price, description, category, gender, image) VALUES (name = ?, price = ?, description = ?, category = ?, gender = ?, image = ?)");
+          $addProductstmt = mysqli_prepare($link, "INSERT INTO products(name, price, description, category, gender, image) VALUES (?, ?, ?, ?, ?, ?)");
           mysqli_stmt_bind_param($addProductstmt, "sdssss", $_POST["name_new"], $_POST["price_new"], $_POST["description_new"], $_POST["category_new"], $_POST["gender_new"], $dbImagePath);
           mysqli_execute($addProductstmt);
           
