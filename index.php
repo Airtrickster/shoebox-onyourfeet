@@ -18,8 +18,6 @@
 </head>
 <body>
 
-<?php include "header.php"; ?>
-<!--
     <header>
         <div class="wrap">
             <div class="flex brand">
@@ -29,23 +27,21 @@
             </div>
             <div class="flex">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="about.html">About us</a></li>
-                    <li><a href="#">Contact us</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="product.php">Products</a></li>
+                    <li><a href="about.php">About us</a></li>
+                    <li><a href="contact.php">Contact us</a></li>
                 </ul>
             </div>
             <div class="flex" id="signin">
                 <a href="#"><i class="fa-solid fa-star "></i></a>
                 <a href="#"><i class="fa-solid fa-cart-shopping "></i></a>
                 <a href="#">Sign in</a>
-                <a href="#">Log in</a>
+                <a href="login-signup.php">Log in</a>
             </div>
             <div class="menubar"><i class="fa-solid fa-bars"></i></div>
         </div>
     </header>
-
--->
 
     <section class="showcase">
         <div class="box">  
@@ -206,9 +202,40 @@
             </div>
         </div>
     </section>
-    
-    <?php include "footer.php"; ?>
+
+    <footer class="main-footer">
+        <div class="container footer-des">
+            <div class="flex">
+                <div id="Logo">
+                    <h1>Shoe Box</h1>
+                </div>
+            </div>
+            <div class="flex">
+                <div id="services">
+                    <a href="FAQ.html">FAQs</a>
+                    <a href="privacy_policy.php">Privacy Policy</a>
+                    <a href="shipping_policy.php">Shipping Policy</a>
+                    <a href="refund_policy.php">Refund Policy</a>
+                </div>
+            </div>
+            <div class="flex">
+                <div id="social-media">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="sub-footer">
+        <div class="container copyright">
+            <p>&copy; Shoe box 2023. All Rights Reserved.</p>
+        </div>
+    </footer>
+
     <script src="js/script.js"></script>
+
 </body>
 </html>
 

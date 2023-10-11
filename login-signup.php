@@ -4,7 +4,7 @@
 }
   include "db_conn.php";
   if (isset($_SESSION["user_id"])) {
-    echo '<script> window.location.href="index.php" </script>'; 
+    echo '<script> window.location.href="product.php" </script>'; 
   }
 ?>
 
