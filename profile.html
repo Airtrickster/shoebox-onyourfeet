@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile</title>
+    <!--css--> 
+    <link rel="stylesheet" href="css/profile.css" /> 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css"> 
+  </head>
+
+  <script src="lib/jquery-3.6.3.js"></script>
+  <body>
+
+    <header class="header header-scrolled">
+
+      <div class="wrappings start">
+      <a href="index.html" class="logo">
+          <img src="images/mini-logo.png" alt="Logo">
+      </a>  
+      </div>
+  
+      <div class="wrappings center">
+          <nav class="navbar">
+              <a href="index.html">Home</a>
+              <a href="about.html">About</a>
+              <a href="product.html">Product</a>
+              <a href="contact.html">Contact</a>
+          </nav>
+      </div>
+  
+      <div class="wrappings end">
+          <div class="icons">
+              <div class="fas fa-shopping-cart" id="cart-btn"></div>
+              <div class="fa-solid fa-heart" id="fav-btn"></div>
+              <div class="fa-solid fa-user" id="profile-btn"> </div>
+          </div>
+      </div>
+  
+      <div class="profile-items-container">
+      <div class="profile-item">
+          <div class="profile-sidebar">
+  
+                  <div class="name-sidebar">
+  
+                      <div class="img-profile">
+                          <img src="images/blank-profile-picture.webp" alt="profile">
+                      </div>
+  
+                      <div class="name-prof">
+                          <h1>Full name goes here</h1>
+                          <h2>username_goes_here</h2>
+                      </div>
+  
+                  </div>
+  
+                  <div class="nav-btn-sidebar">                    
+                      <a href="profile.html">Profile</a>
+                      <a href="#">Logout</a>
+                  </div>
+  
+  
+          </div>
+      </div>
+      </div>
+  
+      </div>
+  
+          <i class="fas fa-bars" id="menu-btn"></i>
+      
+      <div class="cart-items-container">
+      <div class="cart-item">
+          <div class="content">
+              <h3> Shopping Cart </h3>
+          </div>
+      </div>
+  
+      <div class="cart-item">
+          <a href=""><span class="fas fa-times"></span> </a>
+          <img src="images/products/athletic_shoes/men/692bc396a50b3bf8c1b7ee1c41d0e5e4b4.rsquare.w600.webp" alt="">
+          <div class="content">
+          <h3 style="width: 85%;  "><a href="">Nike Metcon 8</a></h3>
+          <div class="price">Php 7898.83 <br> x1 = Php 7898.83 <br> <button style="font-size:18px; padding:5px; margin: 4px 10px 0px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;" onclick="decrementNumber1()">-</button> <p id="quantity-1" style="display:inline"> 1 </p> <button style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"  onclick="incrementNumber1()">+</button><button style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;" onclick="changeQuantity1()">Apply</button></div>
+          </div>
+      </div>
+      <script>
+          var quantity1 = 1;
+          function incrementNumber1() {
+              quantity1++;
+              document.getElementById("quantity-1").innerHTML = "" + quantity1;
+          }
+  
+          function decrementNumber1() {
+              quantity1--;
+              if (quantity1 < 1) {
+                  quantity1 = 1;
+              }
+              document.getElementById("quantity-1").innerHTML = "" + quantity1;
+              }
+          function changeQuantity1() {
+              window.location.href = "#";
+          }
+          </script>
+          <a href="#" class="btn">checkout now <br> Php 7898.83</a>
+      </div>
+  
+      <div class="fav-items-container">
+      <div class="fav-item">
+          <div class="content">
+              <h3> Favorites </h3>
+          </div>
+      </div>
+      <div class="fav-item">
+          <a href="#"><span class="fas fa-times"></span> </a>
+          <img src="images/products/athletic_shoes/men/692bc396a50b3bf8c1b7ee1c41d0e5e4b4.rsquare.w600.webp" alt="">
+          <div class="content">
+          <h3><a href="#">Nike Metcon 8</a></h3>
+          </div>
+      </div>
+      </div>
+  
+  </header>
+    
+
+  <div class="profile-box">
+    <div class="container">
+      <div class="flexing">
+
+        <aside class="flex side-bar">
+
+          <div class="boxprofile">
+                    <div class="img">
+                      <img src="images/profile_picture/blank-profile-picture.webp" alt="">
+                      <button class="change-dp" onclick='window.location.href = "#"'>
+                        <i class="fa-solid fa-camera"></i>
+                      </button>
+                    </div>
+          
+                    <div class="names">
+                      <h1>Full name goes here</h1>
+                      <h2>username_goes_here></h2>
+                      <a href="#">Logout</a>
+                    </div>
+          
+                  </div>
+          
+          <nav class="sidebtns">
+          
+          <ul>
+            <li><a href="account.html">My Account</a></li>
+            <li><a href="purchases.html">My Purchase</a></li>
+            <li><a id="drop">Settings</a>
+              <ul class="down">
+                <li><a href="change_pass.html">Change Password</a></li>
+                <li><a href="addresses.html">Addresses</a></li>
+              </ul>
+            </li>
+          </ul>
+          
+          </nav>
+          
+          </aside>
+          
+          <script src="js/app.js"></script>
+          <script type="text/javascript">
+                $(document).ready(function(){
+              $('#drop').click(function () {
+                 if ($('.down').is(':hidden')) {
+                     $('.down').show();
+                 } else {
+                     $('.down').hide();
+                 }
+               }); 
+             });
+            </script>
+
+        <section class="flex profile">
+          <div class="details">
+            <div class="box1">
+            <i class="fa-solid fa-xl fa-calendar"></i>
+              <p>01-01-1970</p>
+            </div>
+            <div class="box1">
+            <i class="fa-solid fa-xl fa-envelope"></i>
+            <p>email@goeshere.com</p>
+            </div>
+            <div class="box1">
+            <i class="fa-solid fa-xl fa-phone"></i>
+            <p>09123456789</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+     
+    <div class="credit">
+        <div class="wrapping start">
+            <div class="wrap">
+                <p>Be the first to know about our special offers, upcoming sales, special events, new arrivals, and more.</p>
+            </div>
+        </div>
+
+        <div class="wrapping center">
+            <div class="help">
+                <a href="FAQ.html">FAQ's</a>
+                <a href="privacy_policy.html">Privacy Policy</a>
+                <a href="shipping_policy.html">Shipping Policy</a>
+                <a href="refund_policy.html">Refund Policy</a>
+            </div>
+        </div>
+
+        <div class="wrapping end">
+            <div class="share">
+                <a href="https://www.facebook.com/VandKApparel" class="fa-brands fa-xl fa-facebook-f"></a>
+                <a href="https://www.twitter.com/" class="fa-brands fa-xl fa-twitter"></a>
+                <a href="https://www.instagram.com/" class="fa-brands fa-xl fa-instagram"></a>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<footer class="sub-footer">
+    <p> Copyright &copy; 2023. On your feet, inc. all rights reserved.</p>
+</footer>
+
+    <script src="js/script.js"></script>
+
+  </body>
+</html>

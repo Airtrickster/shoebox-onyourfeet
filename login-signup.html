@@ -8,6 +8,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="css/login.css" />
+    <link rel="icon" href="images/icon.png">
     <title>Sign in & Sign up Form</title>
   </head>
   <body>
@@ -42,23 +43,46 @@
             </div>
           </form>
       
-          <form action="#" id="signupForm" class="sign-up-form" method="post" enctype="multipart/form-data"
+          <form action="" id="signupForm" class="sign-up-form" method="post" enctype="multipart/form-data"
           onsubmit='return signUpValidation()'>
             <h2 class="title">Sign up</h2>
             <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" name="usernameSignUp" placeholder="Username" />
+              <i class="fas fa-user "></i>
+              <input type="text" name="firstNameSignUp" placeholder="First name" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-user "></i>
+              <input type="text" name="lastNameSignUp" placeholder="Last Name" />
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
               <input type="email" name="emailSignUp" placeholder="Email" />
             </div>
             <div class="input-field">
+              <i class="fas fa-calendar"></i>
+              <input type="date" name="dateOfBirthSignUp" placeholder="Birthday" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-phone  "></i>
+              <input type="text" name="phoneNumberSignUp" placeholder="Mobile No." />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" name="usernameSignUp" placeholder="Username" />
+            </div>
+            <div class="input-field">
               <i class="fas fa-lock"></i>
               <input type="password" name="passwordSignUp" placeholder="Password" />
             </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="confirmPasswordSignUp" placeholder="Confirm Password" />
+            </div>
+           
+            <label class="toss" for="agreeSignUp">  <input type="checkbox" name="agreeSignUp" id="agreeSignUp"> I Agree To The <a href="tos.html"> Terms of Service </a> And I Read The <a href="privacy_policy.php">Privacy Policy</a> </label>
             <input type="submit" class="btn" name="signup" value="sign up"/>
             <p class="social-text">Or Sign up with social platforms</p>
+ 
             <div class="social-media">
               <a href="#" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
@@ -89,7 +113,7 @@
             <button class="btn transparent" id="sign-up-btn">Sign up</button>
           </div>
           <img
-            src="images/converse-clipart-sneaker-nike-7.png"
+            src="images/converse-clipart-sneaker-nike-7.webp"
             class="image"
             alt=""
           />

@@ -1,0 +1,84 @@
+footer{
+    font-family: 'Roboto', sans-serif;
+    background: var(--black);
+}
+
+.footer{
+    text-align: center;
+}
+
+.footer .share a{ 
+    color: var(--text);
+    border: 1px solid var(--text);
+    margin: 0px 7px;
+    padding: 15px 10px;
+}
+
+.footer .share a:hover{
+    background-color: var(--main-color);
+}
+
+.footer .credit{
+    font-size: 1.05rem;
+    color:#fff;
+    font-weight: lighter;
+    font-size: 1.1rem;
+    padding:2rem 2rem .8rem 2rem;
+    display: flex;
+    align-items: center;
+} 
+
+.wrapping{
+    width: 33.3%;
+    display: flex;
+}
+
+.start{
+    justify-content: flex-start;
+}
+
+.center{
+    justify-content: center;
+}
+
+.end{
+    justify-content: flex-end;
+}
+
+.footer .credit .help a{
+    color: var(--text);
+}
+
+.sub-footer{
+    text-align: center;
+    color: var(--text);
+    padding: 20px;
+}
+
+.sub-footer p{
+    font-size: 1.2rem;
+}
+
+.wrap{
+    width: 80%;
+}
+
+.wrap p{
+    word-wrap: break-word;
+    text-align: center;
+    border: var(--text ) 1px solid;
+    font-size: 13px;
+    text-align: center;
+    padding: 2px;
+}
+
+.help a {
+    border-right: 1px solid #c4c4c4;
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 13px;
+}
+
+.help a:last-child {
+    border-right:0;
+} 

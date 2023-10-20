@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Account & Security</title>
+    <link rel="stylesheet" href="css/acnt.css" />
+    <script src="js/acnt.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="box">
+        <h1>Account Details</h1>
+        <form action="" id="accountForm" method="post" enctype="multipart/form-data" onsubmit='return changeDetails()'>
+          <input type="text" name="username_new" placeholder="username" value="">
+          <input type="text" name="first_name_new" placeholder="first name" value="">
+          <input type="text" name="last_name_new" placeholder="last name" value="">
+          <input type="text" name="phone_new" placeholder="contact number" value="">
+          <input type="email" name="email_new" placeholder="email" value="">
+          <input type="date" name="bday_new" placeholder="birthday" value="">
+          <div class="button-add">
+            <input type="submit" name="change_details" value="Save Changes">
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>

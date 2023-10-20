@@ -67,21 +67,21 @@ form.sign-in-form {
 }
 
 .input-field {
-  max-width: 380px;
+  max-width: 300px;
   width: 100%;
   background-color: #f0f0f0;
   margin: 10px 0;
-  height: 55px;
+  height: 35px;
   border-radius: 55px;
   display: grid;
   grid-template-columns: 15% 85%;
-  padding: 0 0.4rem;
+  padding: 0 10px;
   position: relative;
 }
 
 .input-field i {
   text-align: center;
-  line-height: 55px;
+  line-height: 35px;
   color: #acacac;
   transition: 0.5s;
   font-size: 1.1rem;
@@ -91,15 +91,15 @@ form.sign-in-form {
   background: none;
   outline: none;
   border: none;
-  line-height: 1;
-  font-weight: 600;
-  font-size: 1.1rem;
+  font-weight: 500;
+  font-size: 15px;
   color: #333;
 }
 
 .input-field input::placeholder {
   color: #aaa;
   font-weight: 500;
+  font-size: 15px;
 }
 
 .social-text {
@@ -231,6 +231,10 @@ form.sign-in-form {
   transform: translateX(800px);
 }
 
+label{
+  font-size: 15px;
+}
+
 /* ANIMATION */
 
 .container.sign-up-mode:before {
@@ -282,6 +286,24 @@ form.sign-in-form {
     transition: 1s 0.8s ease-in-out;
   }
 
+.input-field {
+    height:25px;
+  }
+
+  .input-field i{
+    line-height: 25px;
+  }
+
+  .title{
+    font-size: 1.5rem !important;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  label{
+    text-align: center;
+  }
+
   .signin-signup,
   .container.sign-up-mode .signin-signup {
     left: 50%;
@@ -298,6 +320,11 @@ form.sign-in-form {
     align-items: center;
     padding: 2.5rem 8%;
     grid-column: 1 / 2;
+  }
+
+  .social-icon {
+    width: 30px;
+    height: 30px;
   }
 
   .right-panel {
@@ -329,7 +356,13 @@ form.sign-in-form {
     padding: 0.5rem 0;
   }
 
-  .btn.transparent {
+.btn  {
+    width: 90px;
+    height: 30px;
+    margin: 5px 0px 0px;
+  }
+
+  .btn .transparent {
     width: 110px;
     height: 35px;
     font-size: 0.7rem;

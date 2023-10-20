@@ -1,0 +1,176 @@
+#about{
+    background: #bbbbbb; 
+    
+}
+
+.about{
+    margin-top: 6%;
+    
+}
+
+.about-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.584);
+    background:var(--main-color);
+}
+
+.about-img img{
+    width: 40%;
+}
+
+.about-text{
+    margin: 0px 30px;
+    text-align: center;
+}
+
+.about-text h1{
+    font-size: 5rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.about-text p{
+    margin-bottom: 30px;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.about-mission{
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/img2bg.png) ;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: grid;
+    place-content: center start;
+    box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.584);
+}
+
+.mission-text{
+    width: 100%;
+    margin-left: 50px;
+}
+
+
+.about-mission h1{
+    color: var(--text);
+    text-align: center;
+    font-size: 5rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+.about-mission p{
+    color: var(--text);
+    text-align: center;
+    font-size: 5rem;
+    width: 50%;
+
+}
+
+.card{
+    background: var(--main-color);
+    width: 17%;
+    height: 250px;
+    padding: 20px 10px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.584);
+}
+
+.card h3{
+    font-size: 1.5rem;
+}
+
+.card ul li{
+    text-align: left;
+    margin: 10px;
+    padding: 0px 10px 0px;
+    font-size: 1rem;
+}
+
+.card:hover{
+    transition: .2s;
+    transform: scale(1.01);
+}
+
+.members .card img{
+    width: 100px;
+    border-radius: 50%;
+}
+
+@media (max-width:450px){
+
+    .about{
+        margin-top: 20%;
+    }
+
+    .about-img{
+        display: block;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .about-img img{
+        width: 100%;
+    }
+
+    .about-text{
+        padding: 10px 0px 20px 0px;
+    }
+
+    .about-text p{
+        text-align: justify;
+        text-indent: 10%;
+    }
+
+    .mission{
+       display: grid;
+       place-content: center;
+        
+    }
+
+    .about-mission{
+        height: 90vh;
+        
+    }
+
+    .mission-text{
+       margin-left: 0px;
+       font-size: 25px !important;
+       text-align: center   ;
+       margin-left: 27%;
+    }
+
+    .about-mission h1{
+        font-size: 3rem !important;
+    }
+
+    .members{
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card{
+        margin-bottom: 40px;
+        padding: 5px 15px 20px 15px;
+    }
+
+    .card img{
+       max-width: 100%;
+    }
+
+    .card h3{
+        font-size: 10px;
+        padding-top: 10px;
+    }
+
+    .card ul li{
+        font-size: 10px;
+    }
+
+}

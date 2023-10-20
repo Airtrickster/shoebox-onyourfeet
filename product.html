@@ -5,66 +5,121 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="lib/jquery-3.6.3.js"></script>
+    <link rel="icon" href="images/icon.png">
     <title>On your feet | Product</title>
 </head>
 <body>
     
-    <header class="header">
+    <header class="header header-scrolled">
 
+        <div class="wrappings start">
         <a href="index.html" class="logo">
             <img src="images/mini-logo.png" alt="Logo">
-        </a>
-    
-        <nav class="navbar">
-            <a href="index.html">home</a>
-            <a href="about.html">about</a>
-            <a href="product.html">product</a>
-            <a href="contact.html">contact</a>
-        </nav>
-    
-        <div class="icons">
-            <div class="fas fa-shopping-cart" id="cart-btn"></div>
-            <div class="fa-solid fa-star"></div>
-            <div class="fa-solid fa-user" onclick='window.location.href="tos.html"'></div>
-            <div class="fas fa-bars" id="menu-btn"></div>
+        </a>  
         </div>
     
+        <div class="wrappings center">
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="product.html">Product</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    
+        <div class="wrappings end">
+            <div class="icons">
+                <div class="fas fa-shopping-cart" id="cart-btn"></div>
+                <div class="fa-solid fa-heart" id="fav-btn"></div>
+                <div class="fa-solid fa-user" id="profile-btn"> </div>
+            </div>
+        </div>
+    
+        <div class="profile-items-container">
+        <div class="profile-item">
+            <div class="profile-sidebar">
+    
+                    <div class="name-sidebar">
+    
+                        <div class="img-profile">
+                            <img src="images/blank-profile-picture.webp" alt="profile">
+                        </div>
+    
+                        <div class="name-prof">
+                            <h1>Full name goes here</h1>
+                            <h2>username_goes_here</h2>
+                        </div>
+    
+                    </div>
+    
+                    <div class="nav-btn-sidebar">                    
+                        <a href="profile.html">Profile</a>
+                        <a href="#">Logout</a>
+                    </div>
+    
+    
+            </div>
+        </div>
+        </div>
+    
+        </div>
+    
+            <i class="fas fa-bars" id="menu-btn"></i>
+        
         <div class="cart-items-container">
-            <div class="cart-item">
-                <span class="fas fa-times"></span>
-                <img src="images/products/formal_shoes/men/20081949_20MILANOS_20-_20KIAN_20-_20BLACK_20_281_29_9388b81a-192f-4f69-8138-396b88b11f3f_350x500.webp" alt="">
-                <div class="content">
-                    <h3>cart item 01</h3>
-                    <div class="price">Php 799/-</div>
-                </div>
+        <div class="cart-item">
+            <div class="content">
+                <h3> Shopping Cart </h3>
             </div>
-            <div class="cart-item">
-                <span class="fas fa-times"></span>
-                <img src="images/products/formal_shoes/men/7342001750194-1_902f865c-fedc-45e9-9c36-8fba87368b2d_350x500.webp" alt="">
-                <div class="content">
-                    <h3>cart item 02</h3>
-                    <div class="price">Php 2,999.78/-</div>
-                </div>
+        </div>
+    
+        <div class="cart-item">
+            <a href=""><span class="fas fa-times"></span> </a>
+            <img src="images/products/athletic_shoes/men/692bc396a50b3bf8c1b7ee1c41d0e5e4b4.rsquare.w600.webp" alt="">
+            <div class="content">
+            <h3 style="width: 85%;  "><a href="">Nike Metcon 8</a></h3>
+            <div class="price">Php 7898.83 <br> x1 = Php 7898.83 <br> <button style="font-size:18px; padding:5px; margin: 4px 10px 0px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;" onclick="decrementNumber1()">-</button> <p id="quantity-1" style="display:inline"> 1 </p> <button style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"  onclick="incrementNumber1()">+</button><button style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;" onclick="changeQuantity1()">Apply</button></div>
             </div>
-            <div class="cart-item">
-                <span class="fas fa-times"></span>
-                <img src="images/products/formal_shoes/women/7405129793714-1_350x500.webp" alt="">
-                <div class="content">
-                    <h3>cart item 03</h3>
-                    <div class="price">Php 399/-</div>
-                </div>
+        </div>
+        <script>
+            var quantity1 = 1;
+            function incrementNumber1() {
+                quantity1++;
+                document.getElementById("quantity-1").innerHTML = "" + quantity1;
+            }
+    
+            function decrementNumber1() {
+                quantity1--;
+                if (quantity1 < 1) {
+                    quantity1 = 1;
+                }
+                document.getElementById("quantity-1").innerHTML = "" + quantity1;
+                }
+            function changeQuantity1() {
+                window.location.href = "#";
+            }
+            </script>
+            <a href="#" class="btn">checkout now <br> Php 7898.83</a>
+        </div>
+    
+        <div class="fav-items-container">
+        <div class="fav-item">
+            <div class="content">
+                <h3> Favorites </h3>
             </div>
-            <div class="cart-item">
-                <span class="fas fa-times"></span>
-                <img src="images/products/formal_shoes/women/7405778567346-1_350x500.webp" alt="">
-                <div class="content">
-                    <h3>cart item 04</h3>
-                    <div class="price">Php 499/-</div>
-                </div>
+        </div>
+        <div class="fav-item">
+            <a href="#"><span class="fas fa-times"></span> </a>
+            <img src="images/products/athletic_shoes/men/692bc396a50b3bf8c1b7ee1c41d0e5e4b4.rsquare.w600.webp" alt="">
+            <div class="content">
+            <h3><a href="#">Nike Metcon 8</a></h3>
             </div>
-            <a href="#" class="btn">checkout now</a>
+        </div>
         </div>
     
     </header>
@@ -94,8 +149,8 @@
             <img src="images/product_ath.png">
             <h1>Athletic Shoes</h1>
             <div class="btn-prod">
-            <button onclick='window.location.href="athletic_shoes_men.html"' class="btn2 buttoncurved">Shop Men's</button>
-            <button onclick='window.location.href="athletic_shoes_women.html"' class="btn2 buttoncurved">Shop Women's</button>
+            <button onclick='window.location.href="product_category.html?category=athletic&gender=men"' class="btn2 buttoncurved">Shop Men's</button>
+            <button onclick='window.location.href="product_category.html?category=athletic&gender=women"' class="btn2 buttoncurved">Shop Women's</button>
             </div>
         </div>
 
@@ -103,8 +158,8 @@
             <img src="images/product_for.png" >
             <h1>Formal Shoes</h1>
             <div class="btn-prod">
-            <button onclick='window.location.href="formal_shoes_men.html"' class="btn2 buttoncurved">Shop Men's</button>
-            <button onclick='window.location.href="formal_shoes_women.html"' class="btn2 buttoncurved">Shop Women's</button>
+            <button onclick='window.location.href="product_category.html?category=formal&gender=men"' class="btn2 buttoncurved">Shop Men's</button>
+            <button onclick='window.location.href="product_category.html?category=formal&gender=women"' class="btn2 buttoncurved">Shop Women's</button>
             </div>
         </div>
 
@@ -112,8 +167,8 @@
             <img src="images/product_cas.png" >
             <h1>Casual Shoes</h1>
             <div class="btn-prod">
-            <button onclick='window.location.href="casual_shoes_men.html"' class="btn2 buttoncurved">Shop Men's</button>
-            <button onclick='window.location.href="casual_shoes_women.html"' class="btn2 buttoncurved">Shop Women's</button>
+            <button onclick='window.location.href="product_category.html?category=casual&gender=men"' class="btn2 buttoncurved">Shop Men's</button>
+            <button onclick='window.location.href="product_category.html?category=casual&gender=women"' class="btn2 buttoncurved">Shop Women's</button>
             </div>
         </div>
 
@@ -253,31 +308,37 @@
     </section>
 
     <footer class="footer">
-
+ 
         <div class="credit">
-            <div class="wrap">
-                <p>Be the first to know about our special offers, upcoming sales, special events, new arrivals, and more.</p>
+            <div class="wrapping start">
+                <div class="wrap">
+                    <p>Be the first to know about our special offers, upcoming sales, special events, new arrivals, and more.</p>
+                </div>
             </div>
-    
-            <div class="help">
-                <a href="FAQ.html">faq's</a>
-                <a href="privacy_policy.html">privacy policy</a>
-                <a href="shipping_policy.html">shipping policy</a>
-                <a href="refund_policy.html">refund policy</a>
+       
+            <div class="wrapping center">
+                <div class="help">
+                    <a href="FAQ.html">FAQ's</a>
+                    <a href="privacy_policy.html">Privacy Policy</a>
+                    <a href="shipping_policy.html">Shipping Policy</a>
+                    <a href="refund_policy.html">Refund Policy</a>
+                </div>
             </div>
-    
-            <div class="share">
-                <a href="https://www.facebook.com/VandKApparel" class="fab fa-xl fa-square-facebook"></a>
-                <a href="https://www.twitter.com/" class="fab fa-xl fa-square-twitter"></a>
-                <a href="https://www.instagram.com/" class="fab fa-xl fa-square-instagram"></a>
+       
+            <div class="wrapping end">
+                <div class="share">
+                    <a href="https://www.facebook.com/VandKApparel" class="fa-brands fa-xl fa-facebook-f"></a>
+                    <a href="https://www.twitter.com/" class="fa-brands fa-xl fa-twitter"></a>
+                    <a href="https://www.instagram.com/" class="fa-brands fa-xl fa-instagram"></a>
+                </div>
             </div>
         </div>
-    
-    </footer>
-    
-    <footer class="sub-footer">
+       
+       </footer>
+       
+       <footer class="sub-footer">
         <p> Copyright &copy; 2023. On your feet, inc. all rights reserved.</p>
-    </footer>
+       </footer>
 
 
     <script src="js/script.js"></script>

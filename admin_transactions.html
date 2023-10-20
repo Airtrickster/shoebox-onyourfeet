@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Transactions </title>
+    <!--css--> 
+    <link rel="stylesheet" href="css/profile.css" /> 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+    <style>
+      .neumorph-card{
+        border:1px solid #000;
+        background:rgb(197, 220, 251);
+        margin-top:20px;
+        border-radius:20px;
+        display: flex;
+        justify-content:space-around;
+        align-items:center;
+        padding:20px;
+      }
+      .neumorph-card img{
+        width: 30%;
+        aspect-ratio:1/1;
+        border-radius:20px;
+      }
+
+      .button-box{
+        display: flex;
+        justify-content: center;
+        align-items:center
+      }
+
+      .detail{
+        height:20vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .detail a{
+        font-size:2rem;
+        margin-bottom: 30px;
+        color:black;
+      }
+
+      .detail a:hover{
+        text-decoration: underline;
+      }
+
+      .detail p{
+        margin: 4px 0px;
+      }
+
+
+      .center h2{
+        font-size:1.5rem;
+        text-align: center;
+      }
+
+      .button-box button{
+       margin:0px 5px;
+      }
+
+      .button-box button:hover{
+        cursor: pointer;
+        background: #d2a671;
+        color:black;
+      }
+
+      .scroll::-webkit-scrollbar{
+        width:10px;
+      }
+
+      .scroll::-webkit-scrollbar-thumb{
+        background: gray;
+        border-radius:50px;
+      }
+
+      .flex button:hover{
+        cursor: pointer;
+        background: #d2a671;
+        color:black;
+      }
+    </style>
+  </head>
+
+  <script src="lib/jquery-3.6.3.js"></script>
+  <body>
+
+    <header class="header header-scrolled">
+
+      <div class="wrappings start">
+      <a href="index.html" class="logo">
+          <img src="images/mini-logo.png" alt="Logo">
+      </a>  
+      </div>
+  
+      <div class="wrappings center">
+          <nav class="navbar">
+          </nav>
+      </div>
+  
+      <div class="wrappings end">
+          <div class="icons">
+            <div class="fa-solid fa-envelope" id="inbox-btn"></div>
+              <div class="fa-solid fa-user" id="profile-btn"></div>
+          </div>
+      </div>
+  
+      <div class="profile-items-container">
+      <div class="profile-item">
+          <div class="profile-sidebar">
+  
+                  <div class="name-sidebar">
+  
+                      <div class="img-profile">
+                          <img src="images/blank-profile-picture.webp" alt="profile">
+                      </div>
+  
+                      <div class="name-prof">
+                          <h1>admin admin</h1>
+                          <h2>admin</h2>
+                      </div>
+  
+                  </div>
+  
+                  <div class="nav-btn-sidebar">                    
+                      <a href="#">Logout</a>
+                  </div>
+  
+  
+          </div>
+      </div>
+      </div>
+  
+      <div class="inbox-items-container">
+      <div class="inbox-item">
+          <div class="content">
+              <h3> Inbox </h3>
+          </div>
+      </div>
+
+                  <div class="inbox-item">
+                  <div class="content">
+                  <a href="view_message.html">
+                  <h3> From: Receiver goes here  </h3>
+                  <p> Short message goes here and if it goes long... </p>
+                  </a>
+                  </div>
+                  </div>';
+      </div>
+          <i class="fas fa-bars" id="menu-btn"></i>
+      </div>
+  
+  </header>    
+    
+
+  <div class="profile-box">
+    <div class="container">
+      <div class="flexing">
+
+        <aside class="flex side-bar">
+          <nav class="sidebtns">
+          
+          <ul>
+            <li><a href="product_maintenance.html">Product Maintenance</a></li>
+            <li><a href="admin_transactions.html">Transactions</a></li>
+            <li><a id="drop">Settings</a>
+              <ul class="down">
+                <li><a href="account.html">My Account</a></li>
+                <li><a href="change_pass.html">Change Password</a></li>
+              </ul>
+            </li>
+          </ul>
+          
+          </nav>
+          
+          </aside>
+
+        <section class="flex address">
+                <div class="neumorph-card">
+                  <img src="images/products/athletic_shoes/men/692bc396a50b3bf8c1b7ee1c41d0e5e4b4.rsquare.w600.webp">
+                  <div class="detail">
+                  <a href="product_details.html"> Nike Metcon 8 </a>
+                      <p><strong>Ordered by: </strong> 1970-01-01 00:00:00 </p>
+                      <p><strong>Date Ordered: </strong>1970-01-01 00:00:00</p>
+                      <p><strong>Quantity:</strong> 1 </p>
+                      <p><strong>Amount Paid:</strong> 7898.83</p>
+                      <p><strong>Payment Method Used:</strong> 'Bank</p>
+                      <p><strong>Delivered to:</strong> Address goes here </p>
+                  </div>
+                </div>';
+        </section>
+      </div>
+    </div>
+  </div>
+
+
+    <script src="js/admin_script.js"></script>
+
+  </body>
+</html>
