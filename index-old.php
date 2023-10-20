@@ -31,8 +31,6 @@
 
 <?php include "header.php"; ?>
 
-</header>
-
 <!-- header section ends -->
 
 <!-- home section starts  -->
