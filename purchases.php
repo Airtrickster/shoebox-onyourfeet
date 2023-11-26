@@ -13,21 +13,21 @@
   <head>
     <title> My Purchases </title>
     <!--css-->
-    <link rel="stylesheet" href="css/newprofile.css" />
+    <link rel="stylesheet" href="css/purchases.css" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 
     <style>
       .neumorph-card{
-        border:1px solid #000;
-        background:rgb(197, 220, 251);
+        background: white;
         margin-top:20px;
         border-radius:20px;
         display: flex;
         justify-content:space-around;
         align-items:center;
         padding:20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
       .neumorph-card img{
         width: 30%;
