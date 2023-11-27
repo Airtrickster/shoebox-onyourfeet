@@ -87,13 +87,13 @@
     <div class="details-page-container">
     <!-- 1 -->
 
-		<div class="details-page-product">
+        <div class="details-page-product">
         <!-- 2 -->
 
         <div class="col-lg-6 col-md-6 col-sm-12 imgbox">
                     <img src="images/products/<?php echo $productImage; ?>" class="img-fluid" alt="Product Image"> 
                 </div>
-			
+            
             <div class="details-page-product-details">
             <!-- 3 -->
 
@@ -153,7 +153,7 @@
             </div>
 
         <!-- 2 -->
-		</div>
+        </div>
 
     <!-- 1 -->
     </div>
@@ -227,4 +227,4 @@
     <script src="js/script.js"></script>
 
 </body>
-</html>
+</html>​

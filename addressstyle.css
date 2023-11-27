@@ -15,9 +15,7 @@ body
 {
   
   height:100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
   place-items: center;
 }
 
@@ -39,7 +37,6 @@ input
 {
 	height: 35px;
 	width: 300px;
-	/*background-color: #254E58;*/
 	border-radius: 20px;
 	border:none;
 	color: #5a5449;
