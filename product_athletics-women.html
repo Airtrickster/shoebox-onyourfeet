@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/product-cat-new.css">
+    <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
+    <link rel="icon" href="images/icon.png">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>ShoeBox | Products | Athletic Shoes Women></title>
+</head>
+
+<body style="background-color: black;">
+
+    <!--navbar with functionalities-->
+    <header class="header header-scrolled">
+
+        <div class="wrappings start">
+            <a href="index-new.html" class="logo">
+                <img src="images/mini-logo.png" alt="Logo">
+            </a>
+        </div>
+
+        <div class="wrappings center">
+            <nav class="navbar">
+                <a href="index.html" style="text-decoration: none;" >Home</a>
+                <a href="about.html" style="text-decoration: none;">About</a>
+                <a href="product.html" style="text-decoration: none;" class="active">Product</a>
+                <a href="contact.html" style="text-decoration: none;">Contact</a>
+            </nav>
+        </div>
+
+        <div class="wrappings end">
+            <div class="icons">
+                <div class="fas fa-shopping-cart" id="cart-btn"></div>
+                <div class="fa-solid fa-heart" id="fav-btn"></div>
+                <div class="fa-solid fa-user" id="profile-btn"> </div>
+            </div>
+        </div>
+
+        <div class="profile-items-container">
+            <div class="profile-item">
+                <div class="profile-sidebar">
+
+                    <div class="name-sidebar">
+
+                        <div class="img-profile">
+                            <img src="images/blank-profile-picture.webp" alt="profile">
+                        </div>
+
+                        <div class="name-prof">
+                            <h1>Full name goes here</h1>
+                            <h2>username_goes_here</h2>
+                        </div>
+
+                    </div>
+
+                    <div class="nav-btn-sidebar">
+                        <a href="profile.html" class="btn-profile" style="text-decoration: none;">Profile</a>
+                        <a href="#" class="btn-profile" style="text-decoration: none;">Logout</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+        <i class="fas fa-bars" id="menu-btn"></i>
+
+        <div class="cart-items-container">
+            <div class="cart-item">
+                <div class="content">
+                    <h3> Shopping Cart </h3>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <a href=""><span class="fas fa-times"></span> </a>
+                <img src="images/products/athletic_shoes/men/692bc396a50b3bf8c1b7ee1c41d0e5e4b4.rsquare.w600.webp"
+                    alt="">
+                <div class="content">
+                    <h3 style="width: 85%;  "><a href="">Nike Metcon 8</a></h3>
+                    <div class="price">Php 7898.83 <br> x1 = Php 7898.83 <br> <button
+                            style="font-size:18px; padding:5px; margin: 4px 10px 0px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"
+                            onclick="decrementNumber1()">-</button>
+                        <p id="quantity-1" style="display:inline"> 1 </p> <button
+                            style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"
+                            onclick="incrementNumber1()">+</button><button
+                            style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"
+                            onclick="changeQuantity1()">Apply</button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var quantity1 = 1;
+                function incrementNumber1() {
+                    quantity1++;
+                    document.getElementById("quantity-1").innerHTML = "" + quantity1;
+                }
+
+                function decrementNumber1() {
+                    quantity1--;
+                    if (quantity1 < 1) {
+                        quantity1 = 1;
+                    }
+                    document.getElementById("quantity-1").innerHTML = "" + quantity1;
+                }
+                function changeQuantity1() {
+                    window.location.href = "#";
+                }
+            </script>
+            <a href="#" class="btn">checkout now <br> Php 7898.83</a>
+        </div>
+
+        <div class="fav-items-container">
+            <div class="fav-item">
+                <div class="content">
+                    <h3> Favorites </h3>
+                </div>
+            </div>
+            <div class="fav-item">
+                <a href="#"><span class="fas fa-times"></span> </a>
+                <img src="images/products/athletic_shoes/men/692bc396a50b3bf8c1b7ee1c41d0e5e4b4.rsquare.w600.webp"
+                    alt="">
+                <div class="content">
+                    <h3><a href="#">Nike Metcon 8</a></h3>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+     <!--Athletics Men-->
+     <div class="container scroll-card">
+        <div class="row">
+            <div class="col" style="margin-top: 65px;">
+                <a href="product.html"><button class="btn btn-cat" style="margin-right: 50px; border-radius: 20px; font-size: 15px;">Back</button></a>
+                <a href=""><button class="btn btn-cat-current" style="font-size: 18px;">ATHLETICS</button></a>
+                <a href="product_formal-women.html"><button class="btn btn-cat" style="font-size: 18px;">FORMAL</button></a>
+                <a href="product_casual-women.html"><button class="btn btn-cat" style="font-size: 18px;">CASUAL</button></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h1 class="header-title">
+                    ATHLETICS <span style="font-style: italic; color: #eec98b;">WOMEN</span>
+                </h1>
+            </div> 
+            <div class="col">
+                <a href="product_athletics-men.html">
+                    <button class="btn btn-sex">
+                        MEN
+                        <i class="fa-solid fa-right-long" style="color: #5b3d04; margin-left: 5px;"></i>
+                    </button>
+                </a>
+            </div>  
+        </div>
+        <div class="dash"></div>
+
+        <!--BasketBall-->
+
+        <h1 class="category-title">Tennis Wear</h1>
+        <div class="row">
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                        <div class="row align-items-center">
+                            <div class="col-sm ">
+                                <img src="new images/asics-logo.png" alt="" width="70px" height="35px" class="">
+                            </div>
+                            <div class="col-sm">
+                                <h3 class="price">P3934</h3>
+                            </div>
+                        </div>
+                        <img src="new images/athelics-women/asics-women-tennis-1.jpg" alt="" class="product-img rounded-0" width="285px" height="250px">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <p class="card-title">Tennis</p>
+                                </div>
+                                <div class="col-sm star">
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title">GEL-RESOLUTION 9</h5>
+                            <p class="card-text">The GEL-RESOLUTION 9 tennis shoe creates advanced stability
+                                    and cushioning for players who like to control the game from the baseline.</p>
+                           
+                        
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <img src="new images/babolat-logo.png" alt="" width="100px" height="25px" class="">
+                            </div>
+                            <div class="col">
+                                <h3 class="price">P4378</h3>
+                            </div>
+                        </div>
+                        <img src="new images/athelics-women/babolat-women-tennis.jpg" alt="" class="product-img rounded-0" width="285px" height="250px">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <p class="card-title">Tennis</p>
+                                </div>
+                                <div class="col-sm star">
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title">SFX3 ALL COURT</h5>
+                            <p class="card-text">TThe Babolat Women’s SFX3 All Court Tennis Shoes ensures all the comfort
+                                 you need on the court with a sole that is suitable for all surfaces.</p>
+                            
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                        <div class="row align-items-center">
+                            <div class="col-sm ">
+                                <img src="new images/diadora-logo.png" alt="" width="130px" height="25px" class="">
+                            </div>
+                            <div class="col-sm">
+                                <h3 class="price">P5486</h3>
+                            </div>
+                        </div>
+                        <img src="new images/athelics-women/diadora-tennis-women.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="col-sm">
+                                        <p class="card-title">Tennis</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm star">
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title">BLUSHSHIELD TORNEO AG</h5>
+                            <p class="card-text">Diadora Women`s Blushield Torneo 2 AG Tennis Shoes incorporate many familiar technologies from
+                                 durable and stable Speed Blushield line. </p>
+                            
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="" class="product-link">
+                        <div class="row align-items-center">
+                            <div class="col-sm ">
+                                <img src="new images/k-swiss-logo.png" alt="" width="105px" height="20px" class="">
+                            </div>
+                            <div class="col-sm">
+                                <h3 class="price">P6317</h3>
+                            </div>
+                        </div>
+                        <img src="new images/athelics-women/k-swiss-tennis-women.jpg" alt="" class="product-img rounded-0" width="285px" height="250px">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <p class="card-title">Tennis</p>
+                                </div>
+                                <div class="col-sm star">
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title">HYPERCOURT EXPRESS 2</h5>
+                            <p class="card-text">The K-Swiss® Hypercourt Express 2 tennis shoes is lightweight, breathable,
+                                for the competitive junior player who wants high performance on the court.</p>
+                           
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+             
+            
+            <!--Football-->
+
+            <div class="dash"></div>
+            <div id="football"></div>
+            <h1 class="category-title">Soccer Wear</h1>
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                        <div class="row align-items-center">
+                            <div class="col-sm ">
+                                <img src="new images/puma-logo.png" alt="" width="70px" height="35px" class="">
+                            </div>
+                            <div class="col-sm">
+                                <h3 class="price">P1884</h3>
+                            </div>
+                        </div>
+                        <img src="new images/athelics-women/puma-women-football.jpg" alt="" class="product-img rounded-0" width="285px" height="250px">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <p class="card-title">Soccer</p>
+                                </div>
+                                <div class="col-sm star">
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title">EVOSPEED 4.4</h5>
+                            <p class="card-text">Firm-ground soccer cleat with lightweight synthetic
+                                upper featuring SpeedCELL designation for responsive design</p>
+                            
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                        <div class="row align-items-center">
+                            <div class="col-sm ">
+                                <img src="new images/adidas-logo.png" alt="" width="60px" height="30px" class="">
+                            </div>
+                            <div class="col-sm">
+                                <h3 class="price">P5789</h3>
+                            </div>
+                        </div>
+                        <img src="new images/athelics-women/adidad-women-tennis.jpg" alt="" class="product-img rounded-0" width="285px" height="250px">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <p class="card-title">Soccer</p>
+                                </div>
+                                <div class="col-sm star">
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title">ACE 17.1 SOCCER CLEATS</h5>
+                            <p class="card-text">This soft groung style is engineered with a snug, sock-like Primeknit upper
+                                and leather toe with a stitch pattern that’s good for ball control.</p>
+                           
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                        <div class="row align-items-center">
+                            <div class="col-sm ">
+                                <img src="new images/diadora-logo.png" alt="" width="130px" height="25px" class="">
+                            </div>
+                            <div class="col-sm">
+                                <h3 class="price">P1496</h3>
+                            </div>
+                        </div>
+                        <img src="new images/athelics-women/diadora-women-soccer.jpg" alt="" class="product-img rounded-0" width="285px" height="250px">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <p class="card-title">Soccer</p>
+                                </div>
+                                <div class="col-sm star">
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title">CAPITANO ID</h5>
+                            <p class="card-text">This soft groung style is engineered with a snug, sock-like Primeknit upper and
+                                leather toe with a stitch pattern that’s good for ball control. </p>
+                           
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                        <div class="row align-items-center">
+                            <div class="col-sm ">
+                                <img src="new images/vitike-logo.png" alt="" width="125px" height="28px" class="">
+                            </div>
+                            <div class="col-sm">
+                                <h3 class="price">P2457</h3>
+                            </div>
+                        </div>
+                        <img src="new images/athelics-women/vitike-women-soccer.jpg" alt="" class="product-img rounded-0" width="285px" height="250px">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <p class="card-title">Soccer</p>
+                                </div>
+                                <div class="col-sm star">
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title">TURF SHOES INDOOR</h5>
+                            <p class="card-text">Also fit for a variety of surfaces, these shoes have a ribbed synthetic
+                                upper for precise ball control and an anti-stretch lining for a secure fit.</p>
+                            
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <!--Running-->
+
+            <div class="dash"></div>
+            <h1 class="category-title">Running Wear</h1>
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                        <div class="row align-items-center">
+                            <div class="col-sm ">
+                                <img src="new images/brooks-logo.png" alt="" width="90px" height="25px" class="">
+                            </div>
+                            <div class="col-sm">
+                                <h3 class="price">P9088</h3>
+                            </div>
+                        </div>
+                        <img src="new images/athelics-women/brooks-women-running.jpg"alt="" class="product-img rounded-0" width="285px" height="250px">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <p class="card-title">Running</p>
+                                </div>
+                                <div class="col-sm star">
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title">CATAMOUNT 2</h5>
+                            <p class="card-text">The original Catamount, Brooks’s first trail shoe with a DNA Flash midsole,
+                                was one-part super shoe with its responsive, high-energy return platform.</p>
+                            
+                        
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                        <div class="row align-items-center">
+                            <div class="col-sm ">
+                                <img src="new images/newbalance-logo.png" alt="" width="65px" height="30px" class="">
+                            </div>
+                            <div class="col-sm">
+                                <h3 class="price" >P9975</h3>
+                            </div>
+                        </div>
+                        <img src="new images/athelics-women/newbalance-women-running.jpg" alt="" class="product-img rounded-0" width="285px" height="250px">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <p class="card-title">Running</p>
+                                </div>
+                                <div class="col-sm star">
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title">FUELCELL SUPERCOMP</h5>
+                            <p class="card-text">The debut SuperComp Trainer was one of our favorite shoes last year.
+                                It had super-thick stacks of incredibly bouncy foam and it was ridiculously fun to wear.​</p>
+                            
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                        <div class="row align-items-center">
+                            <div class="col-sm ">
+                                <img src="new images/saucony-logo.png" alt="" width="70px" height="35px" class="">
+                            </div>
+                            <div class="col-sm">
+                                <h3 class="price">P15185</h3>
+                            </div>
+                        </div>
+                        <img src="new images/athelics-women/saucony-women-running.jpg" alt="" class="product-img rounded-0" width="285px" height="250px">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <p class="card-title">Running</p>
+                                </div>
+                                <div class="col-sm star">
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title">ENDORPHIN ELITE</h5>
+                            <p class="card-text">Run your next marathon or field race by wearing the turbocharged
+                                Saucony® Endorphin Elite sneakers offering high performance with textile and synthetic upper</p>
+                            
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                        <div class="row align-items-center">
+                            <div class="col-sm ">
+                                <img src="new images/altra-logo.png" alt="" width="90px" height="25px" class="">
+                            </div>
+                            <div class="col-sm">
+                                <h3 class="price">P9088</h3>
+                            </div>
+                        </div>
+                        <img src="new images/athelics-women/altra-women-running.jpg"alt="" class="product-img rounded-0" width="285px" height="250px">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <p class="card-title">Running</p>
+                                </div>
+                                <div class="col-sm star">
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                </div>
+                            </div>
+                            <h5 class="card-title">VIA OLYMPUS 2</h5>
+                            <p class="card-text">The Via Olympus provides an über-cushioned ultra comfortable with a generous
+                                platform of foam for long-distance running—very long-distance running.</p>
+                            
+                        
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            
+
+
+        </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+
+        <div class="credit">
+            <div class="wrapping start">
+                <div class="wrap">
+                    <p>Be the first to know about our special offers, upcoming sales, special events, new arrivals, and
+                        more.</p>
+                </div>
+            </div>
+
+            <div class="wrapping center">
+                <div class="help">
+                    <a href="FAQ.html">FAQ's</a>
+                    <a href="privacy_policy.html">Privacy Policy</a>
+                    <a href="shipping_policy.html">Shipping Policy</a>
+                    <a href="refund_policy.html">Refund Policy</a>
+                </div>
+            </div>
+
+            <div class="wrapping end">
+                <div class="share">
+                    <a href="https://www.facebook.com/VandKApparel" class="fa-brands fa-xl fa-facebook-f"></a>
+                    <a href="https://www.twitter.com/" class="fa-brands fa-xl fa-twitter"></a>
+                    <a href="https://www.instagram.com/" class="fa-brands fa-xl fa-instagram"></a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <footer class="sub-footer">
+        <p> Copyright &copy; 2023. On your feet, inc. all rights reserved.</p>
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

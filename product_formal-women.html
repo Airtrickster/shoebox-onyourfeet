@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/product-cat-new.css">
+    <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
+    <link rel="icon" href="images/icon.png">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>ShoeBox | Products | Formal Shoes Women></title>
+</head>
+
+<body style="background-color: black;">
+
+    <!--navbar with functionalities-->
+    <header class="header header-scrolled">
+
+        <div class="wrappings start">
+            <a href="index-new.html" class="logo">
+                <img src="images/mini-logo.png" alt="Logo">
+            </a>
+        </div>
+
+        <div class="wrappings center">
+            <nav class="navbar">
+                <a href="index.html" style="text-decoration: none;" >Home</a>
+                <a href="about.html" style="text-decoration: none;">About</a>
+                <a href="product.html" style="text-decoration: none;" class="active">Product</a>
+                <a href="contact.html" style="text-decoration: none;">Contact</a>
+            </nav>
+        </div>
+
+        <div class="wrappings end">
+            <div class="icons">
+                <div class="fas fa-shopping-cart" id="cart-btn"></div>
+                <div class="fa-solid fa-heart" id="fav-btn"></div>
+                <div class="fa-solid fa-user" id="profile-btn"> </div>
+            </div>
+        </div>
+
+        <div class="profile-items-container">
+            <div class="profile-item">
+                <div class="profile-sidebar">
+
+                    <div class="name-sidebar">
+
+                        <div class="img-profile">
+                            <img src="images/blank-profile-picture.webp" alt="profile">
+                        </div>
+
+                        <div class="name-prof">
+                            <h1>Full name goes here</h1>
+                            <h2>username_goes_here</h2>
+                        </div>
+
+                    </div>
+
+                    <div class="nav-btn-sidebar">
+                        <a href="profile.html" class="btn-profile" style="text-decoration: none;">Profile</a>
+                        <a href="#" class="btn-profile" style="text-decoration: none;">Logout</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+        <i class="fas fa-bars" id="menu-btn"></i>
+
+        <div class="cart-items-container">
+            <div class="cart-item">
+                <div class="content">
+                    <h3> Shopping Cart </h3>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <a href=""><span class="fas fa-times"></span> </a>
+                <img src="images/products/athletic_shoes/men/692bc396a50b3bf8c1b7ee1c41d0e5e4b4.rsquare.w600.webp"
+                    alt="">
+                <div class="content">
+                    <h3 style="width: 85%;  "><a href="">Nike Metcon 8</a></h3>
+                    <div class="price">Php 7898.83 <br> x1 = Php 7898.83 <br> <button
+                            style="font-size:18px; padding:5px; margin: 4px 10px 0px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"
+                            onclick="decrementNumber1()">-</button>
+                        <p id="quantity-1" style="display:inline"> 1 </p> <button
+                            style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"
+                            onclick="incrementNumber1()">+</button><button
+                            style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"
+                            onclick="changeQuantity1()">Apply</button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var quantity1 = 1;
+                function incrementNumber1() {
+                    quantity1++;
+                    document.getElementById("quantity-1").innerHTML = "" + quantity1;
+                }
+
+                function decrementNumber1() {
+                    quantity1--;
+                    if (quantity1 < 1) {
+                        quantity1 = 1;
+                    }
+                    document.getElementById("quantity-1").innerHTML = "" + quantity1;
+                }
+                function changeQuantity1() {
+                    window.location.href = "#";
+                }
+            </script>
+            <a href="#" class="btn">checkout now <br> Php 7898.83</a>
+        </div>
+
+        <div class="fav-items-container">
+            <div class="fav-item">
+                <div class="content">
+                    <h3> Favorites </h3>
+                </div>
+            </div>
+            <div class="fav-item">
+                <a href="#"><span class="fas fa-times"></span> </a>
+                <img src="images/products/athletic_shoes/men/692bc396a50b3bf8c1b7ee1c41d0e5e4b4.rsquare.w600.webp"
+                    alt="">
+                <div class="content">
+                    <h3><a href="#">Nike Metcon 8</a></h3>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+     <!--Formal Women-->
+     <div class="container scroll-card">
+        <div class="row">
+            <div class="col" style="margin-top: 65px;">
+                <a href="product.html"><button class="btn btn-cat" style="margin-right: 50px; border-radius: 20px; font-size: 15px;">Back</button></a>
+                <a href="product_athletics-women.html"><button class="btn btn-cat" style="font-size: 18px;">ATHLETICS</button></a>
+                <button class="btn btn-cat-current" style="font-size: 18px;">FORMAL</button>
+                <a href="product_casual-women.html"><button class="btn btn-cat" style="font-size: 18px;">CASUAL</button></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h1 class="header-title">
+                    FORMAL <span style="font-style: italic; color: #eec98b;">WOMEN</span>
+                </h1>
+            </div> 
+            <div class="col">
+                <a href="product_formal-men.html">
+                    <button class="btn btn-sex">
+                        MEN
+                        <i class="fa-solid fa-right-long" style="color: #5b3d04; margin-left: 5px;"></i>
+                    </button>
+                </a>
+            </div>  
+        </div>
+        <div class="dash"></div>
+
+
+        <!--row-1-heels-->
+        <h1 class="category-title">Heels</h1>
+        <div class="row">
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/maguire-logo.webp" alt="" width="100px" height="25px" class="">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P10000</h3>
+                        </div>
+                    </div>
+                    <img src="new images/formal-women/maguire-formal.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Maguire</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">NOTO GOLD HIGH HEEL</h5>
+                        <p class="card-text">Handmade in Montecatini Terme, Italy. Liven up your outfit with this cheeky high heel. 
+                            Its puffy signature knot is such a statement!</p>
+                            
+                        
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <img src="new images/shekudo.png" alt="" width="120px" height="21px" class="">
+                        </div>
+                        <div class="col">
+                            <h3 class="price">P20400</h3>
+                        </div>
+                    </div>
+                    <img src="new images/formal-women/shekudo-women.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Shekudo</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>  
+                        <h5 class="card-title">SIMONE ROPE MULE</h5>
+                        <p class="card-text">They'll be green with envy when they see you in these knotty grass green mules! 
+                            I mean, how stunning is that sculptural heel shape?</p>
+                            
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/farmrio-logo.png" alt="" width="100px" height="22px" class="">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P6373</h3>
+                        </div>
+                    </div>
+                    <img src="new images/formal-women/farm-rio-women.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="col-sm">
+                                    <p class="card-title">Farm Rio</p>
+                                </div>  
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">MARSALA MONSTERA HEEL</h5>
+                        <p class="card-text">Love the contrast of those delicate ankle straps, chunky heel shape, which also will keep you stable 
+                            and secure on your feet for a long night of dancing.</p>
+                           
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/brother-vellies-logo.png" alt="" width="110px" height="25px" class="">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P44800</h3>
+                        </div>
+                    </div>
+                    <img src="new images/formal-women/brother-vellies-formal.jpg" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Brother Vellies</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">OLIVIA PUPM IN STONE</h5>
+                        <p class="card-text">These cuties are unbelievably comfortable and soft. Apparently, they are also the best heels to dance the night away!
+                        </p>
+                      
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="dash"></div>
+             <!--row-2 flats-->
+             <h1 class="category-title">Flats</h1>
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/dream-pairs-logo.png" alt="" width="110px" height="23px" class="">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P1274</h3>
+                        </div>
+                    </div>
+                    <img src="new images/formal-women/dream-pairs-formal.jpg" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Dream Pairs</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">SOLE SIMPLE BALLERINA</h5>
+                        <p class="card-text">These ballerina walking flats feature a 0.15" heel and a trademark ballerina silhouette. Suitable for business and casual wear.</p>
+                          
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/tory-burch-logo.png" alt="" width="120px" height="30px" class="">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P15138</h3>
+                        </div>
+                    </div>
+                    <img src="new images/formal-women/tory-flat.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Tory Burch</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">GEORGIA SQUARE TOE</h5>
+                        <p class="card-text">An enameled stacked-T buckle accentuates the trend-forward square toe of this sleek leather upper, lining and synthetic soleballet flat.
+                            </p>
+                           
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/sam-edelman-logo.png" alt="" width="90px" height="25px" class="">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P4816</h3>
+                        </div>
+                    </div>
+                    <img src="new images/formal-women/sam-edelman-formal.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Sam Edelman</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">LORAINE BIT LOAFER</h5>
+                        <p class="card-text"> Polished bit hardware underscores the menswear-inspired aesthetic of a classic loafer 
+                            set on a cushioned insole for lasting comfort. </p>
+                           
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/kenneth-cole-logo.png" alt="" width="125px" height="30px" class="">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P6016</h3>
+                        </div>
+                    </div>
+                    <img src="new images/formal-women/keneth cole formal.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Kenneth Cole</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">ATLAS FLAT</h5>
+                        <p class="card-text">A graceful vamp bow adds timeless charm to a versatile flat fitted with a 
+                            PORON®-cushioned footbed for endless comfort and support.</p>
+                        
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="dash"></div>
+             <!--row-3 BOOTS-->
+             <h1 class="category-title">Boots</h1>
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/UGG-logo.png" alt="" width="60px" height="30px" class="">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P6624</h3>
+                        </div>
+                    </div>
+                    <img src="new images/formal-women/ugg-boots.png"alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">UGG</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">ROMELY HERITAGE BOOTS</h5>
+                        <p class="card-text">This boot is updated with an UGGplush collar, a moisture-wicking textile made from a wool-rich blend but 
+                            crafted to feel and wear like genuine shearling.</p>
+                           
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/earth-logo.png" alt="" width="65px" height="30px" class="">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price" >P8973</h3>
+                        </div>
+                    </div>
+                    <img src="new images/formal-women/earth-boots.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Earth</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">CALIA WEDGE BOOTIE</h5>
+                        <p class="card-text">Rear lacing and a side-zip closure add easy-on comfort to a wedge bootie rendered in velvety suede with 
+                            memory foam cushioning.​</p>
+                          
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <a href="product_details.html" class="product-link" style="width: 29rem;">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/sam-edelman-logo.png" alt="" width="90px" height="30px" class="">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P7160</h3>
+                        </div>
+                    </div>
+                    <img src="new images/formal-women/sam-edelman-boots.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Sam Edelman</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">USHA POINTED TOE</h5>
+                        <p class="card-text">Gleaming logo hardware adds signature appeal to the heel of a polished bootie 
+                            framed by a pointy toe and tapered heel.</p>
+                          
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <a href="product_details.html" class="product-link" style="width: 29rem;">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/sarto-logo.png" alt="" width="90px" height="25px" class="">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P8430</h3>
+                        </div>
+                    </div>
+                    <img src="new images/formal-women/sarto-formal-boots.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Sarto</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">FLEXA FABIENE BOOTIE</h5>
+                        <p class="card-text">A square toe and block heel ground this burnished leather bootie in contemporary-chic style, while lightweight 
+                            adds everyday comfort.</p>
+                       
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+
+        <div class="credit">
+            <div class="wrapping start">
+                <div class="wrap">
+                    <p>Be the first to know about our special offers, upcoming sales, special events, new arrivals, and
+                        more.</p>
+                </div>
+            </div>
+
+            <div class="wrapping center">
+                <div class="help">
+                    <a href="FAQ.html">FAQ's</a>
+                    <a href="privacy_policy.html">Privacy Policy</a>
+                    <a href="shipping_policy.html">Shipping Policy</a>
+                    <a href="refund_policy.html">Refund Policy</a>
+                </div>
+            </div>
+
+            <div class="wrapping end">
+                <div class="share">
+                    <a href="https://www.facebook.com/VandKApparel" class="fa-brands fa-xl fa-facebook-f"></a>
+                    <a href="https://www.twitter.com/" class="fa-brands fa-xl fa-twitter"></a>
+                    <a href="https://www.instagram.com/" class="fa-brands fa-xl fa-instagram"></a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <footer class="sub-footer">
+        <p> Copyright &copy; 2023. On your feet, inc. all rights reserved.</p>
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

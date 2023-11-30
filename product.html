@@ -4,34 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
     <script src="lib/jquery-3.6.3.js"></script>
-    <link rel="icon" href="images/icon.png">
-    <title>On your feet | Product</title>
+    <link rel="icon" href="new images/logo-2.png">
+    <title>ShoeBox | Product</title>
 </head>
-<body>
-    
+<body style="background-color:#000000;">
+    <div id="top"></div>
+
+    <!--header bg-->
+    <img class="bg-img" src="new images/shoe-header-2.jpg" alt="header image">
+    <!---->
+
+    <!--nav bar but dont have functionalites
+    <header>
+        <div class="wrap">
+            <div class="flex brand">
+                <a href="#">
+                    <h1>Shoe Box</h1>
+                </a>
+            </div>
+            <div class="flex navbar active" > 
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>
+                <div href="#" class="closebtn"><i class="fa-solid fa-lg fa-xmark"></i></div>
+            </div>
+            <div class="flex" id="signin">
+                <a href="#"><i class="fa-solid fa-star "></i></a>
+                <a href="#"><i class="fa-solid fa-cart-shopping "></i></a>
+                <a href="#" id="myBtn">Sign in</a>
+                <a href="#" id="myBtn2">Log in</a>
+            </div>
+            <div class="menubar"><i id="menu-nav" class="fa-solid fa-bars"></i></div>
+        </div>
+    </header> -->
+
+    <!--navbar with functionalities-->
     <header class="header header-scrolled">
 
         <div class="wrappings start">
-        <a href="index.html" class="logo">
-            <img src="images/mini-logo.png" alt="Logo">
-        </a>  
+            <a href="index-new.html" class="logo">
+                <img src="images/mini-logo.png" alt="Logo">
+            </a>
         </div>
-    
+
         <div class="wrappings center">
             <nav class="navbar">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="product.html">Product</a>
-                <a href="contact.html">Contact</a>
+                <a href="index.html" style="text-decoration: none;" >Home</a>
+                <a href="about.html" style="text-decoration: none;">About</a>
+                <a href="product.html" style="text-decoration: none;" class="active">Product</a>
+                <a href="contact.html" style="text-decoration: none;">Contact</a>
             </nav>
         </div>
-    
+
         <div class="wrappings end">
             <div class="icons">
                 <div class="fas fa-shopping-cart" id="cart-btn"></div>
@@ -39,273 +74,294 @@
                 <div class="fa-solid fa-user" id="profile-btn"> </div>
             </div>
         </div>
-    
+
         <div class="profile-items-container">
-        <div class="profile-item">
-            <div class="profile-sidebar">
-    
+            <div class="profile-item">
+                <div class="profile-sidebar">
+
                     <div class="name-sidebar">
-    
+
                         <div class="img-profile">
                             <img src="images/blank-profile-picture.webp" alt="profile">
                         </div>
-    
+
                         <div class="name-prof">
                             <h1>Full name goes here</h1>
                             <h2>username_goes_here</h2>
                         </div>
-    
+
                     </div>
-    
-                    <div class="nav-btn-sidebar">                    
-                        <a href="profile.html">Profile</a>
-                        <a href="#">Logout</a>
+
+                    <div class="nav-btn-sidebar">
+                        <a href="profile.html" class="btn-profile" style="text-decoration: none;">Profile</a>
+                        <a href="#" class="btn-profile" style="text-decoration: none;">Logout</a>
                     </div>
-    
-    
+
+
+                </div>
             </div>
         </div>
+
         </div>
-    
-        </div>
-    
-            <i class="fas fa-bars" id="menu-btn"></i>
-        
+
+        <i class="fas fa-bars" id="menu-btn"></i>
+
         <div class="cart-items-container">
-        <div class="cart-item">
-            <div class="content">
-                <h3> Shopping Cart </h3>
+            <div class="cart-item">
+                <div class="content">
+                    <h3> Shopping Cart </h3>
+                </div>
             </div>
-        </div>
-    
-        <div class="cart-item">
-            <a href=""><span class="fas fa-times"></span> </a>
-            <img src="images/products/athletic_shoes/men/692bc396a50b3bf8c1b7ee1c41d0e5e4b4.rsquare.w600.webp" alt="">
-            <div class="content">
-            <h3 style="width: 85%;  "><a href="">Nike Metcon 8</a></h3>
-            <div class="price">Php 7898.83 <br> x1 = Php 7898.83 <br> <button style="font-size:18px; padding:5px; margin: 4px 10px 0px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;" onclick="decrementNumber1()">-</button> <p id="quantity-1" style="display:inline"> 1 </p> <button style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"  onclick="incrementNumber1()">+</button><button style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;" onclick="changeQuantity1()">Apply</button></div>
+
+            <div class="cart-item">
+                <a href=""><span class="fas fa-times"></span> </a>
+                <img src="images/products/athletic_shoes/men/692bc396a50b3bf8c1b7ee1c41d0e5e4b4.rsquare.w600.webp"
+                    alt="">
+                <div class="content">
+                    <h3 style="width: 85%;  "><a href="">Nike Metcon 8</a></h3>
+                    <div class="price">Php 7898.83 <br> x1 = Php 7898.83 <br> <button
+                            style="font-size:18px; padding:5px; margin: 4px 10px 0px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"
+                            onclick="decrementNumber1()">-</button>
+                        <p id="quantity-1" style="display:inline"> 1 </p> <button
+                            style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"
+                            onclick="incrementNumber1()">+</button><button
+                            style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"
+                            onclick="changeQuantity1()">Apply</button>
+                    </div>
+                </div>
             </div>
-        </div>
-        <script>
-            var quantity1 = 1;
-            function incrementNumber1() {
-                quantity1++;
-                document.getElementById("quantity-1").innerHTML = "" + quantity1;
-            }
-    
-            function decrementNumber1() {
-                quantity1--;
-                if (quantity1 < 1) {
-                    quantity1 = 1;
+            <script>
+                var quantity1 = 1;
+                function incrementNumber1() {
+                    quantity1++;
+                    document.getElementById("quantity-1").innerHTML = "" + quantity1;
                 }
-                document.getElementById("quantity-1").innerHTML = "" + quantity1;
+
+                function decrementNumber1() {
+                    quantity1--;
+                    if (quantity1 < 1) {
+                        quantity1 = 1;
+                    }
+                    document.getElementById("quantity-1").innerHTML = "" + quantity1;
                 }
-            function changeQuantity1() {
-                window.location.href = "#";
-            }
+                function changeQuantity1() {
+                    window.location.href = "#";
+                }
             </script>
             <a href="#" class="btn">checkout now <br> Php 7898.83</a>
         </div>
-    
+
         <div class="fav-items-container">
-        <div class="fav-item">
-            <div class="content">
-                <h3> Favorites </h3>
+            <div class="fav-item">
+                <div class="content">
+                    <h3> Favorites </h3>
+                </div>
+            </div>
+            <div class="fav-item">
+                <a href="#"><span class="fas fa-times"></span> </a>
+                <img src="images/products/athletic_shoes/men/692bc396a50b3bf8c1b7ee1c41d0e5e4b4.rsquare.w600.webp"
+                    alt="">
+                <div class="content">
+                    <h3><a href="#">Nike Metcon 8</a></h3>
+                </div>
             </div>
         </div>
-        <div class="fav-item">
-            <a href="#"><span class="fas fa-times"></span> </a>
-            <img src="images/products/athletic_shoes/men/692bc396a50b3bf8c1b7ee1c41d0e5e4b4.rsquare.w600.webp" alt="">
-            <div class="content">
-            <h3><a href="#">Nike Metcon 8</a></h3>
-            </div>
-        </div>
-        </div>
-    
+
     </header>
 
-    <section class="sale">
-        <div class="box-sale">
-            <h1>25% off select styles</h1>
-            <p>Sign in and use code <span>OYFT25</span> for 25% off. Not a member? Use code <span>FEET20</span> for an extra 20% off. Select styles. Exclusions apply.</p>
-            <button onclick='window.location.href="#product"''>Shop</button>
+ <!--header-->
+        <div class="header-content position-relative">
+            <h1 class="header-text">DISCOVER LIMITED SHOES WITHOUT LIMITATION</h1>
         </div>
-    </section>
 
-
-    <section class="showcase-page">
-        <div class="show">
-            <p>feet in!</p>
-            <img src="./images/basketball-shoes.png" alt="page">
-            <p class="center-text">When it comes to basketball, having the best pair of basketball shoes is essential</p>
-        </div>
-    </section>
-
-    <section class="product" id="product">
-
-        <h1 class="heading"> our <span>product</span> </h1>
-    
-        <div class="content">
-            <img src="images/product_ath.png">
-            <h1>Athletic Shoes</h1>
-            <div class="btn-prod">
-            <button onclick='window.location.href="product_category.html?category=athletic&gender=men"' class="btn2 buttoncurved">Shop Men's</button>
-            <button onclick='window.location.href="product_category.html?category=athletic&gender=women"' class="btn2 buttoncurved">Shop Women's</button>
+        <!--deal of the day-->
+        <div class="container scroll-card">
+            <div class="row">
+                <h1 class="top" style="padding-bottom: 50px; color: rgb(255, 255, 255); font-size: 70px;">DEAL OF THE DAY</h1>
             </div>
-        </div>
-
-          <div class="content">
-            <img src="images/product_for.png" >
-            <h1>Formal Shoes</h1>
-            <div class="btn-prod">
-            <button onclick='window.location.href="product_category.html?category=formal&gender=men"' class="btn2 buttoncurved">Shop Men's</button>
-            <button onclick='window.location.href="product_category.html?category=formal&gender=women"' class="btn2 buttoncurved">Shop Women's</button>
-            </div>
-        </div>
-
-          <div class="content">
-            <img src="images/product_cas.png" >
-            <h1>Casual Shoes</h1>
-            <div class="btn-prod">
-            <button onclick='window.location.href="product_category.html?category=casual&gender=men"' class="btn2 buttoncurved">Shop Men's</button>
-            <button onclick='window.location.href="product_category.html?category=casual&gender=women"' class="btn2 buttoncurved">Shop Women's</button>
-            </div>
-        </div>
-
-    </section>
-
-    <section class="BestSeller" id="BestSeller">
-
-        <h1 class="heading"> Best <span>Seller</span> </h1>
-    
-        <div class="box-container">
-    
-            <div class="box">
-                <div class="icons">
-                    <a href="#" class="fas fa-shopping-cart"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
-                <div class="image">
-                    <img src="images/products/athletic_shoes/men/132caceb69553d285f143e5caceec85bf6.rsquare.w600.webp" alt="">
-                </div>
-                <div class="content">
-                    <h3>Altra Outroad Trail Running Shoe</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
+            <div class="dash"></div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="row align-items-center">
+                            <div class="col-sm ">
+                                <img src="new images/adidas-logo.png" alt="" width="50px" height="35px" class="">
+                            </div>
+                            <div class="col-sm">
+                                <h3 class="price">P8500</h3>
+                            </div>
+                        </div>
+                        <img src="new images/athetics-men/adidas-men-basketball.png" alt="" class="featured-img rounded-0" width="285px" height="250px">
+                        <div class="card-body">
+                            <p class="card-title">Basketball</p>
+                            <h5 class="card-title">TRAE YOUNG 3 SHOES</h5>
+                            <p class="card-text">Signature Sneakers from Trae Young and Adidas Bastketball</p>
+                            <a href="athletics-product-men-new.html" class="btn  btn-standard">Shop Now</a>
+                        </div>
                     </div>
-                    <div class="price">Php 7634.55 </div>
                 </div>
-            </div>
-    
-            <div class="box">
-                <div class="icons">
-                    <a href="#" class="fas fa-shopping-cart"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
-                <div class="image">
-                    <img src="images/products/formal_shoes/men/7341857669298-2_082302a4-7c41-4c47-b02d-11c04a8e32b7_350x500.webp" alt="">
-                </div>
-                <div class="content">
-                    <h3>East Rock Men's Hanston Loafers</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
+
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <img src="new images/vans-logo.jpg" alt="" width="65px" height="35px" class="">
+                            </div>
+                            <div class="col">
+                                <h3 class="price">P3899</h3>
+                            </div>
+                        </div>
+                        <img src="new images/vans-product-1.png" alt="" class="featured-img rounded-0" width="285px" height="250px">
+                        <div class="card-body">
+                            <p class="card-title">Old Skool</p>
+                            <h5 class="card-title">OLD SKOOL SHOE</h5>
+                            <p class="card-text">The Iconic Shoe that Brought our Sidestripe to Life</p>
+                            <a href="#" class="btn btn-standard">Shop Now</a>
+                        </div>
                     </div>
-                    <div class="price">Php 1,700.00 <span> 2,899.00</span></div>
                 </div>
-            </div>
-    
-            <div class="box">
-                <div class="icons">
-                    <a href="#" class="fas fa-shopping-cart"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
-                <div class="image">
-                    <img src="images/products/casual_shoes/women/casual_shoe_20.png" alt="">
-                </div>
-                <div class="content">
-                    <h3>Adidas Stan Smith Sneaker</h3>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
+
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="row align-items-center">
+                            <div class="col-sm ">
+                                <img src="new images/alexander-mcqueen-logo.png" alt="" width="65px" height="35px" class="">
+                            </div>
+                            <div class="col-sm">
+                                <h3 class="price">P4900</h3>
+                            </div>
+                        </div>
+                        <img src="new images/alexander-mac-product-1.jpg" alt="" class="featured-img rounded-0" width="285px" height="250px">
+                        <div class="card-body">
+                            <p class="card-title">Style Boots</p>
+                            <h5 class="card-title">WANDER LACE UP BOOT</h5>
+                            <p class="card-text">Presented in Black Calf Leather with a Rubberised Hand Feel</p>
+                            <a href="#" class="btn btn-standard">Shop Now</a>
+                        </div>
                     </div>
-                    <div class="price">Php 4,899.00 <span>5,000.00</span> </div>
                 </div>
+
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="row align-items-center">
+                            <div class="col-sm ">
+                                <img src="new images/nike-logo.png" alt="" width="65px" height="35px" class="">
+                            </div>
+                            <div class="col-sm">
+                                <h3 class="price">P4900</h3>
+                            </div>
+                        </div>
+                        <img src="new images/athetics-men/nike-men-football.jpg" alt="" class="featured-img rounded-0" width="285px" height="250px">
+                        <div class="card-body">
+                            <p class="card-title">FootBall</p>
+                            <h5 class="card-title">NIKE AIR ZOOM VICTORY</h5>
+                            <p class="card-text">Push for your Personal Pest in the Nike Air Zoom Victory</p>
+                            <a href="athletics-product-men-new.html#football" class="btn btn-standard">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+               
             </div>
-    
         </div>
-    
-    </section>
+        
+        <!--ads-->
+        <section class="sale">
+            <div class="box-sale">
+                <h1>25% off select styles</h1>
+                <p>Sign in and use code <span>OYFT25</span> for 25% off. Not a member? Use code <span>FEET20</span> for an extra 20% off. Select styles. Exclusions apply.</p>
+                <button onclick='window.location.href="#product"'>Shop</button>
+            </div>
+        </section>
+       
+        <!--Trending now-->
+        <div class="container trend">
+            <div class="row">
+                <h1 style="padding-bottom: 50px; color: rgb(255, 255, 255); font-size: 70px;">TRENDING NOW</h1>
+                <div class="dash"></div>
+            </div>
 
-    <section class="review" id="review">
-
-        <h1 class="heading"> customer's <span>review</span> </h1>
-    
-        <div class="box-container">
-    
-            <div class="box">
-                <img src="images/quote-img.png" alt="" class="quote">
-                <p>Wow! I finally found the shoe that I was looking for and it fits with my size! This store is a lifesaver</p>
-                <img src="images/hern.jpg" class="user" alt="">
-                <h3>Person 1</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+            <div class="row" style="margin-bottom: 100px; margin-top: 25px;">
+                <div class="container cont-mod">
+                    <img class="img-trend-1 rounded" src="new images/trend-1.jpg" alt="trending shoes">
+                    <div class="position-relative trend-content">
+                        <h1 style="font-size: 70px;">Step into Style</h1>
+                        <p style="font-size: 20px;">Where innovative designs seamlessly blend comfort and style, <br>ensuring every step is a statement.</p>
+                        <button class="btn btn-primary btn-standard">Shop</button>
+                    </div>
                 </div>
             </div>
-    
-            <div class="box">
-                <img src="images/quote-img.png" alt="" class="quote">
-                <p>"I ordered the Axel Arigato Clean 90, it is indeed cleaaannnn!! sheeshhh..., I'll order again"</p>
-                <img src="images/eme.jpg" class="user" alt="">
-                <h3>Person 2</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+
+
+            <div class="row">
+                <div class="col">
+                    <img class="rounded img-trend"src="new images/trend-2.jpg" alt="">
+                    <div class="row-2-context">
+                        <h3 style="font-style: italic; font-size: 40px; font-weight: bold; margin-bottom: 20px;">Footwear <br> Frenzy</h3>
+                        <button class="btn btn-primary btn-standard">Shop</button>
+                    </div>
                 </div>
+                <div class="col">
+                    <img class="rounded img-trend"src="new images/trend-3.jpg" alt="">
+                    <div class="row-3-context">
+                        <h3 style="font-style: italic; font-size: 40px; font-weight: bold; margin-bottom: 20px;">Sole Statements</h3>
+                        <button class="btn btn-primary btn-standard">Shop</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--Categories-->
+        <div class="container products-cat">
+            <div class="row">
+                <h1 style="text-align: center; padding-top: 10px; color: rgb(255, 255, 255); font-size: 70px;">Our Products</h1>
+                <div class="dash" style="margin-top: 35px; margin-bottom: 0"></div>
+            </div>
+            <div class="row">
+                    <div class="card card-cat align-items-center" >
+                        <div class="card-body">
+                            <h2 class="card-title">ATHLETIC SHOES</h2>
+                        </div>
+                        <a href=""><img src="new images/product-athletic.jpg" alt="" class="category-product-img rounded-0"></a>
+                        <div class="btn-men-women">
+                            <a href="product_athletics-men.html" class="btn btn-men-women-b">Shop Men's</a>
+                            <a href="product_athletics-women.html" class="btn btn-men-women-b">Shop Women's</a>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="row">
+                    <div class="card card-cat align-items-center">
+                        <div class="card-body">
+                            <h2 class="card-title">FORMAL SHOES</h2>
+                        </div>
+                        <a href=""><img src="new images/product-formal.jpg" alt="" class="category-product-img rounded-0"></a>
+                        <div class="btn-men-women">
+                            <a href="product_formal-men.html" class="btn btn-men-women-b">Shop Men's</a>
+                            <a href="product_formal-women.html" class="btn btn-men-women-b">Shop Women's</a>
+                        </div>
+                    </div>
             </div>
             
-            <div class="box">
-                <img src="images/quote-img.png" alt="" class="quote">
-                <div>
-                <p class="text-wrap">This website is amazing! The layout is very user-friendly, and the search engine optimization is top notch. I would definitely recommend this website to anyone looking for a great online shopping experience.  </p>
-                <p id="hide" style="display:none;"> The website was very easy to use and I enjoyed browsing through the different styles of shoes and it was helpful to be able to see how the shoes would look before making a purchase.  I enjoy shopping online and using this website for purchasing online was a smooth and easy process. I will definitely shop on this website again.</p>
-                <button id="show">show more</button>
-                <button id="hider">hide</button>
+            <div class="row">
+                    <div class="card card-cat align-items-center">
+                        <div class="card-body">
+                            <h2 class="card-title">CASUAL SHOES</h2>
+                        </div>
+                        <a href=""><img src="new images/product-casual.jpg" alt="" class="category-product-img rounded-0"></a>
+                        <div class="btn-men-women">
+                            <a href="product_casual-men.html" class="btn btn-men-women-b">Shop Men's</a>
+                            <a href="product_casual-women.html" class="btn btn-men-women-b">Shop Women's</a>
+                        </div>
+                    </div>
             </div>
-                <img src="images/cal.jpg" class="user" alt="">
-                <h3>Person 3</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-    
+
+            <div class="dash" style="margin-top: 25px;"></div>
         </div>
-    
-    </section>
+
+        <div class="nav-bottom">
+            <a href="#top" class="btn btn-nav-bottom">Go Back to Top</a>
+        </div>
 
     <footer class="footer">
  
@@ -342,6 +398,9 @@
 
 
     <script src="js/script.js"></script>
+     <!--boostrap js-->
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
 </body>
 </html>

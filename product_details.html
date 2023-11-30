@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/product_details.css">
     <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="icon" href="images/icon.png">
     <title>On your feet | Product name goes here</title>
 
@@ -20,8 +22,11 @@
     
     .details-page-container {
         max-width: 1300px;
-        margin: 0 auto;
-        padding: 20px;
+        margin: 50px 100px auto;
+        padding: 5px;
+        background-color: rgb(0, 0, 0);
+        border-radius: 30px;
+        border: solid 5px white;
 
     }
     
@@ -34,8 +39,9 @@
     }
     
     .details-page-product img {
-        max-height: 400px;
-        max-width: 400px;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
         margin-right: 20px;
     }
     
@@ -171,7 +177,8 @@
         <!-- 2 -->
 
         <div class="col-lg-6 col-md-6 col-sm-12 imgbox">
-                    <img src="images/products/athletic_shoes/men/692bc396a50b3bf8c1b7ee1c41d0e5e4b4.rsquare.w600.webp" class="img-fluid" alt="Product Image"> 
+                    <img src="images/products/athletic_shoes/men/692bc396a50b3bf8c1b7ee1c41d0e5e4b4.rsquare.w600.webp" 
+                    class="img-fluid" alt="Product Image"> 
                 </div>
 			
             <div class="details-page-product-details">
@@ -179,49 +186,88 @@
 
                     <div class="rbox">
                     <h1 class="productName">Nike Metcon 8</h1> 
+    
                         <h2 class="productName"> Php 7898.83 </h2>
                             <h3 class="details-right">
                             <br>You chase the clock, challenging and encouraging each other all in the name of achieving goals and making gains. Our go-to model for training relies on a lighter, more breathable upper than our previous edition to complement our standards of durability and comfort, so that you can float through your cardio, power through your lifts and dominate your workouts.
-                            <br>Available Colors: Grey/Black/Red/Frost White/Blue/Neon Green
-                            <br>Available Sizes: EU/US/UK 
+                            <br><br>Available Colors: Grey/Black/Red/Frost White/Blue/Neon Green
+                            <br><br>Available Sizes: EU/US/UK 
                             </h3>
-
-                            <!-- SIZE -->
-                            <div class="">
-                                <label for="size">Size:</label>
+                               
+                            
+                            <!-- SIZE AND COLOR
+                            <div class="size-color">
+                                <label for="size" class="size">Size:</label>
                                 <select name="size" id="size" class="details-page-product-size-select">
-                                    <option value="small">Small</option>
-                                    <option value="medium">Medium</option>
-                                    <option value="large">Large</option>
+                                    <option value="small">30</option>
+                                    <option value="medium">35</option>
+                                    <option value="large">40</option>
                                 </select>
-                            </div>
-
-                            <!-- COLOR -->
-                            <div class="">
-                                <label for="color">Color:</label>
+                
+                                <label for="color" style="margin-left: 50px;">Color:</label>
                                 <select name="color" id="color">
                                     <option value="red">Red</option>
                                     <option value="blue">Blue</option>
                                     <option value="green">Green</option>
                                 </select>
                             </div>
+                            -->
 
                             <!-- QUANTITY -->
                             <div class="quantity-button">
                                 <button class="subtract" onclick="subtractQuantity()">-</button>
-                                <input type="number" min="1" max="100" step="1" value="1" id="quantity">
+                                <input type="number" min="1" max="100" step="1" value="1" id="quantity" 
+                                style="color: white; background-color: black; text-align: center; padding: 3px 5px; margin-bottom: 10px;">
                                 <button class="add" onclick="addQuantity()">+</button>
+
+                                <button class="apply" onclick="">Apply</button>
+
+                                <button class="fa-regular fa-heart" id="fav-btn" onclick="toggleFavs()" style="padding: 15px 20px; margin-left: 180px">
+                                
+                                </button>
+
+                                
                             </div>
-                            <button class="apply" onclick="">Apply</button>
+    
+                            <a href="#" class="btn btn-standard" style="font-weight: 500;">
+                                <i class="fa-solid fa-cart-plus" style="color: #ffffff; margin-right: 10px; font-size: 20px;"></i>
+                                Add to Cart
+                            </a>
+
+                            <div id="app">
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-2">
+                                      <div class="comment">
+                                    <p v-for="items in item" v-text="items"></p>
+                                      </div><!--End Comment-->
+                                      </div><!--End col -->
+                                      </div><!-- End row -->
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                         <textarea type="text" class="input" placeholder="Write a review" v-model="newItem" @keyup.enter="addItem()"></textarea>
+                                      <button v-on:click="addItem()" class='primaryContained float-right' type="submit">Add Comment</button>
+                                    </div><!-- End col -->
+                                  </div><!--End Row -->
+                                </div><!--End Container -->
+                            </div><!-- end App -->
+
+                              <div class="row" style="font-size: 20px; padding: 0;">
+                                <div class="col">
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                    <i class="fa-solid fa-star" style="color: #ffa50a;"> 5.5</i>
+                                </div>
+
+                            </div>
+                            
+                            
+                    
                             
                     </div>
-                   
-
-                        
-                        <button onclick='' class="btn btn-primary btn-lg btn-block">Add To Cart</button>
-                        <button class="fa-regular fa-heart" id="fav-btn" onclick="toggleFavs()">
-                            
-                        </button>
+            
                                 
                     
                         
@@ -290,6 +336,38 @@
         }
     </script>
     <script src="js/script.js"></script>
+
+    <!-- Vue JS -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js'></script>
+    <!-- jQuery -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script>
+        $(document).ready(function(){ 
+ 
+            $(".primaryContained").on('click', function(){
+            $(".comment").addClass("commentClicked");
+            });//end click
+            $("textarea").on('keyup.enter', function(){
+            $(".comment").addClass("commentClicked");
+            });//end keyup
+            });//End Function
+
+            new Vue({
+            el: "#app",
+            data:{
+                title: 'Add a comment',
+            newItem: '',
+            item: [],
+            },
+            methods:{
+            addItem  (){
+            this.item.push(this.newItem);
+                this.newItem = "";
+            }
+            }
+
+            });
+    </script>
 
 </body>
 </html>

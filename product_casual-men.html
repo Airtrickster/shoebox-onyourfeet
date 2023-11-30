@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/product-cat-new.css">
+    <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
+    <link rel="icon" href="images/icon.png">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>ShoeBox | Products | Casual Shoes Men></title>
+</head>
+
+<body style="background-color: black;">
+
+    <!--navbar with functionalities-->
+    <header class="header header-scrolled">
+
+        <div class="wrappings start">
+            <a href="index-new.html" class="logo">
+                <img src="images/mini-logo.png" alt="Logo">
+            </a>
+        </div>
+
+        <div class="wrappings center">
+            <nav class="navbar">
+                <a href="index.html" style="text-decoration: none;" >Home</a>
+                <a href="about.html" style="text-decoration: none;">About</a>
+                <a href="product.html" style="text-decoration: none;" class="active">Product</a>
+                <a href="contact.html" style="text-decoration: none;">Contact</a>
+            </nav>
+        </div>
+
+        <div class="wrappings end">
+            <div class="icons">
+                <div class="fas fa-shopping-cart" id="cart-btn"></div>
+                <div class="fa-solid fa-heart" id="fav-btn"></div>
+                <div class="fa-solid fa-user" id="profile-btn"> </div>
+            </div>
+        </div>
+
+        <div class="profile-items-container">
+            <div class="profile-item">
+                <div class="profile-sidebar">
+
+                    <div class="name-sidebar">
+
+                        <div class="img-profile">
+                            <img src="images/blank-profile-picture.webp" alt="profile">
+                        </div>
+
+                        <div class="name-prof">
+                            <h1>Full name goes here</h1>
+                            <h2>username_goes_here</h2>
+                        </div>
+
+                    </div>
+
+                    <div class="nav-btn-sidebar">
+                        <a href="profile.html" class="btn-profile" style="text-decoration: none;">Profile</a>
+                        <a href="#" class="btn-profile" style="text-decoration: none;">Logout</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+        <i class="fas fa-bars" id="menu-btn"></i>
+
+        <div class="cart-items-container">
+            <div class="cart-item">
+                <div class="content">
+                    <h3> Shopping Cart </h3>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <a href=""><span class="fas fa-times"></span> </a>
+                <img src="images/products/athletic_shoes/men/692bc396a50b3bf8c1b7ee1c41d0e5e4b4.rsquare.w600.webp"
+                    alt="">
+                <div class="content">
+                    <h3 style="width: 85%;  "><a href="">Nike Metcon 8</a></h3>
+                    <div class="price">Php 7898.83 <br> x1 = Php 7898.83 <br> <button
+                            style="font-size:18px; padding:5px; margin: 4px 10px 0px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"
+                            onclick="decrementNumber1()">-</button>
+                        <p id="quantity-1" style="display:inline"> 1 </p> <button
+                            style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"
+                            onclick="incrementNumber1()">+</button><button
+                            style="font-size:18px; padding:5px; margin-left:10px; background:#d3ad7f; border-radius:4%; color: white; cursor: pointer;"
+                            onclick="changeQuantity1()">Apply</button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var quantity1 = 1;
+                function incrementNumber1() {
+                    quantity1++;
+                    document.getElementById("quantity-1").innerHTML = "" + quantity1;
+                }
+
+                function decrementNumber1() {
+                    quantity1--;
+                    if (quantity1 < 1) {
+                        quantity1 = 1;
+                    }
+                    document.getElementById("quantity-1").innerHTML = "" + quantity1;
+                }
+                function changeQuantity1() {
+                    window.location.href = "#";
+                }
+            </script>
+            <a href="#" class="btn">checkout now <br> Php 7898.83</a>
+        </div>
+
+        <div class="fav-items-container">
+            <div class="fav-item">
+                <div class="content">
+                    <h3> Favorites </h3>
+                </div>
+            </div>
+            <div class="fav-item">
+                <a href="#"><span class="fas fa-times"></span> </a>
+                <img src="images/products/athletic_shoes/men/692bc396a50b3bf8c1b7ee1c41d0e5e4b4.rsquare.w600.webp"
+                    alt="">
+                <div class="content">
+                    <h3><a href="#">Nike Metcon 8</a></h3>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+     <!--Formal Women-->
+     <div class="container scroll-card">
+        <div class="row">
+            <div class="col" style="margin-top: 65px;">
+                <a href="product.html"><button class="btn btn-cat" style="margin-right: 50px; border-radius: 20px; font-size: 15px;">Back</button></a>
+                <a href="product_athletics-men.html"><button class="btn btn-cat" style="font-size: 18px;">ATHLETICS</button></a>
+                <a href="product_formal-men.html"><button class="btn btn-cat" style="font-size: 18px;">FORMAL</button></a>
+                <button class="btn btn-cat-current" style="font-size: 18px;">CASUAL</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h1 class="header-title">
+                    CASUAL <span style="font-style: italic; color: #eec98b;">MEN</span>
+                </h1>
+            </div> 
+            <div class="col">
+                <a href="product_casual-women.html">
+                    <button class="btn btn-sex">
+                        WOMEN
+                        <i class="fa-solid fa-right-long" style="color: #5b3d04; margin-left: 5px;"></i>
+                    </button>
+                </a>
+            </div>  
+        </div>
+        <div class="dash"></div>
+
+
+        <!--row-1-->
+        <div class="row">
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/UGG-logo.png" alt="" width="60px" height="25px" class="">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P3967</h3>
+                        </div>
+                    </div>
+                    <img src="new images/casual-men/ugg-casual.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">UGG</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">CLASSIC SCUFF SLIPPER</h5>
+                        <p class="card-text">Slip into the blissful comfort of a classic scuff slipper lined with genuine shearling and UGGplush and set on a 
+                            Treadlite by UGG sole for indoor/outdoor wear.</p>
+                            
+                        
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <img src="new images/cole-han-logo.jpg" alt="" width="100px" height="30px" class="">
+                        </div>
+                        <div class="col">
+                            <h3 class="price">P6103</h3>
+                        </div>
+                    </div>
+                    <img src="new images/casual-men/cole-haan-casual.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Cole Haan</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>  
+                        <h5 class="card-title">GRANDPRO RALLY</h5>
+                        <p class="card-text">Perforated leather adds smart texture to a stylish sneaker built with GrandFøam cushioning, GrandOS Energy
+                             Foam and an Ortholite footbed for superior comfort.</p>
+                           
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/newbalance-logo.png" alt="" width="60px" height="22px" class="">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P3355</h3>
+                        </div>
+                    </div>
+                    <img src="new images/casual-men/new-balance-casual.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="col-sm">
+                                    <p class="card-title">New Balance</p>
+                                </div>  
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">574 SNEAKER</h5>
+                        <p class="card-text">Heritage details meet modern attitude in a '70s-throwback running shoe reissued as a 
+                            mold-breaking street sneaker. Suede overlays keep the look bold and sneakerhead-savvy.</p>
+                           
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/johnston_and_murphy_logo.png" alt="" width="100px" height="23px" class="">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P4272</h3>
+                        </div>
+                    </div>
+                    <img src="new images/casual-men/j&m-casual.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">J & M</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">ARMHERTST KNIT</h5>
+                        <p class="card-text">A sporty knit build means a flexible feel in a modern sneaker 
+                            with Smart Degree Technology® for breathable comfort. Removable, Textile upper and lining/rubber sole.
+                        </p>
+                        
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+
+
+             <!--ROW 2-->
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/Allbirds-Logo.png" alt="" width="110px" height="30px" class="">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P5431</h3>
+                        </div>
+                    </div>
+                    <img src="new images/casual-men/allbirds-casual.jpg" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Allbirds</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">TREE RUNNERS</h5>
+                        <p class="card-text">Our breathable, silky-smooth sneaker made with responsibly sourced eucalyptus tree fiber treads lightly in everything you do.
+                            Lightweight, breathable eucalyptus fiber provides next-level comfort.
+                        </p>
+                          
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/nike-logo.png" alt="" width="90px" height="30px" class="">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P4433</h3>
+                        </div>
+                    </div>
+                    <img src="new images/casual-men/nike-casual.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Nike</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">NIKE COURT VISION</h5>
+                        <p class="card-text">A classic remixed with at least 20% recycled materials by weight, its crisp upper and stitched overlays keep the soul of the original style.
+                            The plush, low-cut collar keeps it sleek and comfortable for your world. 
+                            </p>
+                             
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/birkenstock-logo.png" alt="" width="90px" height="20px" class="" style="margin-left: 3px;">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P9645</h3>
+                        </div>
+                    </div>
+                    <img src="new images/casual-men/birkenstock-casual.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Birken Stock</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">BOSTON SOFT CLOG</h5>
+                        <p class="card-text"> A natural-cork and latex footbed ensures proper weight distribution and support in a 
+                            comfy clog designed to stimulate circulation and improve balance. Contoured footbed with arch support.</p>
+                          
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/goodman-logo.png" alt="" width="125px" height="30px" class="" style="margin-left: 3px;">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P13918</h3>
+                        </div>
+                    </div>
+                    <img src="new images/casual-men/goodman-casual.jpg" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Goodman Brand</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">CLASSIC LEGEND SNEAKER</h5>
+                        <p class="card-text">Supple leather elevates a stylish sneaker that was handmade in Tuscany 
+                            and fitted with a smart calfskin lining. Lace-up style, Removable insole, Leather upper and lining/rubber sole. Made in Italy</p>
+                        
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+
+             <!--ROW 3-->
+
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/crocs-logo.png" alt="" width="50px" height="30px" class="" style="margin-left: 4px;">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P2709</h3>
+                        </div>
+                    </div>
+                    <img src="new images/casual-men/crocs-casual-black.png"alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Crocs</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">CLASSIC LINE CLOG</h5>
+                        <p class="card-text">A classic clog features a plush fuzzy lining for toasty warmth when the temperature drops. A flip-up heel strap and shock-absorbing Croslite® cushioning offer a 
+                            secure and comfy fit, while a grip sole provides traction and stability.</p>
+                           
+                        
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 product-card">
+                <div class="card" style="width: 29rem;">
+                    <a href="product_details.html" class="product-link">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/northface-logo.png" alt="" width="65px" height="30px" class="">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price" >P3357</h3>
+                        </div>
+                    </div>
+                    <img src="new images/casual-men/northface-casual.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">North Face</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">THERMOBALL TRACION</h5>
+                        <p class="card-text">A durable ripstop upper and high-traction rubber tread bring both indoor and outdoor practicality to a water-resistant slipper lined with PrimaLoft® insulation. The collapsible heel makes it easy to 
+                            slide on for morning coffee or a dash outside to check the mail.</p>
+                            
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <a href="product_details.html" class="product-link" style="width: 29rem;">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/adidas-logo.png" alt="" width="60px" height="30px" class="" style="margin-left: 4px;">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P2197</h3>
+                        </div>
+                    </div>
+                    <img src="new images/casual-men/adidas-casual.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Adidas</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">ADILETTE SPORT SLIDE</h5>
+                        <p class="card-text"> The adidas brand sets the curve for sports technology and streetwear relevance. Marvel at the marble pattern on this lightweight slider that adds an eye-catching touch to your laid-back look. Contoured footbed,
+                            Synthetic upper, lining and sole</p>
+                          
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            
+            <div class="col-md-3 product-card">
+                <div class="card">
+                    <a href="product_details.html" class="product-link" style="width: 29rem;">
+                    <div class="row align-items-center">
+                        <div class="col-sm ">
+                            <img src="new images/alexander-mcqueen-logo.png" alt="" width="90px" height="30px" class="" style="margin-left: 4px;">
+                        </div>
+                        <div class="col-sm">
+                            <h3 class="price">P8430</h3>
+                        </div>
+                    </div>
+                    <img src="new images/casual-men/alexandercqueen-casual.png" alt="" class="product-img rounded-0" width="285px" height="250px">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="card-title">Alex. McQueen</p>
+                            </div>
+                            <div class="col-sm star">
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                                <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
+                            </div>
+                        </div>
+                        <h5 class="card-title">HYBRRID LOGO SLIDE</h5>
+                        <p class="card-text"> Innovative, uncompromising—all words that describe the romantic and provocative fashion of Alexander McQueen. 
+                            Embossed logos brand these pool sliders molded with contoured footbeds and a chunky, leopard-spotted sole.
+                            Made in Italy</p>
+                          
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+
+        <div class="credit">
+            <div class="wrapping start">
+                <div class="wrap">
+                    <p>Be the first to know about our special offers, upcoming sales, special events, new arrivals, and
+                        more.</p>
+                </div>
+            </div>
+
+            <div class="wrapping center">
+                <div class="help">
+                    <a href="FAQ.html">FAQ's</a>
+                    <a href="privacy_policy.html">Privacy Policy</a>
+                    <a href="shipping_policy.html">Shipping Policy</a>
+                    <a href="refund_policy.html">Refund Policy</a>
+                </div>
+            </div>
+
+            <div class="wrapping end">
+                <div class="share">
+                    <a href="https://www.facebook.com/VandKApparel" class="fa-brands fa-xl fa-facebook-f"></a>
+                    <a href="https://www.twitter.com/" class="fa-brands fa-xl fa-twitter"></a>
+                    <a href="https://www.instagram.com/" class="fa-brands fa-xl fa-instagram"></a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <footer class="sub-footer">
+        <p> Copyright &copy; 2023. On your feet, inc. all rights reserved.</p>
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
