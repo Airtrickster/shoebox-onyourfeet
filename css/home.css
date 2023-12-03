@@ -1,6 +1,6 @@
 .home{
     min-height: 90vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5 )), url(../images/bgs.png) ;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5 )), url(../images/bgs3.webp) ;
     background-size: cover;
     background-position: center;
 }
@@ -40,6 +40,49 @@
     width: 25%;
     padding: 10px;
     margin: auto;
+}
+
+/* Service*/
+.service{
+    background: #13131a;
+    height: 50vh;
+    display: grid;
+    place-items: center;
+}
+
+.services{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.box1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box1 img{
+    width:30%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.box1 h2{
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.box1 p{
+    font-size: 15px;
+    text-align: center;
+    color: white;
 }
 
 @media (max-width:768px){

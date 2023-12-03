@@ -39,6 +39,13 @@
         padding: 2rem 7%;
     }
 
+    .active{
+        background-color: rgb(50, 29, 7);
+        border-radius: 20px;
+        padding: 0px 15px;
+        border: solid 1px #d3ad7f;
+    }
+
 .heading{
     text-align: center;
     color:#fff;
@@ -52,19 +59,7 @@
     text-transform: uppercase;
 }
 
-    .btn{
-        margin-top: 1rem;
-        display: inline-block;
-        padding:.9rem 3rem;
-        font-size: 1.7rem;
-        color:#fff;
-        background: var(--main-color);
-        cursor: pointer;
-    }
-
-    .btn:hover{
-        letter-spacing: .2rem;
-    }
+   
 
     .text-about a{
         color: var(--black);
@@ -124,6 +119,13 @@
         display: flex;
         justify-content: space-between;
         text-align: center;
+    }
+
+    a.btn-profile{
+        border-radius: 10px;
+        text-align: center;
+        font-weight: 500;
+        background-color: #d3ad7f;
     }
 
 #banner {

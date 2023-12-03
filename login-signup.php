@@ -3,11 +3,6 @@
     session_start();
 }
   include "db_conn.php";
-  if (isset($_SESSION["user_id"]) && $_SESSION["user_type"] == "admin") {
-    echo '<script> window.location.href="index.php" </script>'; 
-  } else if (isset($_SESSION["user_id"])) {
-    echo '<script> window.location.href="product.php" </script>'; 
-  }
 ?>
 
 <!DOCTYPE html>
@@ -192,11 +187,8 @@
             if (! is_null($credentials["image"])) {
               $_SESSION["image"] = $credentials["image"];
             }
-            if ($_SESSION["user_type"] == "admin") {
-              echo '<script> window.location.href="index.php" </script>';
-            } else {
-              echo '<script> window.location.href="product.php" </script>';
-            }
+            echo '<script> window.location.href="index.php" </script>';
+
             
           } else {
             echo '<script> alert("Wrong Credentials please try again"); window.location.href = "' . $_SERVER["PHP_SELF"] . '"; </script>';

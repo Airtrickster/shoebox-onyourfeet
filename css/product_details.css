@@ -1,9 +1,17 @@
     .img-fluid {
-        background-color: #fff;
-        border-radius: 10px;
-        margin-top: 6%;
-        box-shadow: 2px 2px 4px 8px rgba(0, 0, 0, 0.9);
+        background-color: #f9f4f4;
+        border-radius: 50px;
+        box-shadow: 10px 20px rgba(233, 159, 0, 0.634);
+        border: 20px white solid;
     }
+
+    .img-fluid:hover{
+        background-color: #f9f4f4;
+        border-radius: 50px;
+        box-shadow: 20px 10px 20px rgba(233, 159, 0, 0.634);
+        border: 20px white solid;
+    }
+
      .pdetails{
         padding-top: 4%;
         padding-bottom: 4%;
@@ -45,8 +53,18 @@
         cursor: pointer;
     }  
 
+    .pdetails button:hover {
+        background-color: #8d4d00;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+    }  
+
      .rbox{
-        background-color: #fff;
+        background-color: #000000;
         border-radius: 10px;
         padding: 20px;
         margin: 10px;
@@ -56,19 +74,25 @@
     
     .details-right {
         text-align: justify;
+        color: white;
+        margin-bottom: 30px;
         
     }
     
-    .productName {
-        color: #0f0f0f;
+    h1.productName {
+        color: #ffffff;
+        font-size: 30px;
+        font-style: italic;
        
     }
 
+    h2.productName{
+        color: white;
+        font-size: 25px;
+    }
+
     .imgbox {
-        background-color: #9b9b9b80;
-        border-radius: 10px;
         padding: 20px;
-        margin: 10px;
         align-items: center;
         
     } 
@@ -91,6 +115,94 @@
         
       }
 
+      div.size-color{
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        background-color: white;
+        padding: 30px 50px;
+        border-radius: 10px;
+        font-weight: 500;
+      }
+
+      div.quantity-button{
+        background-color: black;
+        font-size: 20px;
+        margin-top: 20px;
+        border-radius: 10px;
+      }
+
+      a.btn-standard{
+        padding: 10px;
+        font-size: 20px;
+        background-color:#d3ad7f;
+        color: white;
+        margin-top: 7.5px;
+        margin-right: 5px
+      }
+
+      a.btn-standard:hover{
+        padding: 10px;
+        font-size: 20px;
+        background-color:#8d4d00;
+        color: white;
+        margin-top: 7.5px;
+        margin-right: 5px
+      }
+
      /* CSS NEW ADD */
+
+     /*comment box*/
+
+     #app{
+        margin: 0;
+     }
+     .container {
+        max-width: 640px;
+        margin: 30px auto;
+        background: #fff;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .comment {
+        display: block;
+        transition: all 1s;
+        font-size: 15pxpx;
+    }
+    .commentClicked {
+        min-height: 0px;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        padding: 5px 10px
+    }
+
+    .container textarea {
+        width: 100%;
+        border: none;
+        background: #E8E8E8;
+        padding: 5px 10px;
+        height: 50%;
+        border-radius: 5px 5px 0px 0px;
+        border-bottom: 2px solid #016BA8;
+        transition: all 0.5s;
+        margin-top: 15px;
+        font-size: 15px;
+    }
+
+    button.primaryContained {
+        background: rgb(168, 90, 1);
+        color: #fff;
+        padding: 10px 10px;
+        border: none;
+        margin-top: 0px;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
+        transition: 1s all;
+        font-size: 10px;
+        border-radius: 5px;
+    }
+
 
      

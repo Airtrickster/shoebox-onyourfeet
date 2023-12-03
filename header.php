@@ -28,19 +28,35 @@
 
     <div class="wrappings start">
     <a href="index.php" class="logo">
-        <img src="images/mini-logo.png" alt="Logo">
+        <img src="images/icon.png" alt="Logo">
     </a>  
     </div>
 
     <div class="wrappings center">
         <nav class="navbar">
             <?php
+                switch ($_SERVER["SCRIPT_NAME"]) {
+                case "/index.php":
+                    $homeActive = 'class="active"';
+                    break;
+                case "/about.php":
+                    $aboutActive = 'class="active"';
+                    break;
+                case "/product.php":
+                case "/product_category.php":
+                case "/product_details.php":
+                    $productActive = 'class="active"';
+                    break;    
+                case "/contact.php":
+                    $contactActive = 'class="active"';
+                    break;
+                }
                 if ($_SESSION["user_type"] == "user" || ! isset($_SESSION["user_type"])) {
                     echo '
-                    <a href="index.php">Home</a>
-                    <a href="about.php">About</a>
-                    <a href="product.php">Product</a>
-                    <a href="contact.php">Contact</a>
+                    <a href="index.php" '. $homeActive .'>Home</a>
+                    <a href="about.php" '. $aboutActive .'>About</a>
+                    <a href="product.php" '. $productActive .'>Product</a>
+                    <a href="contact.php" '. $contactActive .'>Contact</a>
                     ';
                 }
             ?>

@@ -34,14 +34,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/product_details.css">
     <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="icon" href="images/icon.png">
-    <title>Shoebox | <?php echo $productName ?></title>
+    <title>On your feet | <?php echo $productName ?></title>
 
 <style>
      .details-page-body {
@@ -51,11 +47,8 @@
     
     .details-page-container {
         max-width: 1300px;
-        margin: 50px 100px auto;
-        padding: 5px;
-        background-color: rgb(0, 0, 0);
-        border-radius: 30px;
-        border: solid 5px white;
+        margin: 0 auto;
+        padding: 20px;
 
     }
     
@@ -68,9 +61,8 @@
     }
     
     .details-page-product img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
+        max-height: 400px;
+        max-width: 400px;
         margin-right: 20px;
     }
     
@@ -95,105 +87,63 @@
     <div class="details-page-container">
     <!-- 1 -->
 
-		<div class="details-page-product">
+        <div class="details-page-product">
         <!-- 2 -->
 
         <div class="col-lg-6 col-md-6 col-sm-12 imgbox">
-                    <img src="images/products/<?php echo $productImage; ?>" 
-                    class="img-fluid" alt="Product Image"> 
+                    <img src="images/products/<?php echo $productImage; ?>" class="img-fluid" alt="Product Image"> 
                 </div>
-			
+            
             <div class="details-page-product-details">
             <!-- 3 -->
 
                     <div class="rbox">
                     <h1 class="productName"><?php echo $productName; ?></h1> 
-    
-                        <h2 class="productName"> Php <?php echo $productPrice; ?> </h2>
+                        <h2 class="productName"><?php echo "Php ", $productPrice; ?></h2>
                             <h3 class="details-right">
-                            <?php echo $productDescription; ?>
+                            <?php echo str_replace("\n", "<br>",  $productDescription); ?>
                             </h3>
-                               
-                            
-                            <!-- SIZE AND COLOR
-                            <div class="size-color">
-                                <label for="size" class="size">Size:</label>
+
+                            <!-- SIZE -->
+                            <div class="">
+                                <label for="size">Size:</label>
                                 <select name="size" id="size" class="details-page-product-size-select">
-                                    <option value="small">30</option>
-                                    <option value="medium">35</option>
-                                    <option value="large">40</option>
+                                    <option value="small">Small</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="large">Large</option>
                                 </select>
-                
-                                <label for="color" style="margin-left: 50px;">Color:</label>
+                            </div>
+
+                            <!-- COLOR -->
+                            <div class="">
+                                <label for="color">Color:</label>
                                 <select name="color" id="color">
                                     <option value="red">Red</option>
                                     <option value="blue">Blue</option>
                                     <option value="green">Green</option>
                                 </select>
                             </div>
-                            -->
 
                             <!-- QUANTITY -->
                             <div class="quantity-button">
                                 <button class="subtract" onclick="subtractQuantity()">-</button>
-                                <input type="number" min="1" max="100" step="1" value="<?php if (! $isInCart) { echo "1"; } else { echo $cartQuantity; } ?>" id="quantity" 
-                                style="color: white; background-color: black; text-align: center; padding: 3px 5px; margin-bottom: 10px;">
+                                <input type="number" min="1" max="100" step="1" value="<?php if (! $isInCart) { echo "1"; } else { echo $cartQuantity; } ?>" id="quantity">
                                 <button class="add" onclick="addQuantity()">+</button>
-
-                                <?php
+                            </div>
+                            <?php
                                 if ($isInCart) {
                                     echo '<button class="apply" onclick="applyQuantity()">Apply</button>';
                                 }
-                                ?>
-
-                                <button class="<?php if (! isset($_SESSION["user_id"]) || ! $isInFavs) { echo "fa-regular"; } else { echo "fa-solid"; } ?> fa-heart" id="fav-btn" onclick="toggleFavs()" style="padding: 15px 20px; margin-left: 180px">
-                                
-                                </button>
-
-                                
-                            </div>
-    
-                            <button onclick='<?php if (! isset($_SESSION["user_id"]) || ! $isInCart) { echo 'addToCart()'; } else { echo 'removeFromCart()'; } ?>' class="btn btn-standard" style="font-weight: 500;">
-                                <i class="fa-solid fa-cart-plus" style="color: #ffffff; margin-right: 10px; font-size: 20px;"></i>
-                                <?php if (! $isInCart) { echo "Add To Cart"; } else { echo "Remove From Cart"; } ?>
-                            </button>
-
-                            <!-- Reviews removed
-                            <div id="app">
-                                <div class="container">
-                                  <div class="row">
-                                    <div class="col-2">
-                                      <div class="comment">
-                                    <p v-for="items in item" v-text="items"></p>
-                                      </div>
-                                      </div>
-                                      </div>
-                                  <div class="row">
-                                    <div class="col-md-6">
-                                         <textarea type="text" class="input" placeholder="Write a review" v-model="newItem" @keyup.enter="addItem()"></textarea>
-                                      <button v-on:click="addItem()" class='primaryContained float-right' type="submit">Add Comment</button>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-
-                            
-                              <div class="row" style="font-size: 20px; padding: 0;">
-                                <div class="col">
-                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
-                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
-                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
-                                    <i class="fa-solid fa-star" style="color: #ffa50a;"></i>
-                                    <i class="fa-solid fa-star" style="color: #ffa50a;"> 5.5</i>
-                                </div>
-
-                            </div>
-                            -->
-                            
-                    
+                            ?>
                             
                     </div>
-            
+                   
+
+                        
+                        <button onclick='<?php if (! isset($_SESSION["user_id"]) || ! $isInCart) { echo 'addToCart()'; } else { echo 'removeFromCart()'; } ?>' class="btn btn-primary btn-lg btn-block"><?php if (! $isInCart) { echo "Add To Cart"; } else { echo "Remove From Cart"; } ?></button>
+                        <button class="<?php if (! isset($_SESSION["user_id"]) || ! $isInFavs) { echo "fa-regular"; } else { echo "fa-solid"; } ?> fa-heart" id="fav-btn" onclick="toggleFavs()">
+                            
+                        </button>
                                 
                     
                         
@@ -203,10 +153,12 @@
             </div>
 
         <!-- 2 -->
-		</div>
+        </div>
 
     <!-- 1 -->
     </div>
+
+
 
 
     <?php include "footer.php"; ?>
@@ -270,40 +222,9 @@
             }
             window.location.href="toggle_favs.php?product_id=<?php echo $productId ?>";
         }
+
     </script>
     <script src="js/script.js"></script>
 
-    <!-- Vue JS -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js'></script>
-    <!-- jQuery -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <script>
-        $(document).ready(function(){ 
- 
-            $(".primaryContained").on('click', function(){
-            $(".comment").addClass("commentClicked");
-            });//end click
-            $("textarea").on('keyup.enter', function(){
-            $(".comment").addClass("commentClicked");
-            });//end keyup
-            });//End Function
-
-            new Vue({
-            el: "#app",
-            data:{
-                title: 'Add a comment',
-            newItem: '',
-            item: [],
-            },
-            methods:{
-            addItem  (){
-            this.item.push(this.newItem);
-                this.newItem = "";
-            }
-            }
-
-            });
-    </script>
-
 </body>
-</html>
+</html>​

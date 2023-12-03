@@ -30,5 +30,5 @@
 </footer>
 
 <footer class="sub-footer">
-    <p> Copyright &copy; 2023. On your feet, inc. all rights reserved.</p>
+    <p> Copyright &copy; 2023. Shoebox, inc. all rights reserved.</p>
 </footer>
