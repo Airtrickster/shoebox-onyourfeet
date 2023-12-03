@@ -37,6 +37,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout Page</title>
     <link rel="stylesheet" href="css/checkout.css" />
+    <link rel="icon" href="images/icon.png">
   </head>
   <body>
     <form id="checkout-form">

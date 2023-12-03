@@ -26,7 +26,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Profile</title>
+    <title>Shoebox | Profile</title>
     <!--css--> 
     <link rel="stylesheet" href="css/profile.css" /> 
     <link rel="stylesheet" href="css/style.css">

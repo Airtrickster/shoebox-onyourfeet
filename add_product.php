@@ -18,6 +18,7 @@
   <head>
     <title> Add Product </title>
     <link rel="stylesheet" href="css/add-prod.css" />
+    <link rel="icon" href="images/icon.png">
     <script src="js/acnt.js"></script>
   </head>
   <body>

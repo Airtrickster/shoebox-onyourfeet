@@ -32,6 +32,7 @@ while ($addressRow = mysqli_fetch_array($getAddressResults)) {
     <title>Edit Address</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="acntstyle.css">
+    <link rel="icon" href="images/icon.png">
 </head>
 
 <body>

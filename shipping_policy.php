@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/shipping_policy.css">
     <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
     <link rel="icon" href="images/icon.png">
-    <title>On your feet | Shipping Policy</title>
+    <title>Shoebox | Shipping Policy</title>
 </head>
 <body id="shipping">
     

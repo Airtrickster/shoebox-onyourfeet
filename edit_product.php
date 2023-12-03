@@ -24,6 +24,7 @@
     <title> Edit Product </title>
     <link rel="stylesheet" href="css/add-prod.css" />
     <script src="js/acnt.js"></script>
+    <link rel="icon" href="images/icon.png">
 
     <style>
       .container{

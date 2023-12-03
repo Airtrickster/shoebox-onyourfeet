@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="./lib/fontawesome-free-6.2.1-web/css/all.min.css">
     <link rel="icon" href="images/icon.png">
-    <title>On your feet | Contact</title>
+    <title>Shoebox | Contact</title>
 </head>
 <body>
 

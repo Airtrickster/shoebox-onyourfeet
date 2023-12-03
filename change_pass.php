@@ -14,6 +14,7 @@ if (!isset($_SESSION["user_id"])) {
 <head>
     <title>Change Password</title>
     <link rel="stylesheet" href="acntstyle.css">
+    <link rel="icon" href="images/icon.png">
 </head>
 
 <body>

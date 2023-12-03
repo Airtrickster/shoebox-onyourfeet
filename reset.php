@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>Reset Password</title> 
     <link rel="stylesheet" href="css/reset.css" />
+    <link rel="icon" href="images/icon.png">
   </head>
   <body>
     <form>

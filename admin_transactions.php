@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
+    <link rel="icon" href="images/icon.png">
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 
     <style>
