@@ -70,6 +70,63 @@
         </div>
      </section>
 
+     <section class="review" id="review">
+
+<h1 class="heading"> customer's <span>review</span> </h1>
+
+<div class="box-container">
+
+    <div class="box">
+        <img src="images/quote-img.png" alt="" class="quote">
+        <p>Wow! I finally found the shoe that I was looking for and it fits with my size! This store is a lifesaver</p>
+        <img src="images/hern.jpg" class="user" alt="">
+        <h3>Person 1</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+    </div>
+
+    <div class="box">
+        <img src="images/quote-img.png" alt="" class="quote">
+        <p>"I ordered the Axel Arigato Clean 90, it is indeed cleaaannnn!! sheeshhh..., I'll order again"</p>
+        <img src="images/eme.jpg" class="user" alt="">
+        <h3>Person 2</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+    </div>
+    
+    <div class="box">
+        <img src="images/quote-img.png" alt="" class="quote">
+        <div>
+        <p class="text-wrap">This website is amazing! The layout is very user-friendly, and the search engine optimization is top notch. I would definitely recommend this website to anyone looking for a great online shopping experience.  </p>
+        <p id="hide" style="display:none;"> The website was very easy to use and I enjoyed browsing through the different styles of shoes and it was helpful to be able to see how the shoes would look before making a purchase.  I enjoy shopping online and using this website for purchasing online was a smooth and easy process. I will definitely shop on this website again.</p>
+        <button id="show">show more</button>
+        <button id="hider">hide</button>
+    </div>
+        <img src="images/cal.jpg" class="user" alt="">
+        <h3>Person 3</h3>
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+    </div>
+
+</div>
+
+</section>
+
 <!-- footer section starts  -->
 
 <?php include "footer.php"; ?>
