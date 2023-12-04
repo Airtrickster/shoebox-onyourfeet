@@ -106,7 +106,7 @@
       <div class="flexing">
 
 
-      <?php include "newprofile_nav.php"; ?>
+      <?php include "profile_nav.php"; ?>
 
 		<div class = "purchases">
             <?php
