@@ -130,16 +130,18 @@
             $inboxResults = mysqli_query($link, "SELECT message_id, name, CONCAT(SUBSTRING(message, 1, 75), '...') AS \"short_msg\", is_read FROM inbox ORDER BY message_id DESC");
             while ($messageRow = mysqli_fetch_array($inboxResults)) {
                 if ($messageRow["is_read"] == 0) {
+                    $unreadSymbol = "*";
                     $bold1 = "<b>";
                     $bold2 = "</b>";
                 } else {
+                    $unreadSymbol = "";
                     $bold1 = "";
                     $bold2 = "";
                 }
                 echo '<div class="inbox-item">
                 <div class="content">
                 <a href="view_message.php?message_id=' . $messageRow["message_id"] . '">
-                <h3> From: ' . $messageRow["name"] . '  </h3>
+                <h3>' . $unreadSymbol . ' From: ' . $messageRow["name"] . '  </h3>
                 <p> ' . $bold1 . ' ' . $messageRow["short_msg"] . ' ' . $bold2 . ' </p>
                 </a>
                 </div>
