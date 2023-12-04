@@ -33,7 +33,7 @@ body{
     justify-content: center;
 }
 
-.text-form input[type="text"], [type="number"]{
+.text-form input[type="text"], [type="number"], [type="email"], [type="password"], [type="date"]{
     background-color: rgb(167, 193, 225);
     margin: 5px;
     font-size: 1rem;
