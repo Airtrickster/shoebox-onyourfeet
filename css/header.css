@@ -165,7 +165,7 @@
         color:var(--main-color);
     }
 
-    .header .cart-items-container .btn{
+    .header .cart-items-container .checkout-btn{
         width: 100%;
         text-align: center;
     }
