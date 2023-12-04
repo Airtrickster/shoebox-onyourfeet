@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="css/product_details.css">
     <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="lib/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="images/icon.png">
     <title>Shoebox | <?php echo $productName ?></title>
 
@@ -274,9 +274,9 @@
     <script src="js/script.js"></script>
 
     <!-- Vue JS -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js'></script>
+    <script src='lib/vue-js-2.5.17.js'></script>
     <!-- jQuery -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='lib/jquery-3.6.3.js'></script>
     <script>
         $(document).ready(function(){ 
  

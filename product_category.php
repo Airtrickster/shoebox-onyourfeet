@@ -21,7 +21,9 @@
     <link rel="stylesheet" href="lib/fontawesome-free-6.2.1-web/css/all.min.css">
     <link rel="icon" href="images/icon.png">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="lib/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="lib/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.min.js"></script>
+     <script src="lib/bootstrap-5.3.0-alpha1-dist/js/bootstrap.min.js"></script>
     <title>Shoebox | Products | <?php echo ucwords($_GET["category"]) . " | " . ucwords( $_GET["gender"]) ?> </title></title>
 </head>
 
@@ -117,7 +119,8 @@
 
 
     <script src="js/script.js"></script>
-
+    <script src="lib/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/bootstrap-5.3.0-alpha1-dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
