@@ -84,28 +84,28 @@
             </div>
 
             <div class="card">
-                <img src="./images/zacAbout.jpg" alt="Zach">
-                <h3>Zachary Ian A. Alonzo</h3>
+                <img src="./images/grecielAbout.png" alt="Greciel">
+                <h3> Greciel Mae B. Casi</h3>
                  <div>
                     <ul>
                         <li>Chief Marketing Officer (CMO)</li>
                     </ul>
                 </div>
                 <div class="quote">
-                    <p><Q>If you round out your edges, you lose your edge.</Q>  - Zachary Alonzo</p>
+                    <p><Q>If you round out your edges, you lose your edge.</Q></p>
                 </div>
             </div>
 
             <div class="card">
-                <img src="./images/wesAbout.png" alt="Wesley">
-                <h3>Wesley Emerenciana</h3>
+                <img src="./images/nathalieAbout.png" alt="Nathalie">
+                <h3> Nathalie Deanna R. Uba </h3>
                  <div>
                     <ul>
                         <li>Chief Operations Officer (COO)</li>
                     </ul>
                 </div>
                 <div class="quote">
-                    <p><Q>If you don't take risks, you can't create a future.</Q>  - Wesley Emerenciana</p>
+                    <p><Q>If you don't take risks, you can't create a future.</Q> </p>
                 </div>
             </div>
 
