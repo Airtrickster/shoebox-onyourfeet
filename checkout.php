@@ -11,6 +11,11 @@
     mysqli_stmt_bind_param($checkoutstmt, "ssi", $_POST["address"], $_POST["payment-method"], $_SESSION["user_id"]);
     mysqli_execute($checkoutstmt);
 
+
+    $stockUpdatestmt = mysqli_prepare($link, "UPDATE products LEFT JOIN cart ON products.product_id = cart.product_id SET stock = stock - cart.quantity WHERE user_id = ?");
+    mysqli_stmt_bind_param($stockUpdatestmt, "i", $_SESSION["user_id"]);
+    mysqli_execute($stockUpdatestmt);
+
     $clearCartstmt = mysqli_prepare($link, "DELETE FROM cart WHERE user_id = ?;");
     mysqli_stmt_bind_param($clearCartstmt, "i", $_SESSION["user_id"]);
     mysqli_stmt_execute($clearCartstmt);

@@ -29,7 +29,7 @@
     <style>
       .container{
           width:380px;
-          height:585px;
+          height:650px;
           padding: 15px;  
           background: rgb(197, 220, 251);
           border-radius: 10px;
@@ -49,8 +49,9 @@
         <h1>Edit Product</h1>
         <form action="" id="editProductForm" method="post" enctype="multipart/form-data">
           <div class="text-form">
-            <input type="text" name="name_new" value="<?php echo $productDetails["name"]; ?>">
-            <input type="number" name="price_new" step="any" value="<?php echo $productDetails["price"]; ?>">
+            <input type="text" name="name_new" placeholder="Product name" value="<?php echo $productDetails["name"]; ?>">
+            <input type="number" name="price_new" step="any" placeholder="Price" value="<?php echo $productDetails["price"]; ?>">
+            <input type="number" name="stock_new" step="any" placeholder="Stock" value="<?php echo $productDetails["stock"]; ?>">
           </div>
           <div class="drop-down">
             <select name="category_new">
@@ -101,15 +102,15 @@
           move_uploaded_file($_FILES["image_new"]["tmp_name"], "images/products/".$productDetails["category"]."_shoes/".$productDetails["gender"]."/".$randomString.$_FILES["image_new"]["name"]);
           $dbImagePath = $productDetails["category"]."_shoes/".$productDetails["gender"]."/".$randomString.$_FILES["image_new"]["name"];
 
-          $editProductstmt = mysqli_prepare($link, "UPDATE products SET name = ?, price = ?, description = ?, category = ?, gender = ?, image = ? WHERE product_id = ?");
-          mysqli_stmt_bind_param($editProductstmt, "sdssssi", $_POST["name_new"], $_POST["price_new"], $_POST["description_new"], $_POST["category_new"], $_POST["gender_new"], $dbImagePath, $productDetails["product_id"]);
+          $editProductstmt = mysqli_prepare($link, "UPDATE products SET name = ?, price = ?, stock = ?, description = ?, category = ?, gender = ?, image = ? WHERE product_id = ?");
+          mysqli_stmt_bind_param($editProductstmt, "sdissssi", $_POST["name_new"], $_POST["price_new"], $_POST["stock_new"], $_POST["description_new"], $_POST["category_new"], $_POST["gender_new"], $dbImagePath, $productDetails["product_id"]);
           mysqli_execute($editProductstmt);
         } else {
-          $editProductstmt = mysqli_prepare($link, "UPDATE products SET name = ?, price = ?, description = ?, category = ?, gender = ? WHERE product_id = ?");
-          mysqli_stmt_bind_param($editProductstmt, "sdsssi", $_POST["name_new"], $_POST["price_new"], $_POST["description_new"], $_POST["category_new"], $_POST["gender_new"], $productDetails["product_id"]);
+          $editProductstmt = mysqli_prepare($link, "UPDATE products SET name = ?, price = ?, stock = ?, description = ?, category = ?, gender = ? WHERE product_id = ?");
+          mysqli_stmt_bind_param($editProductstmt, "sdisssi", $_POST["name_new"], $_POST["price_new"], $_POST["stock_new"], $_POST["description_new"], $_POST["category_new"], $_POST["gender_new"], $productDetails["product_id"]);
           mysqli_execute($editProductstmt);
         }       
-        echo '<script> alert("Product edited successfully"); </script>';
+        echo '<script> alert("Product edited successfully"); window.location.href = "' . $_SERVER["PHP_SELF"] . '?product_id=' . $_GET["product_id"] . '"; </script>';
       }
     ?>
 

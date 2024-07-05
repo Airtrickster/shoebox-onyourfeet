@@ -4,7 +4,7 @@
 }
     include "db_conn.php";
 
-    $productDetailstmt = mysqli_prepare($link, "SELECT products.product_id AS \"products_product_id\", cart.quantity AS \"cart_quantity\", name, price, image, description, cart.product_id AS \"is_in_cart\", cart.item_id AS \"cart_item_id\", favorites.product_id AS \"is_in_favs\" FROM products LEFT JOIN cart ON products.product_id = cart.product_id AND cart.user_id = ? LEFT JOIN favorites ON products.product_id = favorites.product_id AND favorites.user_id = ? WHERE products.product_id = ?;");
+    $productDetailstmt = mysqli_prepare($link, "SELECT products.product_id AS \"products_product_id\", cart.quantity AS \"cart_quantity\", name, price, stock, image, description, cart.product_id AS \"is_in_cart\", cart.item_id AS \"cart_item_id\", favorites.product_id AS \"is_in_favs\" FROM products LEFT JOIN cart ON products.product_id = cart.product_id AND cart.user_id = ? LEFT JOIN favorites ON products.product_id = favorites.product_id AND favorites.user_id = ? WHERE products.product_id = ?;");
     mysqli_stmt_bind_param($productDetailstmt, "iii", $_SESSION["user_id"], $_SESSION["user_id"], $_GET["product_id"]);
     mysqli_stmt_execute($productDetailstmt);
     $productDetailResults = mysqli_stmt_get_result($productDetailstmt);
@@ -14,6 +14,7 @@
         $productId= $productDetailArray["products_product_id"];
         $productName = $productDetailArray["name"];
         $productPrice = $productDetailArray["price"];
+        $productStock = $productDetailArray["stock"];
         $productImage = $productDetailArray["image"];
         $productDescription = $productDetailArray["description"];
         $isInCart = false;
@@ -113,8 +114,15 @@
                             <h3 class="details-right">
                             <?php echo $productDescription; ?>
                             </h3>
+                            <?php
+                                if ($productStock > 0) {
+                                    echo '<h3 class="details-right">' . $productStock . ' left </h3>
+                                    ';
+                                } else {
+                                    echo '<h3 style="color: red;" class="details-right"> Out of Stock! </h3>';
+                                }
+                            ?>
                                
-                            
                             <!-- SIZE AND COLOR
                             <div class="size-color">
                                 <label for="size" class="size">Size:</label>
@@ -134,29 +142,40 @@
                             -->
 
                             <!-- QUANTITY -->
-                            <div class="quantity-button">
-                                <button class="subtract" onclick="subtractQuantity()">-</button>
-                                <input type="number" min="1" max="100" step="1" value="<?php if (! $isInCart) { echo "1"; } else { echo $cartQuantity; } ?>" id="quantity" 
-                                style="color: white; background-color: black; text-align: center; padding: 3px 5px; margin-bottom: 10px;">
-                                <button class="add" onclick="addQuantity()">+</button>
+                            <?php
+                                if ($productStock > 0) {
+                                    if (! $isInCart) { $quantityValue = "1"; } else { $quantityValue = $cartQuantity; };
+                                    echo '
+                                    <div class="quantity-button">
+                                    <button class="subtract" onclick="subtractQuantity()">-</button>
+                                    <input type="number" min="1" max="' . $productStock . '" step="1" id="quantity" value="' . $quantityValue . '"
+                                    style="color: white; background-color: black; text-align: center; padding: 3px 5px; margin-bottom: 10px;">
+                                    <button class="add" onclick="addQuantity()">+</button>
+                                    ';
 
-                                <?php
-                                if ($isInCart) {
-                                    echo '<button class="apply" onclick="applyQuantity()">Apply</button>';
+                                    if ($isInCart) {
+                                        echo '<button class="apply" onclick="applyQuantity()">Apply</button>';
+                                    }
                                 }
-                                ?>
+                            ?>
 
                                 <button class="<?php if (! isset($_SESSION["user_id"]) || ! $isInFavs) { echo "fa-regular"; } else { echo "fa-solid"; } ?> fa-heart" id="fav-btn" onclick="toggleFavs()" style="padding: 15px 20px; margin-left: 180px">
-                                
                                 </button>
-
-                                
+               
                             </div>
-    
-                            <button onclick='<?php if (! isset($_SESSION["user_id"]) || ! $isInCart) { echo 'addToCart()'; } else { echo 'removeFromCart()'; } ?>' class="btn btn-standard" style="font-weight: 500;">
-                                <i class="fa-solid fa-cart-plus" style="color: #ffffff; margin-right: 10px; font-size: 20px;"></i>
-                                <?php if (! $isInCart) { echo "Add To Cart"; } else { echo "Remove From Cart"; } ?>
-                            </button>
+                            
+                            <?php
+                                if ($productStock > 0) {
+                                    if (! isset($_SESSION["user_id"]) || ! $isInCart) { $cartAction = 'addToCart()'; } else { $cartAction = 'removeFromCart()'; }
+                                    if (! $isInCart) { $cartButtonText = "Add To Cart"; } else { $cartButtonText = "Remove From Cart"; }
+                                    echo '
+                                    <button onclick=\'' . $cartAction . '\' class="btn btn-standard" style="font-weight: 500;">
+                                    <i class="fa-solid fa-cart-plus" style="color: #ffffff; margin-right: 10px; font-size: 20px;"></i>
+                                    ' . $cartButtonText . '
+                                </button>
+                                    ';
+                                }
+                            ?>
 
                             <!-- Reviews removed
                             <div id="app">
@@ -223,7 +242,7 @@
         function addQuantity() {
             var quantityInput = document.getElementById("quantity");
             var quantity = parseInt(quantityInput.value);
-            if (quantity < 100) {
+            if (quantity < <?php echo $productStock; ?>) {
                 quantityInput.value = quantity + 1;
             }
         }
