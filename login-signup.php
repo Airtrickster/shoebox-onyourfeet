@@ -3,6 +3,56 @@
     session_start();
 }
   include "db_conn.php";
+  if (isset($_POST["signup"])) {
+    $checkUsernamestmt = mysqli_prepare($link, "SELECT DISTINCT username FROM accounts WHERE username = ?;");
+    mysqli_stmt_bind_param($checkUsernamestmt, "s", $_POST["usernameSignUp"]);
+    mysqli_execute($checkUsernamestmt);
+    $usernameResult = mysqli_stmt_get_result($checkUsernamestmt);
+
+    $checkEmailstmt = mysqli_prepare($link, "SELECT DISTINCT email FROM accounts WHERE email = ?;");
+    mysqli_stmt_bind_param($checkEmailstmt, "s", $_POST["emailSignUp"]);
+    mysqli_execute($checkEmailstmt);
+    $emailResult = mysqli_stmt_get_result($checkEmailstmt);
+
+    if (mysqli_num_rows($usernameResult) > 0) {
+      echo '<script> alert("Username already exists"); window.location.href = "' . $_SERVER["PHP_SELF"] . '"; </script>';
+    } else if (mysqli_num_rows($emailResult) > 0) {
+      echo '<script> alert("Email already exists"); window.location.href = "' . $_SERVER["PHP_SELF"] . '"; </script>';
+    } else {
+      $signupstmt = mysqli_prepare($link, "INSERT INTO accounts (first_name, last_name, email, date_of_birth, phone_number, username, password) VALUES (?, ?, ?, ?, ?, ?, ?);");
+      mysqli_stmt_bind_param($signupstmt, "sssssss", $_POST["firstNameSignUp"], $_POST["lastNameSignUp"] , $_POST["emailSignUp"], $_POST["dateOfBirthSignUp"], $_POST["phoneNumberSignUp"], $_POST["usernameSignUp"], $_POST["passwordSignUp"]);
+      mysqli_stmt_execute($signupstmt);
+    }
+
+  }
+
+  if (isset($_POST["login"])) {
+    $loginstmt = mysqli_prepare($link, "SELECT * FROM accounts WHERE username = ? AND password = ?");
+    mysqli_stmt_bind_param($loginstmt, "ss", $_POST["usernameLogin"], $_POST["passwordLogin"]);
+    mysqli_stmt_execute($loginstmt);
+    $loginResults = mysqli_stmt_get_result($loginstmt);
+    $credentials = mysqli_fetch_array($loginResults);
+
+      if (is_array($credentials)) {
+        $_SESSION["user_id"] = $credentials["user_id"];
+        $_SESSION["username"] = $credentials["username"];
+        $_SESSION["password"] = $credentials["password"];
+        $_SESSION["first_name"] = $credentials["first_name"];
+        $_SESSION["last_name"] = $credentials["last_name"];
+        $_SESSION["full_name"] = $credentials["first_name"] . " " . $credentials["last_name"];
+        $_SESSION["date_of_birth"] = $credentials["date_of_birth"];
+        $_SESSION["phone_number"] = $credentials["phone_number"];
+        $_SESSION["email"] = $credentials["email"];
+        $_SESSION["user_type"] = $credentials["type"];
+        if (! is_null($credentials["image"])) {
+          $_SESSION["image"] = $credentials["image"];
+        }
+        echo '<script> window.location.href="index.php" </script>';
+
+      } else {
+        $errorMessage = "Wrong Credentials. Please try again";
+      }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +74,7 @@
         <div class="signin-signup">
           <form action="" id="loginForm" class="sign-in-form" method="post" enctype="multipart/form-data">
             <h2 class="title">Sign in</h2>
+            <p style="color: red;"> <?php echo $errorMessage; ?> </p>
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="text" name="usernameLogin" placeholder="Username" />
@@ -141,61 +192,6 @@
     </div>
 
     <script src="js/login.js"></script>
-    <?php
 
-      if (isset($_POST["signup"])) {
-        $checkUsernamestmt = mysqli_prepare($link, "SELECT DISTINCT username FROM accounts WHERE username = ?;");
-        mysqli_stmt_bind_param($checkUsernamestmt, "s", $_POST["usernameSignUp"]);
-        mysqli_execute($checkUsernamestmt);
-        $usernameResult = mysqli_stmt_get_result($checkUsernamestmt);
-
-        $checkEmailstmt = mysqli_prepare($link, "SELECT DISTINCT email FROM accounts WHERE email = ?;");
-        mysqli_stmt_bind_param($checkEmailstmt, "s", $_POST["emailSignUp"]);
-        mysqli_execute($checkEmailstmt);
-        $emailResult = mysqli_stmt_get_result($checkEmailstmt);
-
-        if (mysqli_num_rows($usernameResult) > 0) {
-          echo '<script> alert("Username already exists"); window.location.href = "' . $_SERVER["PHP_SELF"] . '"; </script>';
-        } else if (mysqli_num_rows($emailResult) > 0) {
-          echo '<script> alert("Email already exists"); window.location.href = "' . $_SERVER["PHP_SELF"] . '"; </script>';
-        } else {
-          $signupstmt = mysqli_prepare($link, "INSERT INTO accounts (first_name, last_name, email, date_of_birth, phone_number, username, password) VALUES (?, ?, ?, ?, ?, ?, ?);");
-          mysqli_stmt_bind_param($signupstmt, "sssssss", $_POST["firstNameSignUp"], $_POST["lastNameSignUp"] , $_POST["emailSignUp"], $_POST["dateOfBirthSignUp"], $_POST["phoneNumberSignUp"], $_POST["usernameSignUp"], $_POST["passwordSignUp"]);
-          mysqli_stmt_execute($signupstmt);
-        }
-
-      }
-
-      if (isset($_POST["login"])) {
-        $loginstmt = mysqli_prepare($link, "SELECT * FROM accounts WHERE username = ? AND password = ?");
-        mysqli_stmt_bind_param($loginstmt, "ss", $_POST["usernameLogin"], $_POST["passwordLogin"]);
-        mysqli_stmt_execute($loginstmt);
-        $loginResults = mysqli_stmt_get_result($loginstmt);
-        $credentials = mysqli_fetch_array($loginResults);
-
-          if (is_array($credentials)) {
-            $_SESSION["user_id"] = $credentials["user_id"];
-            $_SESSION["username"] = $credentials["username"];
-            $_SESSION["password"] = $credentials["password"];
-            $_SESSION["first_name"] = $credentials["first_name"];
-            $_SESSION["last_name"] = $credentials["last_name"];
-            $_SESSION["full_name"] = $credentials["first_name"] . " " . $credentials["last_name"];
-            $_SESSION["date_of_birth"] = $credentials["date_of_birth"];
-            $_SESSION["phone_number"] = $credentials["phone_number"];
-            $_SESSION["email"] = $credentials["email"];
-            $_SESSION["user_type"] = $credentials["type"];
-            if (! is_null($credentials["image"])) {
-              $_SESSION["image"] = $credentials["image"];
-            }
-            echo '<script> window.location.href="index.php" </script>';
-
-            
-          } else {
-            echo '<script> alert("Wrong Credentials please try again"); window.location.href = "' . $_SERVER["PHP_SELF"] . '"; </script>';
-
-          }
-      }
-    ?>
-    
   </body>
 </html>
